@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- this file is pretty straight foreward, with a couple of brackets and % signs used to indicate where content is being
+substituted for. It's very possible we can also have multiple layout files that also extend this file, haven't tried it tho-->
+
+  <head>
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- this indicates that the title will be added in the files that use this layout file -->
+      <title>{% block title %}{% endblock %}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}"/>
+  </head>
+<body>
+    <!-- This is the navbar for the webpage so it doesn't need to be copied, needs css obviously -->
+    <div class="navbar">
+        <a>This is the navbar edited in the template.html file </a>
+        <a href="{{ url_for('home_page') }}">Home</a>
+
+        <!-- This is a check for variable using the Flask framework. The variable for this method specifically seems to
+        be sent from server.py in the load_user method. The brackets with percentile signs are used to indicate a check
+        for the variable listed within, usually in the form of a for loop or an if statement -->
+        {% if not current_user.is_authenticated %}
+        <a href="{{ url_for('login_page') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout_page') }}">Log out</a>
+        {% endif %}
+    </div>
+
+
+    <!-- This allows for flash messages at the top of the screen. Could also use css -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="flash" class=flashes>
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+
+    <!-- This is differing page content is added on individual pages -->
+    {% block content %}{% endblock %}
+
+    <!-- A Footer or something can go here as well -->
+    <footer>
+        <small>&copy; 2022</small>
+    </footer>
+</body>
+</html>
