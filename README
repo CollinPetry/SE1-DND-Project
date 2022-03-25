@@ -1,0 +1,16 @@
+Python 3.8
+
+Packages:
+Flask
+Flask-login
+Flask-WTF
+Jinja2
+MarkUpSafe
+WTForms
+Werkzeug
+click
+colorama
+itsdangerous
+passlib
+pip
+setuptools
