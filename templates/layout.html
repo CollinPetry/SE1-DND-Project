@@ -11,22 +11,45 @@ substituted for. It's very possible we can also have multiple layout files that 
       <!-- this indicates that the title will be added in the files that use this layout file -->
       <title>{% block title %}{% endblock %}</title>
       <link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}"/>
+      <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
   </head>
 <body>
     <!-- This is the navbar for the webpage so it doesn't need to be copied, needs css obviously -->
-    <div class="navbar">
-        <a>This is the navbar edited in the template.html file </a>
-        <a href="{{ url_for('home_page') }}">Home</a>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+                    </li>
 
-        <!-- This is a check for variable using the Flask framework. The variable for this method specifically seems to
-        be sent from server.py in the load_user method. The brackets with percentile signs are used to indicate a check
-        for the variable listed within, usually in the form of a for loop or an if statement -->
-        {% if not current_user.is_authenticated %}
-        <a href="{{ url_for('login_page') }}">Login</a>
-        {% else %}
-        <a href="{{ url_for('logout_page') }}">Log out</a>
-        {% endif %}
-    </div>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ url_for('test_page') }}">Test</a>
+                    </li>
+
+                    <li class="nav-item px-3">
+                        <!-- This is a check for variable using the Flask framework. The variable for this method specifically seems to
+                        be sent from server.py in the load_user method. The brackets with percentile signs are used to indicate a check
+                        for the variable listed within, usually in the form of a for loop or an if statement -->
+                        {% if not current_user.is_authenticated %}
+                        <a class="nav-link" href="{{ url_for('login_page') }}">Login</a>
+                        {% else %}
+                        <a class="nav-link" href="{{ url_for('logout_page') }}">Log out</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
     <!-- This allows for flash messages at the top of the screen. Could also use css -->
@@ -41,8 +64,28 @@ substituted for. It's very possible we can also have multiple layout files that 
     {% endwith %}
 
 
+    <!-- This div creates the 'inside page' look -->
+    <div class="pageContainer mx-auto p-3">
     <!-- This is differing page content is added on individual pages -->
     {% block content %}{% endblock %}
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous">
+    </script>
+
+    <script src="{{url_for('static', filename='somejavascriptfile.js')}}"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
 
     <!-- A Footer or something can go here as well -->
     <footer>

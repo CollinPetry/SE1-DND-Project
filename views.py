@@ -6,9 +6,13 @@ from forms import LoginForm
 from user import get_user
 
 
+#  For pages that need to be logged in to view, the line above the method def statement should read: @login_required
+
 def home_page():
     return render_template("home.html")
 
+def test_page():
+    return render_template("test.html")
 
 def login_page():
     form = LoginForm()

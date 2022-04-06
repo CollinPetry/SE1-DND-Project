@@ -36,6 +36,11 @@ def create_app():
         "/login", view_func=views.login_page, methods=["GET", "POST"]
     )
 
+
+    app.add_url_rule(
+        "/test", view_func=views.test_page, methods=["GET", "POST"]
+    )
+
     app.add_url_rule("/logout", view_func=views.logout_page)
 
     #  no clue what exactly this is doing, but it's doing something, so no touchy
