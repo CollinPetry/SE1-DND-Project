@@ -8,6 +8,7 @@ create table IF NOT EXISTS Backgrounds(
 
 create table IF NOT EXISTS Alignments(
 	alignment_id int(15) NOT NULL AUTO_INCREMENT,
+    alignment_name varchar(50),
     alignment_description text(50000),
     primary key (alignment_id)
 );

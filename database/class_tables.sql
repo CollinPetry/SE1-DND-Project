@@ -6,6 +6,7 @@ create table IF NOT EXISTS Classes(
 	hp_base int(10),
     hp_mod int(10),
 	hit_die varchar(4),
+    class_description text(50000),
     primary key (class_id)
 );	
 
@@ -146,5 +147,3 @@ CREATE TABLE IF NOT EXISTS Class_Has_Feats(
 	UNIQUE (class_id, feat_id)
 );
 
-ALTER TABLE Classes
-ADD class_description text(50000);

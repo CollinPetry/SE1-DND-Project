@@ -4,6 +4,9 @@ create table IF NOT EXISTS Races(
     native_language_id int(15) Not Null,
     size varchar(20) not Null,
     base_speed int(15) not null,
+    race_description text(10000),
+	alignment_tendency text(10000),
+	age text(1000),
 	FOREIGN KEY (native_language_id) REFERENCES Languages(language_id),
     primary key (race_id)
 );	
@@ -56,5 +59,20 @@ CREATE TABLE IF NOT EXISTS Race_Grants_Weapons(
 	UNIQUE (race_id, weapon_id)
 );
 
-ALTER TABLE Races
-ADD race_description text(50000);
+CREATE TABLE IF NOT EXISTS Race_Tends_Alignment(
+	race_id INT(15) NOT NULL,
+	alignment_id INT(14) NOT NULL,
+	FOREIGN KEY (race_id) REFERENCES Races(race_id),
+	FOREIGN KEY (alignment_id) REFERENCES Alignments(alignment_id),
+	UNIQUE (race_id, alignment_id)
+);
+
+CREATE TABLE IF NOT EXISTS Race_Speaks_Language(
+	race_id INT(15) NOT NULL,
+	language_id INT(14) NOT NULL,
+	FOREIGN KEY (race_id) REFERENCES Races(race_id),
+	FOREIGN KEY (language_id) REFERENCES Languages(language_id),
+	UNIQUE (race_id, language_id)
+);
+
+
