@@ -1,6 +1,6 @@
 create table IF NOT EXISTS Backgrounds(
 	background_id int(15) NOT NULL AUTO_INCREMENT,
-    background_name varchar(20) Not Null,
+    background_name varchar(100) Not Null,
 	background_description text(50000),
     starting_gold int(15),
     primary key (background_id)
@@ -15,11 +15,11 @@ create table IF NOT EXISTS Alignments(
 
 create table IF NOT EXISTS Languages(
 	language_id int(15) NOT NULL AUTO_INCREMENT,
-    typical_speaker varchar(20),
-    script varchar(20),
+    language_name varchar(50),
+    typical_speaker varchar(50),
+    script varchar(50),
     primary key (language_id)
 );
-
 -- 1 (background) to many (suggestions)
 create table IF NOT EXISTS Suggested_Bonds(
 	bond_id int(15) NOT NULL AUTO_INCREMENT,
@@ -62,7 +62,7 @@ create table IF NOT EXISTS Suggested_Flaws(
 create table IF NOT EXISTS Specialty_Personalities(
 	specialty_personality_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
-    specialty_personality_name varchar(20),
+    specialty_personality_name varchar(50),
     specialty_personality_die int(2),
     foreign key (background_id) references Backgrounds(background_id),
     primary key (specialty_personality_id)
@@ -79,7 +79,7 @@ create table IF NOT EXISTS Suggested_Specialty_Traits(
 -- many to many association
 CREATE TABLE IF NOT EXISTS Background_Proficency_Tools(
 	background_id INT(15) NOT NULL,
-	tool_id INT(14) NOT NULL,
+	tool_id INT(15) NOT NULL,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (tool_id) REFERENCES Tools(tool_id),
 	UNIQUE (background_id, tool_id)
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Tools(
 
 CREATE TABLE IF NOT EXISTS Background_Proficency_Languages(
 	background_id INT(15) NOT NULL,
-	language_id INT(14) NOT NULL,
+	language_id INT(15) NOT NULL,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (language_id) REFERENCES Languages(language_id),
 	UNIQUE (background_id, language_id)
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Languages(
 
 CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 	background_id INT(15) NOT NULL,
-	skill_id INT(14) NOT NULL,
+	skill_id INT(15) NOT NULL,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
 	UNIQUE (background_id, skill_id)
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 -- 1 to 1
 CREATE TABLE IF NOT EXISTS Background_Features(
 	background_id INT(15) NOT NULL,
-	background_feat_id INT(14) NOT NULL AUTO_INCREMENT,
+	background_feat_id INT(15) NOT NULL AUTO_INCREMENT,
     feat_description text(50000),  
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	primary key (background_feat_id)
