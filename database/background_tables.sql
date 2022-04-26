@@ -100,6 +100,17 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
 	UNIQUE (background_id, skill_id)
 );
+
+-- CREATE TABLE IF NOT EXISTS Background_Grants_Equipment (
+--     background_id INT(15) NOT NULL,
+--     tool_id INT(15) NOT NULL,
+--     FOREIGN KEY (background_id)
+--         REFERENCES Backgrounds (background_id),
+--     FOREIGN KEY (tool_id)
+--         REFERENCES Equipment (equipment_id),
+--     UNIQUE (background_id , equipment_id)
+-- );
+
 -- 1 to 1
 CREATE TABLE IF NOT EXISTS Background_Features(
 	background_id INT(15) NOT NULL,

@@ -1,4 +1,4 @@
-create database IF NOT EXISTS dungeons_and_dragons;
+-- create database IF NOT EXISTS dungeons_and_dragons;
 
 create table IF NOT EXISTS Classes(
 	class_id int(15) NOT NULL AUTO_INCREMENT,
@@ -76,9 +76,10 @@ create table IF NOT EXISTS Tools(
 create table IF NOT EXISTS Gear(
 	gear_id int(15) NOT NULL AUTO_INCREMENT,
 	gear_name varchar(100) Not Null,
+    gear_description text(50000),
+    gear_category varchar(100),
     weight float(4),
     cost float(4),
-    gear_description text(50000),
     primary key (gear_id)
 );
 
