@@ -1,3 +1,4 @@
+-- after pop skills
 truncate table race_speaks_language;
 INSERT INTO race_speaks_language(race_id, language_id)
 SELECT races.race_id, languages.language_id

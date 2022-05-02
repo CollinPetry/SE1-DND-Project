@@ -65,12 +65,13 @@ create table IF NOT EXISTS Skills(
     primary key (skill_id),
     foreign key (ability_id) references Abilities(ability_id)
 );
+
 create table IF NOT EXISTS Tools(
 	tool_id int(15) NOT NULL AUTO_INCREMENT,
 	tool_name varchar(100) Not Null,
     weight float(4),
     cost float(4),
-    tool_description text(50000),
+    tool_category varchar(100),
     primary key (tool_id)
 );
 

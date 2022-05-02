@@ -113,9 +113,11 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 
 -- 1 to 1
 CREATE TABLE IF NOT EXISTS Background_Features(
-	background_id INT(15) NOT NULL,
 	background_feat_id INT(15) NOT NULL AUTO_INCREMENT,
+    background_feat_name varchar(100) NOT NULL,
     feat_description text(50000),  
-	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
-	primary key (background_feat_id)
+	background_id INT(15),
+	primary key (background_feat_id),
+	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id)
 );
+
