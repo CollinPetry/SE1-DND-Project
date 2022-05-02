@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>My Character</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}"/>
+<link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+  </head>
+  <body>
+
+<header>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+                    </li>
+
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ url_for('test_page') }}">Characters</a>
+                    </li>
+
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ url_for('logout_page') }}">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+  <div id="accordion">
+      <!--Character info-->
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Character Info
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+        <div class = "container">
+            <div class="row">
+          <div class="col">
+              <p>Name: Baloo</p>
+              <p>Race: Khenra</p>
+            </div><div class="col">
+              <p>Class: Monk</p>
+              <p>Background: Hermit</p>
+              </div><div class="col">
+              <p>Level: 7</p>
+              <p>XP: 100</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--Combat-->
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Combat Stats
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <strong>HP:</strong> 45/60
+        </div>
+        <div class="col">
+            <strong>AC:</strong> 18
+        </div>
+        <div class="col">
+            <strong>Speed:</strong> 50
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <strong> Temp HP:</strong> 0
+        </div>
+        <div class="col">
+            <strong>Hit Dice:</strong> 6
+        </div>
+        <div class="col">
+            Death Saves:
+                <div class="row">
+                    <div class="col-sm-1">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          </div>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          </div>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          </div>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <strong>Attacks</strong>
+        </div>
+        <div class="col">
+            <strong>Proficiency:</strong> +4
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+    <strong>Name:</strong>
+        </div>
+        <div class="col">
+            <strong>Bonus:</strong>
+        </div>
+        <div class="col">
+            <strong>Damage/Type:</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+    Knife
+        </div>
+        <div class="col">
+            +3
+        </div>
+        <div class="col">
+            1d6 Piercing
+        </div>
+    </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--stats-->
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Stats and Skills
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <strong>STR:</strong> 14
+                </div>
+                <div class="col">
+                    <strong>DEX:</strong> 17
+                </div>
+                <div class="col">
+                    <strong>CON:</strong> 12
+                </div>
+                <div class="col">
+                    <strong>INT:</strong> 10
+                </div>
+                <div class="col">
+                    <strong>WIS:</strong> 14
+                </div>
+                <div class="col">
+                    <strong>CHA:</strong> 13
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    +2
+                </div>
+                <div class="col">
+                    +3
+                </div>
+                <div class="col">
+                    +1
+                </div>
+                <div class="col">
+                    +0
+                </div>
+                <div class="col">
+                    +2
+                </div>
+                <div class="col">
+                    +2
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    Acrobatics
+                </div>
+                <div class="col">
+                    Animal Handling
+                </div>
+                <div class="col">
+                    Arcana
+                </div>
+                <div class="col">
+                    Athletics
+                </div>
+                <div class="col">
+                    Deception
+                </div>
+                <div class="col">
+                    History
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    Insight
+                </div>
+                <div class="col">
+                    Intimidation
+                </div>
+                <div class="col">
+                    Investigation
+                </div>
+                <div class="col">
+                    Medicine
+                </div>
+                <div class="col">
+                    Nature
+                </div>
+                <div class="col">
+                    Perception
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    Performance
+                </div>
+                <div class="col">
+                    Persuasion
+                </div>
+                <div class="col">
+                    Religion
+                </div>
+                <div class="col">
+                    Sleight of Hand
+                </div>
+                <div class="col">
+                    Stealth
+                </div>
+                <div class="col">
+                    Survival
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              </div>
+                        </div>
+                        <div class="col">
+                            +1
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--feats-->
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Feats and Traits
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong>Name</strong>
+                </div>
+                <div class="col-sm-2">
+                    <strong>Class/Race</strong>
+                </div>
+                <div class="col-md-4">
+                    <strong>Description</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        Dark Vision
+                    </div>
+                    <div class="col-sm-2">
+                        Khenra
+                    </div>
+                    <div class="col-md-4">
+                        You can see +30ft in the dark.
+                    </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--spells-->
+<div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Spells
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong>Name</strong>
+                </div>
+                <div class="col-sm-2">
+                    <strong>Modifier</strong>
+                </div>
+                <div class="col-md-4">
+                    <strong>Description</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        Fireball
+                    </div>
+                    <div class="col-sm-2">
+                        3
+                    </div>
+                    <div class="col-md-4">
+                        You throw a ball of fire.
+                    </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--inventory-->
+<div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Inventory/Notes
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <div class="input-group">
+            <span class="input-group-text">Inventory</span>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-text">Notes</span>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <script src="bootstrap.min.js"></script>
+
+
+  </body>
+</html>
