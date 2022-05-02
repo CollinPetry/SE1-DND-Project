@@ -1,3 +1,4 @@
+-- drop database if exists dungeons_and_dragons;
 -- create database IF NOT EXISTS dungeons_and_dragons;
 
 create table IF NOT EXISTS Classes(

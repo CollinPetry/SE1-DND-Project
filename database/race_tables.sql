@@ -33,31 +33,31 @@ CREATE TABLE IF NOT EXISTS Race_Grants_Abilities(
 	UNIQUE (race_id, ability_id)
 );
 
-CREATE TABLE IF NOT EXISTS Race_Grants_Skills(
-	race_id INT(15) NOT NULL,
+CREATE TABLE IF NOT EXISTS Racial_Trait_Grants_Skills(
+	racial_trait_id INT(15) NOT NULL,
 	skill_id INT(15) NOT NULL,
-	FOREIGN KEY (race_id) REFERENCES Races(race_id),
+	FOREIGN KEY (racial_trait_id) REFERENCES racial_traits(racial_trait_id),
 	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
-	UNIQUE (race_id, skill_id)
+	UNIQUE (racial_trait_id, skill_id)
 );
 
-CREATE TABLE IF NOT EXISTS Race_Grants_Tools(
-	race_id INT(15) NOT NULL,
+CREATE TABLE IF NOT EXISTS Racial_Trait_Grants_Tools(
+	racial_trait_id INT(15) NOT NULL,
 	tool_id INT(15) NOT NULL,
-	FOREIGN KEY (race_id) REFERENCES Races(race_id),
+	FOREIGN KEY (racial_trait_id) REFERENCES Racial_traits(racial_trait_id),
 	FOREIGN KEY (tool_id) REFERENCES Tools(tool_id),
-	UNIQUE (race_id, tool_id)
+	UNIQUE (racial_trait_id, tool_id)
 );
 
-CREATE TABLE IF NOT EXISTS Race_Grants_Weapons(
-	race_id INT(15) NOT NULL,
+CREATE TABLE IF NOT EXISTS Racial_Trait_Grants_Weapons(
+	racial_trait_id INT(15) NOT NULL,
 	weapon_id INT(15) NOT NULL,
-	FOREIGN KEY (race_id) REFERENCES Races(race_id),
+	FOREIGN KEY (racial_trait_id) REFERENCES racial_traits(racial_trait_id),
 	FOREIGN KEY (weapon_id) REFERENCES Weapons(weapon_id),
-	UNIQUE (race_id, weapon_id)
+	UNIQUE (racial_trait_id, weapon_id)
 );
 
-CREATE TABLE IF NOT EXISTS Race_Grants_Trait(
+CREATE TABLE IF NOT EXISTS Race_Grants_Traits(
 	race_id INT(15) NOT NULL,
 	racial_trait_id INT(15) NOT NULL,
 	FOREIGN KEY (race_id) REFERENCES Races(race_id),
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS Race_Tends_Alignment(
 
 CREATE TABLE IF NOT EXISTS Race_Speaks_Language(
 	race_id INT(15) NOT NULL,
-	language_id INT(15) NOT NULL,
+	language_id INT(15),
 	FOREIGN KEY (race_id) REFERENCES Races(race_id),
 	FOREIGN KEY (language_id) REFERENCES Languages(language_id),
 	UNIQUE (race_id, language_id)

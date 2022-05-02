@@ -1,3 +1,4 @@
+-- link abilities with skills
 SET SQL_SAFE_UPDATES = 0;
 UPDATE skills SET ability_id=( 
 SELECT ability_id FROM abilities
