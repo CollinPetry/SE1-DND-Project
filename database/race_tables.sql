@@ -14,7 +14,7 @@ create table IF NOT EXISTS Subraces(
     race_id int(15) Not Null,
 	subrace_name varchar(100) Not Null,
 	subrace_description text(50000),
-    primary key (subrace_id),
+    primary key (race_id,subrace_id),
     FOREIGN KEY (race_id) REFERENCES Races(race_id)
 );
 create table IF NOT EXISTS Racial_Traits(

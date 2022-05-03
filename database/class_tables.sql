@@ -3,7 +3,7 @@
 
 create table IF NOT EXISTS Classes(
 	class_id int(15) NOT NULL AUTO_INCREMENT,
-    class_name varchar(50) Not Null,
+    class_class_proficency_skills varchar(50) Not Null,
 	hit_die int(3),
     class_description text(50000),
     primary key (class_id)
