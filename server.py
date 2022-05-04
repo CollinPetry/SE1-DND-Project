@@ -16,6 +16,9 @@ lm = LoginManager()
 def load_user(user_id):
     return get_user(user_id)
 
+
+
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object("settings")
@@ -39,6 +42,20 @@ def create_app():
 
     app.add_url_rule(
         "/test", view_func=views.test_page, methods=["GET", "POST"]
+    )
+
+    # background process happening without any refreshing
+    app.add_url_rule(
+        '/process', view_func=views.process, methods=["GET", "POST"]
+    )
+
+    # background process happening without any refreshing
+    app.add_url_rule(
+        '/diceroller', view_func=views.diceroller, methods=["GET", "POST"]
+    )
+
+    app.add_url_rule(
+        "/view_char", view_func=views.view_characters, methods=["GET", "POST"]
     )
 
     app.add_url_rule("/logout", view_func=views.logout_page)
