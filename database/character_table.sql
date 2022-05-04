@@ -17,6 +17,7 @@ CREATE TABLE User_Character(
     FOREIGN KEY (char_race_id) REFERENCES races(race_id),
     primary key(char_id)
 );
+
 create view Items as
 select 'Gear' as category, gear_id as item_id , gear_name as item_name, weight, cost
 from Gear
@@ -60,6 +61,3 @@ UNIQUE (char_id, item_id)
 );
 ALTER TABLE packs
 ADD COLUMN description TEXT(5000) NULL AFTER cost;
-
-
-
