@@ -22,41 +22,36 @@ create table IF NOT EXISTS Languages(
 );
 -- 1 (background) to many (suggestions)
 create table IF NOT EXISTS Suggested_Bonds(
-	bond_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     bond_description text(50000),
     bond_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
-    primary key (bond_id)
+    primary key (background_id,bond_roll)
 );
 create table IF NOT EXISTS Suggested_Traits(
-	trait_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     trait_description text(50000),
     trait_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
-    primary key (trait_id)
+    primary key (background_id,trait_roll)
 );
 
 create table IF NOT EXISTS Suggested_Ideals(
-	ideals_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     alignment_id int(15),
     ideal_name varchar(15),
     ideals_description text(50000),
-    ideals_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
     foreign key (alignment_id) references Alignments(alignment_id),
-    primary key (ideals_id)
+    primary key (background_id,ideals_roll)
 );
 
 create table IF NOT EXISTS Suggested_Flaws(
-	flaw_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     flaw_description text(50000),
     flaw_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
-    primary key (flaw_id)
+    primary key (background_id,flaw_roll)
 );
 
 create table IF NOT EXISTS Specialty_Personalities(
