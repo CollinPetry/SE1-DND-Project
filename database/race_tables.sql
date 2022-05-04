@@ -6,16 +6,15 @@ create table IF NOT EXISTS Races(
     race_description text(10000),
 	alignment_tendency text(10000),
 	age text(1000),
-    primary key (race_id)
+    subrace_id int(15) default 0,
+    FOREIGN KEY (subrace_id) REFERENCES Subraces(subrace_id),
+    primary key (race_id,subrace_id)
 );	
 
 create table IF NOT EXISTS Subraces(
 	subrace_id int(15) NOT NULL AUTO_INCREMENT,
-    race_id int(15) Not Null,
 	subrace_name varchar(100) Not Null,
-	subrace_description text(50000),
-    primary key (race_id,subrace_id),
-    FOREIGN KEY (race_id) REFERENCES Races(race_id)
+    primary key (subrace_id)
 );
 create table IF NOT EXISTS Racial_Traits(
 	racial_trait_id int(15) NOT NULL AUTO_INCREMENT,
