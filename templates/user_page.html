@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+<!-- Title on the next line -->
+{% block content %}
+<!-- Side navigation -->
+<div class="grid-container">
+    <div class="character-container">
+        <!-- TO BE REPLACED WITH FOR LOOP FOR CAMPAIGNS -->
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Campaign Name<br>
+                <p>Role: Player/DM<br>List of Other Players and roles<br></p>
+            </div>
+        </div>
+
+    </div>
+    {% include "diceroller.html" %}
+
+</div>
+{% endblock %}

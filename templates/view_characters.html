@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+<!-- Title on the next line -->
+{% block content %}
+<!-- Side navigation -->
+<div class="grid-container">
+    <div class="character-container">
+        <!-- TO BE REPLACED WITH FOR LOOP FOR CHARACTERS -->
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+        <div class="grid-item" id="Content">
+            <div class="characterbox">
+                Character Name<br>
+                <p>Race: Elf<br>Class: Druid<br>Level: 1<br></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='diceroller.js') }}"></script>
+
+    {% include "diceroller.html" %}
+
+</div>
+{% endblock %}
