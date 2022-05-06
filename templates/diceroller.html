@@ -9,7 +9,7 @@
     </select>
   </h4> -->
 
-  <form class="form" action='/diceroller' method="POST" autocomplete="off">
+  <form id="diceform" class="form" action='/diceroller' method="POST" autocomplete="off">
     <div id="dice-container">
       <div id="die">
           <label for="d4">#d4</label>
@@ -46,10 +46,10 @@
           <input type="text" id="d100" name="d100" value="0">
       </div>
     </div>
+      <p><br></p>
 
-    <!-- <h3><br>Check Type</h3> -->
+    <!-- <h3><br>Check Type</h3>
     <div id="dice-container">
-      <!--
       <label for="STR" id="stats">STR<br />
         <input type="radio" id="STR" name="ability type" value="STR">
       </label>
@@ -71,15 +71,19 @@
       <label for="Proficiency" id="stats">Proficiency?<br />
         <input type="checkbox" id="Proficiency" name="Proficiency" value="Proficiency">
       </label>
-      -->
+      <label for="mod">+/-<br />
+        <input type="radio" id="mods" name="mod" value="0">
+        <input type="radio" id="mods" name="mod" value="1">
+      </label>
 
       <label for="modifier" id="stats">Modifier:<br />
         <input type="text" id="modifier" name="modifier" placeholder="+/- #" value="0">
       </label>
     </div>
+      -->
 
     <div class="result">
-        <button class="submit" type="submit">Roll</button>
+        <button class="roll" type="roll">Roll</button>
     </div>
   </form>
 

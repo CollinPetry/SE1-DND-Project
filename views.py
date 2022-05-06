@@ -1,6 +1,7 @@
 import random
-from flask import abort, current_app, render_template, url_for, request, flash, session, jsonify
+from flask import abort, current_app, render_template, url_for, request, flash, session, jsonify, app
 from flask_login import login_required, current_user, login_user, logout_user
+from flask_mysqldb import MySQL
 from werkzeug.utils import redirect
 from passlib.hash import pbkdf2_sha256 as hasher
 from forms import LoginForm
@@ -12,56 +13,70 @@ from user import get_user
 def home_page():
     return render_template("home.html")
 
+
 def view_characters():
     return render_template("view_characters.html")
+
+
+def view_campaigns():
+    return render_template("view_campaigns.html")
 
 def diceroller():
     roll = 0
     d4 = request.form['d4']
     for i in range(0, int(d4)):
-        roll = roll + random.randint(1,4)
+        roll = roll + random.randint(1, 4)
 
     d6 = request.form['d6']
     for i in range(0, int(d6)):
-        roll = roll + random.randint(1,6)
+        roll = roll + random.randint(1, 6)
 
     d8 = request.form['d8']
     for i in range(0, int(d8)):
-        roll = roll + random.randint(1,8)
+        roll = roll + random.randint(1, 8)
 
     d10 = request.form['d10']
     for i in range(0, int(d10)):
-        roll = roll + random.randint(1,10)
+        roll = roll + random.randint(1, 10)
 
     d12 = request.form['d12']
     for i in range(0, int(d12)):
-        roll = roll + random.randint(1,12)
+        roll = roll + random.randint(1, 12)
 
     d20 = request.form['d20']
     for i in range(0, int(d20)):
-        roll = roll + random.randint(1,20)
+        roll = roll + random.randint(1, 20)
 
     d100 = request.form['d100']
     for i in range(0, int(d100)):
-        roll = roll + random.randint(1,100)
+        roll = roll + random.randint(1, 100)
 
-    print("d4: "+str(d4)+
-          "\n d6: "+d6+
-          "\n d8: "+d8+
-          "\n d10: "+d10+
-          "\n d12: "+d12+
-          "\n d20: "+d20
-          )
-    print("Roll: "+str(roll))
-    return jsonify({'roll' : roll})
+    #print("d4: " + d4 +
+    #     "\n d6: " + d6 +
+    #      "\n d8: " + d8 +
+    #      "\n d10: " + d10 +
+    #      "\n d12: " + d12 +
+    #      "\n d20: " + d20
+    #      )
+
+    #mod = request.form['mods']
+    #modifier = request.form['modifier']
+
+
+    print("Roll: " + str(roll))
+    return jsonify({'roll': roll})
+
 
 def test_page():
     return render_template("test.html")
 
+def characterpage():
+    return render_template("character.html")
+
 def process():
     user_question = request.form['question']
     print(user_question)
-    return jsonify({'response' : user_question})
+    return jsonify({'response': user_question})
 
 def login_page():
     form = LoginForm()
@@ -83,3 +98,26 @@ def logout_page():
     logout_user()
     flash("You have logged out.")
     return redirect(url_for("home_page"))
+
+
+def form():
+    return render_template('form.html')
+
+def logintest():
+   app.config['MYSQL_HOST'] = 'localhost'
+   app.config['MYSQL_USER'] = 'root'
+   app.config['MYSQL_PASSWORD'] = ''
+   app.config['MYSQL_DB'] = 'flask'
+
+   mysql = MySQL(app)
+   if request.method == 'GET':
+       return "Login via the login Form"
+
+   if request.method == 'POST':
+       name = request.form['name']
+       age = request.form['age']
+       cursor = mysql.connection.cursor()
+       cursor.execute(''' INSERT INTO info_table VALUES(%s,%s)''', (name, age))
+       mysql.connection.commit()
+       cursor.close()
+       return f"Done!!"
