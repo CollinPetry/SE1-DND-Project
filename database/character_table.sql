@@ -1,5 +1,5 @@
 -- users character
-CREATE TABLE Characters(
+CREATE TABLE IF NOT EXISTS  Characters(
 	user_id int(15) not null,
     char_id int(15) not null auto_increment,
     char_name varchar(100),
@@ -27,7 +27,7 @@ join Characters as c on (c.user_id= u.user_id);
 
 select * from user_chars;
 
-create table char_powers(
+create table IF NOT EXISTS  char_powers(
 	power_id int(15),
     char_id int(15),
     category varchar(50),
@@ -59,12 +59,41 @@ union
 select 'Pack' as category, pack_id, pack_name, weight,cost
 from packs;
 
-CREATE TABLE IF NOT EXISTS char_proficency(
+
+CREATE TABLE IF NOT EXISTS char_proficency_skills(
 	char_id INT(15) NOT NULL,
-	prof_id INT(15) NOT NULL,
-    category varchar(100),
+	skill_id INT(15) NOT NULL,
 	FOREIGN KEY (char_id) REFERENCES characters(char_id),
-	UNIQUE (char_id, prof_id)
+    FOREIGN KEY (skill_id) REFERENCES skills(skill_id),
+	UNIQUE (char_id, skill_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_tools(
+	char_id INT(15) NOT NULL,
+	tool_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (tool_id) REFERENCES tools(tool_id),
+	UNIQUE (char_id, tool_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_weapons(
+	char_id INT(15) NOT NULL,
+	weapon_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+	FOREIGN KEY (weapon_id) REFERENCES weapons(weapon_id),
+    UNIQUE (char_id, weapon_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_armor(
+	char_id INT(15) NOT NULL,
+	armor_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (armor_id) REFERENCES armor(armor_id),
+	UNIQUE (char_id, armor_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_saving_throws(
+	char_id INT(15) NOT NULL,
+	ability_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (ability_id) REFERENCES abilities(ability_id),
+	UNIQUE (char_id, ability_id)
 );
 
 CREATE TABLE IF NOT EXISTS char_languages(
@@ -75,7 +104,7 @@ CREATE TABLE IF NOT EXISTS char_languages(
 	UNIQUE (user_id, language_id)
 );
 
-CREATE TABLE char_inventory(
+CREATE TABLE IF NOT EXISTS char_inventory(
 char_id INT(15) NOT NULL,
 item_id INT(15) NOT NULL,
 FOREIGN KEY (char_id) REFERENCES user_character(char_id),

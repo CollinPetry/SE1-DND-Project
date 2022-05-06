@@ -929,7 +929,6 @@ join languages l on (rsl.language_id = l.language_id);
 
 select * from races;
 
-truncate table race_grants_traits;
 
 INSERT INTO race_grants_traits(race_id, racial_trait_id)
 SELECT races.race_id, racial_traits.racial_trait_id
@@ -975,9 +974,12 @@ or racial_traits.trait_name='Halfling Nimbleness');
 INSERT INTO race_grants_traits(race_id, racial_trait_id)
 SELECT races.race_id, racial_traits.racial_trait_id
 FROM races,racial_traits
-WHERE races.race_name='Half-Orc' and (racial_traits.trait_name='Darkvision' 
-or racial_traits.trait_name='Infernal Legacy'
-or racial_traits.trait_name='Hellish Resistance');
+WHERE races.race_name='Half-Orc' and racial_traits.trait_name in ('Darkvision','Menacing','Relentless Endurance','Savage Attacks');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Tiefling' and racial_traits.trait_name in ('Darkvision','Infernal Legacy','Hellish Resistance');
 
 -- race has abilities
 truncate table race_grants_abilities;
