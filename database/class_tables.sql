@@ -1,5 +1,5 @@
 -- drop database if exists dungeons_and_dragons;
--- create database IF NOT EXISTS dungeons_and_dragons;
+create database IF NOT EXISTS dungeons_and_dragons;
 
 create table IF NOT EXISTS Classes(
 	class_id int(15) NOT NULL AUTO_INCREMENT,

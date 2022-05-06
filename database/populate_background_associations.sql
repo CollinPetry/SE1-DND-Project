@@ -185,6 +185,8 @@ SELECT background_id FROM backgrounds
 WHERE  background_name="Sage")
 WHERE background_feat_name='Researcher';
 
+ALTER TABLE packs
+ADD COLUMN description TEXT(5000) NULL AFTER cost;
 -- Sailor
 INSERT INTO background_proficency_skills(background_id, skill_id)
 SELECT backgrounds.background_id, skills.skill_id

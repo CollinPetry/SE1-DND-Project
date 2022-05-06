@@ -1,4 +1,5 @@
 -- drop database dungeons_and_dragons;
+
 INSERT INTO Languages(language_name, typical_speaker,script)
 VALUES
 ("Common", "Humans", "Common"),

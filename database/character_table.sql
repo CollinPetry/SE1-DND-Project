@@ -1,6 +1,5 @@
-
 -- users character
-CREATE TABLE User_Character(
+CREATE TABLE Characters(
 	user_id int(15) not null,
     char_id int(15) not null auto_increment,
     char_name varchar(100),
@@ -12,10 +11,36 @@ CREATE TABLE User_Character(
 	char_bonds text(50000),
     char_personality text(50000),
     char_ideal text(50000),
+    speed int(15),
+    size varchar(50),
+    char_lvl int(15),
 	FOREIGN KEY (char_background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (char_class_id) REFERENCES classes(class_id),
     FOREIGN KEY (char_race_id) REFERENCES races(race_id),
     primary key(char_id)
+);
+
+create view user_chars as 
+select u.user_id, u.user_name, c.char_name, c.char_id
+from user as u
+join Characters as c on (c.user_id= u.user_id);
+
+select * from user_chars;
+
+create table char_powers(
+	power_id int(15),
+    char_id int(15),
+    category varchar(50),
+	FOREIGN KEY (char_id) REFERENCES Characters(char_id)
+);
+
+
+CREATE TABLE IF NOT EXISTS Class_Proficency_Armor(
+	user_id INT(15) NOT NULL,
+	char_id INT(15) NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES Users(user_id),
+	FOREIGN KEY (char_id) REFERENCES User_Character(char_id),
+	UNIQUE (user_id, char_id)
 );
 
 create view Items as
@@ -38,9 +63,8 @@ CREATE TABLE IF NOT EXISTS char_proficency(
 	char_id INT(15) NOT NULL,
 	prof_id INT(15) NOT NULL,
     category varchar(100),
-	FOREIGN KEY (char_id) REFERENCES user_character(char_id),
-	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
-	UNIQUE (user_id, skill_id)
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+	UNIQUE (char_id, prof_id)
 );
 
 CREATE TABLE IF NOT EXISTS char_languages(
@@ -54,10 +78,7 @@ CREATE TABLE IF NOT EXISTS char_languages(
 CREATE TABLE char_inventory(
 char_id INT(15) NOT NULL,
 item_id INT(15) NOT NULL,
-
 FOREIGN KEY (char_id) REFERENCES user_character(char_id),
 FOREIGN KEY (item_id) REFERENCES items(item_id),
 UNIQUE (char_id, item_id)
 );
-ALTER TABLE packs
-ADD COLUMN description TEXT(5000) NULL AFTER cost;

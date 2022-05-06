@@ -1,8 +1,8 @@
--- drop database if exists dungeons_and_dragons;
--- create database IF NOT EXISTS dungeons_and_dragons;
 
+-- build class tables
 create table IF NOT EXISTS Classes(
 	class_id int(15) NOT NULL AUTO_INCREMENT,
+    class_name varchar(50),
     class_class_proficency_skills varchar(50) Not Null,
 	hit_die int(3),
     class_description text(50000),
@@ -88,6 +88,7 @@ create table IF NOT EXISTS Gear(
 create table IF NOT EXISTS Packs(
 	pack_id int(15) NOT NULL AUTO_INCREMENT,
 	pack_name varchar(100) Not Null,
+    description text(5000),
     weight float(4),
     cost float(4),
     primary key (pack_id)
@@ -149,9 +150,11 @@ CREATE TABLE IF NOT EXISTS Class_Has_Feats(
 	UNIQUE (class_id, feat_id)
 );
 
+-- build background tables
+
 create table IF NOT EXISTS Backgrounds(
 	background_id int(15) NOT NULL AUTO_INCREMENT,
-    background_name varchar(100) Not Null,
+    background_name varchar(20) Not Null,
 	background_description text(50000),
     starting_gold int(15),
     primary key (background_id)
@@ -167,48 +170,54 @@ create table IF NOT EXISTS Alignments(
 create table IF NOT EXISTS Languages(
 	language_id int(15) NOT NULL AUTO_INCREMENT,
     language_name varchar(50),
-    typical_speaker varchar(50),
-    script varchar(50),
+    typical_speaker varchar(20),
+    script varchar(20),
     primary key (language_id)
 );
+
 -- 1 (background) to many (suggestions)
 create table IF NOT EXISTS Suggested_Bonds(
+	bond_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     bond_description text(50000),
     bond_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
-    primary key (background_id,bond_roll)
+    primary key (bond_id)
 );
 create table IF NOT EXISTS Suggested_Traits(
+	trait_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     trait_description text(50000),
     trait_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
-    primary key (background_id,trait_roll)
+    primary key (trait_id)
 );
 
 create table IF NOT EXISTS Suggested_Ideals(
+	ideals_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     alignment_id int(15),
     ideal_name varchar(15),
     ideals_description text(50000),
+    ideals_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
     foreign key (alignment_id) references Alignments(alignment_id),
-    primary key (background_id,ideals_roll)
+    primary key (ideals_id)
 );
 
 create table IF NOT EXISTS Suggested_Flaws(
+	flaw_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
     flaw_description text(50000),
     flaw_roll int(2),
     foreign key (background_id) references Backgrounds(background_id),
-    primary key (background_id,flaw_roll)
+    primary key (flaw_id)
 );
 
 create table IF NOT EXISTS Specialty_Personalities(
 	specialty_personality_id int(15) NOT NULL AUTO_INCREMENT,
     background_id int(15),
-    specialty_personality_name varchar(50),
+    specialty_personality_name varchar(20),
     specialty_personality_die int(2),
     foreign key (background_id) references Backgrounds(background_id),
     primary key (specialty_personality_id)
@@ -225,7 +234,7 @@ create table IF NOT EXISTS Suggested_Specialty_Traits(
 -- many to many association
 CREATE TABLE IF NOT EXISTS Background_Proficency_Tools(
 	background_id INT(15) NOT NULL,
-	tool_id INT(15) NOT NULL,
+	tool_id INT(14) NOT NULL,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (tool_id) REFERENCES Tools(tool_id),
 	UNIQUE (background_id, tool_id)
@@ -233,7 +242,7 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Tools(
 
 CREATE TABLE IF NOT EXISTS Background_Proficency_Languages(
 	background_id INT(15) NOT NULL,
-	language_id INT(15) NOT NULL,
+	language_id INT(14) NOT NULL,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (language_id) REFERENCES Languages(language_id),
 	UNIQUE (background_id, language_id)
@@ -241,32 +250,22 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Languages(
 
 CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 	background_id INT(15) NOT NULL,
-	skill_id INT(15) NOT NULL,
+	skill_id INT(14) NOT NULL,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
 	UNIQUE (background_id, skill_id)
 );
-
--- CREATE TABLE IF NOT EXISTS Background_Grants_Equipment (
---     background_id INT(15) NOT NULL,
---     tool_id INT(15) NOT NULL,
---     FOREIGN KEY (background_id)
---         REFERENCES Backgrounds (background_id),
---     FOREIGN KEY (tool_id)
---         REFERENCES Equipment (equipment_id),
---     UNIQUE (background_id , equipment_id)
--- );
-
 -- 1 to 1
 CREATE TABLE IF NOT EXISTS Background_Features(
-	background_feat_id INT(15) NOT NULL AUTO_INCREMENT,
-    background_feat_name varchar(100) NOT NULL,
+	background_id INT(15) NOT NULL,
+	background_feat_id INT(14) NOT NULL AUTO_INCREMENT,
+    background_feat_name varchar(50),
     feat_description text(50000),  
-	background_id INT(15),
-	primary key (background_feat_id),
-	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id)
+	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
+	primary key (background_feat_id)
 );
 
+-- build race tables
 create table IF NOT EXISTS Races(
 	race_id int(15) NOT NULL AUTO_INCREMENT,
     race_name varchar(100) Not Null,
@@ -275,22 +274,24 @@ create table IF NOT EXISTS Races(
     race_description text(10000),
 	alignment_tendency text(10000),
 	age text(1000),
-    subrace_id int(15) default 0,
-    FOREIGN KEY (subrace_id) REFERENCES Subraces(subrace_id),
-    primary key (race_id,subrace_id)
-);	
+    primary key (race_id)
+);
 
 create table IF NOT EXISTS Subraces(
 	subrace_id int(15) NOT NULL AUTO_INCREMENT,
-	subrace_name varchar(100) Not Null,
-    primary key (subrace_id)
+    race_id int(15) Not Null,
+	subrace_name varchar(20) Not Null,
+	subrace_description text(50000),
+    primary key (subrace_id),
+    FOREIGN KEY (race_id) REFERENCES Races(race_id)
 );
 create table IF NOT EXISTS Racial_Traits(
 	racial_trait_id int(15) NOT NULL AUTO_INCREMENT,
-	trait_name varchar(250) Not Null,
+	trait_name varchar(20) Not Null,
     trait_description text(50000),
     primary key (racial_trait_id)
 );
+
 -- many to many
 CREATE TABLE IF NOT EXISTS Race_Grants_Abilities(
 	race_id INT(15) NOT NULL,
@@ -349,3 +350,93 @@ CREATE TABLE IF NOT EXISTS Race_Speaks_Language(
 );
 
 
+
+-- temp user table
+create table IF NOT EXISTS user(
+	user_id int(15) not null auto_increment,
+    user_name varchar(50),
+    primary key(user_id)
+);
+-- build character tables
+
+-- users character
+CREATE TABLE IF NOT EXISTS Characters(
+	user_id int(15) not null,
+    char_id int(15) not null auto_increment,
+    char_name varchar(100),
+    char_exp int(15),
+    char_race_id int(15),
+    char_class_id int(15),
+    char_background_id int(15),
+    char_alignment_id int(15),
+	char_bonds text(50000),
+    char_personality text(50000),
+    char_ideal text(50000),
+    speed int(15),
+    size varchar(50),
+    char_lvl int(15),
+	FOREIGN KEY (char_background_id) REFERENCES Backgrounds(background_id),
+	FOREIGN KEY (char_class_id) REFERENCES classes(class_id),
+    FOREIGN KEY (char_race_id) REFERENCES races(race_id),
+    primary key(char_id)
+);
+
+create view user_chars as 
+select u.user_id, u.user_name, c.char_name, c.char_id
+from user as u
+join Characters as c on (c.user_id= u.user_id);
+
+create table IF NOT EXISTS char_powers(
+	power_id int(15),
+    char_id int(15),
+    category varchar(50),
+	FOREIGN KEY (char_id) REFERENCES Characters(char_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_characters(
+	user_id INT(15) NOT NULL,
+	char_id INT(15) NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES User(user_id),
+	FOREIGN KEY (char_id) REFERENCES Characters(char_id),
+	UNIQUE (user_id, char_id)
+);
+
+create view Items as
+select 'Gear' as category, gear_id as item_id , gear_name as item_name, weight, cost
+from Gear
+Union
+select 'Tool' as category, tool_id, tool_name, weight,cost
+from Tools
+Union
+select 'Weapon' as category, weapon_id, weapon_name, weight, cost
+from Weapons
+union
+select 'Armor' as category, armor_id, armor_name, weight,cost
+from armor
+union
+select 'Pack' as category, pack_id, pack_name, weight,cost
+from packs;
+
+CREATE TABLE IF NOT EXISTS char_proficency(
+	char_id INT(15) NOT NULL,
+	prof_id INT(15) NOT NULL,
+    category varchar(100),
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+	UNIQUE (char_id, prof_id)
+);
+
+CREATE TABLE IF NOT EXISTS char_languages(
+	char_id INT(15) NOT NULL,
+	language_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+	FOREIGN KEY (language_id) REFERENCES languages(language_id),
+	UNIQUE (char_id, language_id)
+);
+
+CREATE TABLE IF NOT EXISTS char_inventory(
+char_id INT(15) NOT NULL,
+item_id INT(15) NOT NULL,
+FOREIGN KEY (char_id) REFERENCES characters(char_id),
+FOREIGN KEY (item_id) REFERENCES items(item_id),
+UNIQUE (char_id, item_id)
+);

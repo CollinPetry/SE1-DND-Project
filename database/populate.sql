@@ -348,237 +348,6 @@ VALUES
 ("Priest’s Pack","Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin.",19,10),
 ("Scholar’s Pack","Includes a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of parchment, a little bag of sand, and a small knife.",40,10);
 
--- link abilities with skills
-SET SQL_SAFE_UPDATES = 0;
-UPDATE skills SET ability_id=( 
-SELECT ability_id FROM abilities
-WHERE  ability_name="Strength")
-WHERE skill_name='Athletics';
-
-UPDATE skills SET ability_id=( 
-SELECT ability_id FROM abilities
-WHERE  ability_name="Dexterity")
-WHERE skill_name='Athletics';
-
-UPDATE skills SET ability_id=( 
-SELECT ability_id FROM abilities
-WHERE  ability_name="Intelligence")
-WHERE skill_name='Religion' or skill_name='Nature' or skill_name='Investigation' or skill_name='History' or skill_name='Arcana';
-
-UPDATE skills SET ability_id=( 
-SELECT ability_id FROM abilities
-WHERE  ability_name="Wisdom")
-WHERE skill_name='Animal Handling'or skill_name='Insight' or skill_name='Medicine' or skill_name='Perception' or skill_name='Survival';
-
-UPDATE skills SET ability_id=( 
-SELECT ability_id FROM abilities
-WHERE  ability_name="Charisma")
-WHERE skill_name='Persuasion'or skill_name='Deception' or skill_name='Intimidation' or skill_name='Performance';
-
--- after pop skills
-truncate table race_speaks_language;
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Dwarf' and (languages.language_name = "Dwarvish" or languages.language_name="Common");
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Elf' and (languages.language_name = "Elvish" or languages.language_name="Common");
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Dragonborn' and (languages.language_name = "Draconic" or languages.language_name="Common");
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Gnome' and (languages.language_name = "Gnomish" or languages.language_name="Common");
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Half-Elf' and (languages.language_name = "Elvish" or languages.language_name="Common" or languages.language_name=Null);
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Halfling' and (languages.language_name = "Halfling" or languages.language_name="Common");
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Half-Orc' and (languages.language_name = "Orc" or languages.language_name="Common");
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Human' and (languages.language_name="Common" or languages.language_name=null);
-
-INSERT INTO race_speaks_language(race_id, language_id)
-SELECT races.race_id, languages.language_id
-FROM races,languages
-WHERE races.race_name='Tiefling' and (languages.language_name="Common" or languages.language_name='Infernal');
-
-
-select * from race_speaks_language;
-
-select r.race_id as race_id, r.race_name, rsl.language_id, l.language_name
-from races r
-join race_speaks_language rsl on (r.race_id = rsl.race_id)
-join languages l on (rsl.language_id = l.language_id);
-
-
-truncate table racial_trait_grants_weapons;
-truncate table racial_trait_grants_skills;
-
-INSERT INTO racial_trait_grants_weapons(racial_trait_id, weapon_id)
-SELECT racial_traits.racial_trait_id, weapons.weapon_id
-FROM racial_traits,weapons
-WHERE racial_traits.trait_name='Dwarven Combat Training' and (weapons.weapon_name='Handaxe' 
-or weapons.weapon_name='Light Hammer' 
-or weapons.weapon_name='Warhammer'
-or weapons.weapon_name='Battleaxe');
-
-INSERT INTO racial_trait_grants_weapons(racial_trait_id, weapon_id)
-SELECT racial_traits.racial_trait_id, weapons.weapon_id
-FROM racial_traits,weapons
-WHERE racial_traits.trait_name='Elf Weapon Training' and (weapons.weapon_name='Longbow' 
-or weapons.weapon_name='Shortbow' 
-or weapons.weapon_name='Shortsword'
-or weapons.weapon_name='Longsword');
-
-INSERT INTO racial_trait_grants_skills(racial_trait_id, skill_id)
-SELECT racial_traits.racial_trait_id, skills.skill_id
-FROM racial_traits,skills
-WHERE racial_traits.trait_name='Keen Senses' and (skills.skill_name='Perception');
-
-INSERT INTO racial_trait_grants_skills(racial_trait_id, skill_id)
-SELECT racial_traits.racial_trait_id, skills.skill_id
-FROM racial_traits,skills
-WHERE racial_traits.trait_name='Menacing' and (skills.skill_name='Intimidation');
-
-truncate table race_grants_abilities;
-
--- const bonus=2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Dwarf' and (abilities.ability_name='Constitution');
-
--- need to update bonus amounts idk how
--- UPDATE race_grants_abilities SET bonus_amount=2
--- where race_id=(select race_id from races where race_name='Dawrf') and ability_id=(select ability_id from abilities where ability_name='Constitution');
-
--- dex bonus=2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Elf' and (abilities.ability_name='Dexterity');
--- high elf: intel=1
-
--- stren=2 char=1
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Dragonborn' and (abilities.ability_name='Strength'or abilities.ability_name='Charisma');
-
--- intel=2 rock gnome="const" const=1
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Gnome' and (abilities.ability_name='Intelligence');
-
--- two of choice char=2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Half-Elf' and (abilities.ability_name='Charisma');
-
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Halfling' and (abilities.ability_name='Dexterity');
-
--- stren=2 const=1
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Half-Orc' and (abilities.ability_name='Constitution' or abilities.ability_name='Strength');
-
--- 1 each
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Human' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma' or abilities.ability_name='Dexterity' or abilities.ability_name='Wisdom' or abilities.ability_name='Constitution' or abilities.ability_name='Strength');
-
--- intell=1 charisma =2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
-FROM races,abilities
-WHERE races.race_name='Tiefling' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma');
-
-select * from race_grants_abilities;
-
-select r.race_id as race_id, r.race_name, rga.ability_id, a.ability_name
-from races r
-join race_grants_abilities rga on (r.race_id = rga.race_id)
-join abilities a on (rga.ability_id= a.ability_id);
-
-truncate table race_grants_traits;
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Dragonborn' and (racial_traits.trait_name='Draconic Ancestry' or racial_traits.trait_name='Breath Weapon' or racial_traits.trait_name='Damage Resistance');
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Dwarf' and (racial_traits.trait_name='Darkvision' 
-or racial_traits.trait_name='Stonecunning' 
-or racial_traits.trait_name='Dwarven Resilience'
-or racial_traits.trait_name='Dwarven Combat Training'
-or racial_traits.trait_name='Tool Proficency');
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Elf' and (racial_traits.trait_name='Darkvision' 
-or racial_traits.trait_name='Keen Senses' 
-or racial_traits.trait_name='Trance'
-or racial_traits.trait_name='Fey Ancestry');
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Gnome' and (racial_traits.trait_name='Darkvision' 
-or racial_traits.trait_name='Gnome Cunning');
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Half-Elf' and (racial_traits.trait_name='Darkvision' 
-or racial_traits.trait_name='Fey Ancestry');
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Halfling' and (racial_traits.trait_name='Lucky' 
-or racial_traits.trait_name='Brave'
-or racial_traits.trait_name='Halfling Nimbleness');
-
-INSERT INTO race_grants_traits(race_id, racial_trait_id)
-SELECT races.race_id, racial_traits.racial_trait_id
-FROM races,racial_traits
-WHERE races.race_name='Half-Orc' and (racial_traits.trait_name='Darkvision' 
-or racial_traits.trait_name='Infernal Legacy'
-or racial_traits.trait_name='Hellish Resistance');
-
-
-
 -- Cleric --
 INSERT INTO class_proficency_armor(class_id, armor_id)
 SELECT Classes.class_id, armor.armor_id
@@ -838,7 +607,7 @@ SELECT Classes.class_id, skills.skill_id
 FROM classes,skills
 WHERE Classes.class_name='Barbarian' and (skills.skill_name in ("Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival") );
 
-
+-- background populate
 -- acolyte
 INSERT INTO background_proficency_skills(background_id, skill_id)
 SELECT backgrounds.background_id, skills.skill_id
@@ -1074,68 +843,237 @@ SELECT background_id FROM backgrounds
 WHERE  background_name="Urchin")
 WHERE background_feat_name='City Secrets';
 
+-- populate skills
+SET SQL_SAFE_UPDATES = 0;
+UPDATE skills SET ability_id=( 
+SELECT ability_id FROM abilities
+WHERE  ability_name="Strength")
+WHERE skill_name='Athletics';
 
-create view Items as
-select 'Gear' as category, gear_id as item_id , gear_name as item_name, weight, cost
-from Gear
-Union
-select 'Tool' as category, tool_id, tool_name, weight,cost
-from Tools
-Union
-select 'Weapon' as category, weapon_id, weapon_name, weight, cost
-from Weapons
-union
-select 'Armor' as category, armor_id, armor_name, weight,cost
-from armor
-union
-select 'Pack' as category, pack_id, pack_name, weight,cost
-from packs;
+UPDATE skills SET ability_id=( 
+SELECT ability_id FROM abilities
+WHERE  ability_name="Dexterity")
+WHERE skill_name='Athletics';
 
+UPDATE skills SET ability_id=( 
+SELECT ability_id FROM abilities
+WHERE  ability_name="Intelligence")
+WHERE skill_name='Religion' or skill_name='Nature' or skill_name='Investigation' or skill_name='History' or skill_name='Arcana';
 
--- users character
-CREATE TABLE User_Character(
-	user_id int(15) not null,
-    char_id int(15) not null auto_increment,
-    char_name varchar(100),
-    char_exp int(15),
-    char_race_id int(15),
-    char_class_id int(15),
-    char_background_id int(15),
-    char_alignment_id int(15),
-	char_bonds text(50000),
-    char_personality text(50000),
-    char_ideal text(50000),
-	FOREIGN KEY (char_background_id) REFERENCES Backgrounds(background_id),
-	FOREIGN KEY (char_class_id) REFERENCES classes(class_id),
-    FOREIGN KEY (char_race_id) REFERENCES races(race_id),
-    primary key(char_id)
-);
+UPDATE skills SET ability_id=( 
+SELECT ability_id FROM abilities
+WHERE  ability_name="Wisdom")
+WHERE skill_name='Animal Handling'or skill_name='Insight' or skill_name='Medicine' or skill_name='Perception' or skill_name='Survival';
+
+UPDATE skills SET ability_id=( 
+SELECT ability_id FROM abilities
+WHERE  ability_name="Charisma")
+WHERE skill_name='Persuasion'or skill_name='Deception' or skill_name='Intimidation' or skill_name='Performance';
 
 
-CREATE TABLE IF NOT EXISTS char_proficency(
-	char_id INT(15) NOT NULL,
-	prof_id INT(15) NOT NULL,
-    category varchar(100),
-	FOREIGN KEY (char_id) REFERENCES user_character(char_id),
-	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
-	UNIQUE (user_id, skill_id)
-);
+-- race populate
+-- after pop skills
+truncate table race_speaks_language;
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Dwarf' and (languages.language_name = "Dwarvish" or languages.language_name="Common");
 
-CREATE TABLE IF NOT EXISTS char_languages(
-	char_id INT(15) NOT NULL,
-	language_id INT(15) NOT NULL,
-	FOREIGN KEY (char_id) REFERENCES user_character(char_id),
-	FOREIGN KEY (language_id) REFERENCES languages(language_id),
-	UNIQUE (user_id, language_id)
-);
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Elf' and (languages.language_name = "Elvish" or languages.language_name="Common");
 
-CREATE TABLE char_inventory(
-char_id INT(15) NOT NULL,
-item_id INT(15) NOT NULL,
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Dragonborn' and (languages.language_name = "Draconic" or languages.language_name="Common");
 
-FOREIGN KEY (char_id) REFERENCES user_character(char_id),
-FOREIGN KEY (item_id) REFERENCES items(item_id),
-UNIQUE (char_id, item_id)
-);
-ALTER TABLE packs
-ADD COLUMN description TEXT(5000) NULL AFTER cost;
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Gnome' and (languages.language_name = "Gnomish" or languages.language_name="Common");
+
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Half-Elf' and (languages.language_name = "Elvish" or languages.language_name="Common" or languages.language_name=Null);
+
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Halfling' and (languages.language_name = "Halfling" or languages.language_name="Common");
+
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Half-Orc' and (languages.language_name = "Orc" or languages.language_name="Common");
+
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Human' and (languages.language_name="Common" or languages.language_name=null);
+
+INSERT INTO race_speaks_language(race_id, language_id)
+SELECT races.race_id, languages.language_id
+FROM races,languages
+WHERE races.race_name='Tiefling' and (languages.language_name="Common" or languages.language_name='Infernal');
+
+
+select * from race_speaks_language;
+
+select r.race_id as race_id, r.race_name, rsl.language_id, l.language_name
+from races r
+join race_speaks_language rsl on (r.race_id = rsl.race_id)
+join languages l on (rsl.language_id = l.language_id);
+
+select * from races;
+
+truncate table race_grants_traits;
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Dragonborn' and (racial_traits.trait_name='Draconic Ancestry' or racial_traits.trait_name='Breath Weapon' or racial_traits.trait_name='Damage Resistance');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Dwarf' and (racial_traits.trait_name='Darkvision' 
+or racial_traits.trait_name='Stonecunning' 
+or racial_traits.trait_name='Dwarven Resilience'
+or racial_traits.trait_name='Dwarven Combat Training'
+or racial_traits.trait_name='Tool Proficency');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Elf' and (racial_traits.trait_name='Darkvision' 
+or racial_traits.trait_name='Keen Senses' 
+or racial_traits.trait_name='Trance'
+or racial_traits.trait_name='Fey Ancestry');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Gnome' and (racial_traits.trait_name='Darkvision' 
+or racial_traits.trait_name='Gnome Cunning');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Half-Elf' and (racial_traits.trait_name='Darkvision' 
+or racial_traits.trait_name='Fey Ancestry');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Halfling' and (racial_traits.trait_name='Lucky' 
+or racial_traits.trait_name='Brave'
+or racial_traits.trait_name='Halfling Nimbleness');
+
+INSERT INTO race_grants_traits(race_id, racial_trait_id)
+SELECT races.race_id, racial_traits.racial_trait_id
+FROM races,racial_traits
+WHERE races.race_name='Half-Orc' and (racial_traits.trait_name='Darkvision' 
+or racial_traits.trait_name='Infernal Legacy'
+or racial_traits.trait_name='Hellish Resistance');
+
+-- race has abilities
+truncate table race_grants_abilities;
+
+-- const bonus=2
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Dwarf' and (abilities.ability_name='Constitution');
+
+-- need to update bonus amounts idk how
+-- UPDATE race_grants_abilities SET bonus_amount=2
+-- where race_id=(select race_id from races where race_name='Dawrf') and ability_id=(select ability_id from abilities where ability_name='Constitution');
+
+-- dex bonus=2
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Elf' and (abilities.ability_name='Dexterity');
+-- high elf: intel=1
+
+-- stren=2 char=1
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Dragonborn' and (abilities.ability_name='Strength'or abilities.ability_name='Charisma');
+
+-- intel=2 rock gnome="const" const=1
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Gnome' and (abilities.ability_name='Intelligence');
+
+-- two of choice char=2
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Half-Elf' and (abilities.ability_name='Charisma');
+
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Halfling' and (abilities.ability_name='Dexterity');
+
+-- stren=2 const=1
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Half-Orc' and (abilities.ability_name='Constitution' or abilities.ability_name='Strength');
+
+-- 1 each
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Human' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma' or abilities.ability_name='Dexterity' or abilities.ability_name='Wisdom' or abilities.ability_name='Constitution' or abilities.ability_name='Strength');
+
+-- intell=1 charisma =2
+INSERT INTO race_grants_abilities(race_id, ability_id)
+SELECT races.race_id, abilities.ability_id
+FROM races,abilities
+WHERE races.race_name='Tiefling' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma');
+
+select * from race_grants_abilities;
+
+select r.race_id as race_id, r.race_name, rga.ability_id, a.ability_name
+from races r
+join race_grants_abilities rga on (r.race_id = rga.race_id)
+join abilities a on (rga.ability_id= a.ability_id);
+
+-- trait grants profs
+
+truncate table racial_trait_grants_weapons;
+truncate table racial_trait_grants_skills;
+
+INSERT INTO racial_trait_grants_weapons(racial_trait_id, weapon_id)
+SELECT racial_traits.racial_trait_id, weapons.weapon_id
+FROM racial_traits,weapons
+WHERE racial_traits.trait_name='Dwarven Combat Training' and (weapons.weapon_name='Handaxe' 
+or weapons.weapon_name='Light Hammer' 
+or weapons.weapon_name='Warhammer'
+or weapons.weapon_name='Battleaxe');
+
+INSERT INTO racial_trait_grants_weapons(racial_trait_id, weapon_id)
+SELECT racial_traits.racial_trait_id, weapons.weapon_id
+FROM racial_traits,weapons
+WHERE racial_traits.trait_name='Elf Weapon Training' and (weapons.weapon_name='Longbow' 
+or weapons.weapon_name='Shortbow' 
+or weapons.weapon_name='Shortsword'
+or weapons.weapon_name='Longsword');
+
+INSERT INTO racial_trait_grants_skills(racial_trait_id, skill_id)
+SELECT racial_traits.racial_trait_id, skills.skill_id
+FROM racial_traits,skills
+WHERE racial_traits.trait_name='Keen Senses' and (skills.skill_name='Perception');
+
+INSERT INTO racial_trait_grants_skills(racial_trait_id, skill_id)
+SELECT racial_traits.racial_trait_id, skills.skill_id
+FROM racial_traits,skills
+WHERE racial_traits.trait_name='Menacing' and (skills.skill_name='Intimidation');
