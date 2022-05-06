@@ -1,4 +1,5 @@
 from flask import Flask, request
+import flask_login
 from flask_login import LoginManager
 from flask_mysqldb import MySQL
 
@@ -6,8 +7,8 @@ import views
 import os
 
 
-from database import Database
-from user import get_user
+#from database import Database
+#from user import get_user
 
 lm = LoginManager()
 
