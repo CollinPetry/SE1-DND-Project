@@ -1,0 +1,90 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='diceroller.js') }}"></script>
+
+<div class="grid-item" id="dice-roller">
+  <h1>Dice Roller </h1>
+  <!-- <h4>Character:
+    <select name="characters" id="characters">
+      <option value="Character">Character Name</option>
+    </select>
+  </h4> -->
+
+  <form class="form" action='/diceroller' method="POST" autocomplete="off">
+    <div id="dice-container">
+      <div id="die">
+          <label for="d4">#d4</label>
+          <input type="text" id="d4" name="d4" value="0">
+      </div>
+
+      <div id="die">
+          <label for="d6">#d6</label>
+          <input type="text" id="d6" name="d6" value="0">
+      </div>
+
+      <div id="die">
+          <label for="d8">#d8</label>
+          <input type="text" id="d8" name="d8" value="0">
+      </div>
+
+      <div id="die">
+          <label for="d10">#d10</label>
+          <input type="text" id="d10" name="d10" value="0">
+      </div>
+
+      <div id="die">
+          <label for="d12">#d12</label>
+          <input type="text" id="d12" name="d12" value="0">
+      </div>
+
+      <div id="die">
+          <label for="d20">#d20</label>
+          <input type="text" id="d20" name="d20" value="0">
+      </div>
+
+      <div id="die">
+          <label for="d100">#d100</label>
+          <input type="text" id="d100" name="d100" value="0">
+      </div>
+    </div>
+
+    <!-- <h3><br>Check Type</h3> -->
+    <div id="dice-container">
+      <!--
+      <label for="STR" id="stats">STR<br />
+        <input type="radio" id="STR" name="ability type" value="STR">
+      </label>
+      <label for="DEX" id="stats">DEX<br />
+        <input type="radio" id="DEX" name="ability type" value="DEX">
+      </label>
+      <label for="CON" id="stats">CON<br />
+        <input type="radio" id="CON" name="ability type" value="CON">
+      </label>
+      <label for="INT" id="stats">INT<br />
+        <input type="radio" id="INT" name="ability type" value="INT">
+      </label>
+      <label for="WIS" id="stats">WIS<br />
+        <input type="radio" id="WIS" name="ability type" value="WIS">
+      </label>
+      <label for="CHA" id="stats">CHA<br />
+        <input type="radio" id="CHA" name="ability type" value="CHA">
+      </label>
+      <label for="Proficiency" id="stats">Proficiency?<br />
+        <input type="checkbox" id="Proficiency" name="Proficiency" value="Proficiency">
+      </label>
+      -->
+
+      <label for="modifier" id="stats">Modifier:<br />
+        <input type="text" id="modifier" name="modifier" placeholder="+/- #" value="0">
+      </label>
+    </div>
+
+    <div class="result">
+        <button class="submit" type="submit">Roll</button>
+    </div>
+  </form>
+
+  <div class="result">
+      <p>Result: </p><p id="roll"></p>
+  </div>
+
+</div>

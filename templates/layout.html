@@ -20,6 +20,10 @@ substituted for. It's very possible we can also have multiple layout files that 
             href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
   </head>
 <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='diceroller.js') }}"></script>
+
     <!-- This is the navbar for the webpage so it doesn't need to be copied, needs css obviously -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
         <div class="container-fluid">
@@ -32,9 +36,14 @@ substituted for. It's very possible we can also have multiple layout files that 
                         <a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
                     </li>
 
+                    {% if current_user.is_authenticated %}
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ url_for('test_page') }}">Test</a>
+                        <a class="nav-link" href="{{ url_for('view_characters') }}">Characters</a>
                     </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ url_for('test_page') }}">Test Page</a>
+                    </li>
+                    {% endif %}
 
                     <li class="nav-item px-3">
                         <!-- This is a check for variable using the Flask framework. The variable for this method specifically seems to
@@ -69,23 +78,6 @@ substituted for. It's very possible we can also have multiple layout files that 
     <!-- This is differing page content is added on individual pages -->
     {% block content %}{% endblock %}
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-      crossorigin="anonymous">
-    </script>
-
-    <script src="{{url_for('static', filename='somejavascriptfile.js')}}"></script>
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
 
     <!-- A Footer or something can go here as well -->
     <footer>

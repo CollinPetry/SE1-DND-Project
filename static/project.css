@@ -27,3 +27,10 @@ footer {
 	z-index: 0;
 }
 
+.submit {
+    float: center;
+}
+
+.result {
+    text-align: center;
+}

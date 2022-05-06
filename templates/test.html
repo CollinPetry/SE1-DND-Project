@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+   <div>
+        <div id="questionary">
+            <form action='/process' method="POST" autocomplete="off">
+                <div>
+                    <input type="text"  name="question" id = "question" placeholder="Une question?">
+                    <button type="submit"> Pose ta question :) </button>
+        </div>
+            </form>
+    </div>
+        <div>
+    <p id="response"></p>
+    </div>
+    </body>
+</html>
