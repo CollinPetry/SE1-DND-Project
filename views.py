@@ -6,7 +6,7 @@ from werkzeug.utils import redirect
 from passlib.hash import pbkdf2_sha256 as hasher
 from forms import LoginForm
 from user import get_user
-
+from server import mysql
 
 #  For pages that need to be logged in to view, the line above the method def statement should read: @login_required
 
@@ -20,6 +20,7 @@ def view_characters():
 
 def view_campaigns():
     return render_template("view_campaigns.html")
+
 
 def diceroller():
     roll = 0
@@ -51,7 +52,7 @@ def diceroller():
     for i in range(0, int(d100)):
         roll = roll + random.randint(1, 100)
 
-    #print("d4: " + d4 +
+    # print("d4: " + d4 +
     #     "\n d6: " + d6 +
     #      "\n d8: " + d8 +
     #      "\n d10: " + d10 +
@@ -59,9 +60,8 @@ def diceroller():
     #      "\n d20: " + d20
     #      )
 
-    #mod = request.form['mods']
-    #modifier = request.form['modifier']
-
+    # mod = request.form['mods']
+    # modifier = request.form['modifier']
 
     print("Roll: " + str(roll))
     return jsonify({'roll': roll})
@@ -70,13 +70,16 @@ def diceroller():
 def test_page():
     return render_template("test.html")
 
+
 def characterpage():
     return render_template("character.html")
+
 
 def process():
     user_question = request.form['question']
     print(user_question)
     return jsonify({'response': user_question})
+
 
 def login_page():
     form = LoginForm()
@@ -103,21 +106,23 @@ def logout_page():
 def form():
     return render_template('form.html')
 
+
 def logintest():
-   app.config['MYSQL_HOST'] = 'localhost'
-   app.config['MYSQL_USER'] = 'root'
-   app.config['MYSQL_PASSWORD'] = ''
-   app.config['MYSQL_DB'] = 'flask'
+    print("In the method")
+    if request.method == 'GET':
+        return "Login via the login Form"
 
-   mysql = MySQL(app)
-   if request.method == 'GET':
-       return "Login via the login Form"
+    if request.method == 'POST':
+        name = request.form['name']
+        age = request.form['age']
+        print("Here")
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute(''' INSERT INTO info_table VALUES(%s,%s)''', (name, age))
+        cursor.execute("SELECT * from info_table")
+        data = cursor.fetchone()
+        print(data)
+        conn.commit()
+        cursor.close()
 
-   if request.method == 'POST':
-       name = request.form['name']
-       age = request.form['age']
-       cursor = mysql.connection.cursor()
-       cursor.execute(''' INSERT INTO info_table VALUES(%s,%s)''', (name, age))
-       mysql.connection.commit()
-       cursor.close()
-       return f"Done!!"
+        return f"Done!!"
