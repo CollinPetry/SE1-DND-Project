@@ -416,7 +416,7 @@ from armor
 union
 select 'Pack' as category, pack_id, pack_name, weight,cost
 from packs;
-
+select * from Items;
 CREATE TABLE IF NOT EXISTS char_proficency(
 	char_id INT(15) NOT NULL,
 	prof_id INT(15) NOT NULL,
@@ -439,4 +439,13 @@ item_id INT(15) NOT NULL,
 FOREIGN KEY (char_id) REFERENCES characters(char_id),
 FOREIGN KEY (item_id) REFERENCES items(item_id),
 UNIQUE (char_id, item_id)
+);
+
+CREATE TABLE IF NOT EXISTS Class_grants_items(
+	class_id INT(15) NOT NULL,
+	item_id INT(15) NOT NULL,
+    group_number int(15),
+    option_number int(15),
+	quantity int(15),
+	FOREIGN KEY (class_id) REFERENCES Classes(class_id)
 );

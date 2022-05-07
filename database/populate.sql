@@ -192,10 +192,10 @@ INSERT INTO Gear(gear_name,gear_description,gear_category,cost,weight)
 VALUES
 ("Abacus","A standard tool used to make calculations.","Adventuring Gear",2.00,2),
 ("Acid (vial)","As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage.","Adventuring Gear",25.00,1),
-("Alchemist's Fire (flask)","This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's fire as an improvised weapon. On a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames.","Adventuring Gear",50.00,1),
+("Alchemists Fire (flask)","This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemists fire as an improvised weapon. On a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames.","Adventuring Gear",50.00,1),
 ("Antitoxin (vial)","A creature that drinks this vial of liquid gains advantage on saving throws against poison for 1 hour. It confers no benefit to undead or constructs.","Adventuring Gear",50.00,Null),
 ("Backpack","A backpack is a leather pack carried on the back, typically with straps to secure it. A backpack can hold 1 cubic foot/ 30 pounds of gear. You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack.","Adventuring Gear",2.00,5),
-("Ball Bearings (bag of 1,000)","As an action, you can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesn't need to make the save.","Adventuring Gear",1.00,2),
+("Ball Bearings (bag of 1,000)","As an action, you can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesnt need to make the save.","Adventuring Gear",1.00,2),
 ("Barrel",Null,"Adventuring Gear",2.00,70),
 ("Basket",Null,"Adventuring Gear",0.40,2),
 ("Bedroll",Null,"Adventuring Gear",1.00,7),
@@ -205,26 +205,26 @@ VALUES
 ("Book","A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of spells is a spellbook (described later in this section).","Adventuring Gear",25.00,5),
 ("Bottle, Glass",Null,"Adventuring Gear",2.00,2),
 ("Bucket",Null,"Adventuring Gear",0.05,2),
-("Caltrops (bag of 20)","As an action, you can spread a bag of caltrops to cover a square area that is 5 feet on a side. Any creature that enters the area must succeed on a DC 15 Dexterity saving throw or stop moving this turn and take 1 piercing damage. Taking this damage reduces the creature's walking speed by 10 feet until the creature regains at least 1 hit point. A creature moving through the area at half speed doesn't need to make the save.","Adventuring Gear",1.00,2),
+("Caltrops (bag of 20)","As an action, you can spread a bag of caltrops to cover a square area that is 5 feet on a side. Any creature that enters the area must succeed on a DC 15 Dexterity saving throw or stop moving this turn and take 1 piercing damage. Taking this damage reduces the creatures walking speed by 10 feet until the creature regains at least 1 hit point. A creature moving through the area at half speed doesnt need to make the save.","Adventuring Gear",1.00,2),
 ("Candle","For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for an additional 5 feet.","Adventuring Gear",0.01,Null),
 ("Case, Crossbow Bolt","This wooden case can hold up to twenty crossbow bolts.","Adventuring Gear",1.00,1),
 ("Case, Map or Scroll","This cylindrical leather case can hold up to ten rolled-up sheets of paper or five rolled-up sheets of parchment. ","Adventuring Gear",1.00,1),
-("Chain (10 feet)","A chain has 10 hit points. It can be burst with a successful DC 20 Strength check. ","Adventuring Gear",5.00,10),
+("Chain (10 foot)","A chain has 10 hit points. It can be burst with a successful DC 20 Strength check. ","Adventuring Gear",5.00,10),
 ("Chalk",Null,"Adventuring Gear",0.01,Null),
 ("Chest",Null,"Adventuring Gear",5.00,25),
-("Climber's Kit","A climber's kit includes special pitons, boot tips, gloves, and a harness. You can use the climber's kit as an action to anchor yourself; when you do, you can't fall more than 25 feet from the point where you anchored yourself, and you can't climb more than 25 feet away from that point without undoing the anchor.","Adventuring Gear",25.00,12),
+("Climbers Kit","A climbers kit includes special pitons, boot tips, gloves, and a harness. You can use the climbers kit as an action to anchor yourself; when you do, you cant fall more than 25 feet from the point where you anchored yourself, and you cant climb more than 25 feet away from that point without undoing the anchor.","Adventuring Gear",25.00,12),
 ("Clothes, Common",Null,"Adventuring Gear",0.50,3),
 ("Clothes, Costume",Null,"Adventuring Gear",5.00,4),
 ("Clothes, Fine",Null,"Adventuring Gear",15.00,6),
-("Clothes, Traveler's",Null,"Adventuring Gear",2.00,4),
-("Component Pouch","A component pouch is a small, watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost (as indicated in a spell's description).","Adventuring Gear",25.00,2),
-("Crowbar","Using a crowbar grants advantage to Strength checks where the crowbar's leverage can be applied.","Adventuring Gear",2.00,5),
+("Clothes, Travelers",Null,"Adventuring Gear",2.00,4),
+("Component Pouch","A component pouch is a small, watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost (as indicated in a spells description).","Adventuring Gear",25.00,2),
+("Crowbar","Using a crowbar grants advantage to Strength checks where the crowbars leverage can be applied.","Adventuring Gear",2.00,5),
 ("Fishing Tackle","This kit includes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting.","Adventuring Gear",1.00,4),
 ("Flask or Tankard",Null,"Adventuring Gear",0.02,1),
 ("Grappling Hook",Null,"Adventuring Gear",2.00,4),
 ("Hammer",Null,"Adventuring Gear",1.00,3),
 ("Hammer, Sledge",Null,"Adventuring Gear",2.00,10),
-("Healer's Kit","This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. ","Adventuring Gear",5.00,3),
+("Healers Kit","This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. ","Adventuring Gear",5.00,3),
 ("Holy Water (flask)","As an action, you can splash the contents of this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. In either case, make a ranged attack against a target creature, treating the holy water as an improvised weapon. If the target is a fiend or undead, it takes 2d6 radiant damage. A cleric or paladin may create holy water by performing a special ritual. The ritual takes 1 hour to perform, uses 25 gp worth of powdered silver, and requires the caster to expend a 1st-level spell slot.","Adventuring Gear",25.00,1),
 ("Hourglass",Null,"Adventuring Gear",25.00,1),
 ("Hunting Trap","When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet long). A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature.","Adventuring Gear",5.00,25),
@@ -235,16 +235,16 @@ VALUES
 ("Lamp","A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.","Adventuring Gear",0.50,1),
 ("Lantern, Bullseye","A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.","Adventuring Gear",10.00,2),
 ("Lantern, Hooded","A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius. ","Adventuring Gear",5.00,2),
-("Lock","A key is provided with the lock. Without the key, a creature proficient with thieves' tools can pick this lock with a successful DC 15 Dexterity check. Your GM may decide that better locks are available for higher prices. ","Adventuring Gear",10.00,1),
+("Lock","A key is provided with the lock. Without the key, a creature proficient with thieves tools can pick this lock with a successful DC 15 Dexterity check. Your GM may decide that better locks are available for higher prices. ","Adventuring Gear",10.00,1),
 ("Magnifying Glass","This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed. ","Adventuring Gear",100.00,Null),
-("Manacles","These metal restraints can bind a Small or Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of manacles comes with one key. Without the key, a creature proficient with thieves' tools can pick the manacles' lock with a successful DC 15 Dexterity check. Manacles have 15 hit points.","Adventuring Gear",2.00,6),
+("Manacles","These metal restraints can bind a Small or Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of manacles comes with one key. Without the key, a creature proficient with thieves tools can pick the manacles lock with a successful DC 15 Dexterity check. Manacles have 15 hit points.","Adventuring Gear",2.00,6),
 ("Mess Kit","This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl. ","Adventuring Gear",0.20,1),
 ("Mirror, Steel",Null,"Adventuring Gear",5.00,0.5),
 ("Oil (flask)","Oil usually comes in a clay flask that holds 1 pint. As an action, you can splash the oil in this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. Make a ranged attack against a target creature or object, treating the oil as an improvised weapon. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level. If lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn. ","Adventuring Gear",0.10,1),
 ("Paper (one sheet)",Null,"Adventuring Gear",0.20,Null),
 ("Parchment (one sheet)",Null,"Adventuring Gear",0.10,Null),
 ("Perfume (vial)",Null,"Adventuring Gear",5.00,Null),
-("Pick, Miner's",Null,"Adventuring Gear",2.00,10),
+("Pick, Miners",Null,"Adventuring Gear",2.00,10),
 ("Piton",Null,"Adventuring Gear",0.05,0.25),
 ("Poison, Basic (vial)","You can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the poison takes an action. A creature hit by the poisoned weapon or ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying.","Adventuring Gear",100.00,Null),
 ("Pole (10 foot)",Null,"Adventuring Gear",0.05,7),
@@ -255,11 +255,11 @@ VALUES
 ("Ram, Portable","You can use a portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check.","Adventuring Gear",4.00,35),
 ("Rations (1 day)","Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts.","Adventuring Gear",0.50,2),
 ("Robes",Null,"Adventuring Gear",1.00,4),
-("String (10 feet)",Null,"Adventuring Gear",0.00,0),
-("Rope, Hempen (50 feet)","Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check. ","Adventuring Gear",1.00,10),
-("Rope, Silk (50 feet)","Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check. ","Adventuring Gear",10.00,5),
+("String (10 foor)",Null,"Adventuring Gear",0.00,0),
+("Rope, Hempen (50 foot)","Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check. ","Adventuring Gear",1.00,10),
+("Rope, Silk (50 foot)","Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check. ","Adventuring Gear",10.00,5),
 ("Sack",Null,"Adventuring Gear",0.01,0.5),
-("Scale, Merchant's","A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small objects, such as raw precious metals or trade goods, to help determine their worth.","Adventuring Gear",5.00,3),
+("Scale, Merchants","A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small objects, such as raw precious metals or trade goods, to help determine their worth.","Adventuring Gear",5.00,3),
 ("Sealing Wax",Null,"Adventuring Gear",0.50,Null),
 ("Shovel",Null,"Adventuring Gear",2.00,5),
 ("Signal Whistle",Null,"Adventuring Gear",0.05,Null),
@@ -276,8 +276,7 @@ VALUES
 ("Whetstone",Null,"Adventuring Gear",0.01,1),
 ("Arrow","Arrows are used with a bow to make a ranged attack.","Ammunition",0.05,0.05),
 ("Blowgun Needle (50)","Blowgun needles are used with a blowgun to make a ranged attack.","Ammunition",2,0.02),
-("Crossbow Bolt","Crossbow bolts are used with a crossbow to make a ranged attack.","Ammunition",0.05,0.05),
-("Sling Bullet (5)","Sling bullets are used with a sling to make a ranged attack.","Ammunition",0.01,0.075),
+("Sling Bullet (5)","Sling bullets are used with a sling to make a ranged attack.","Ammunition",0.07),
 ("Crystal","An arcane focus is a special itemNull an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.","Arcane Focus",10.00,1),
 ("Orb","An arcane focus is a special item-an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.","Arcane Focus",20.00,3),
 ("Rod","An arcane focus is a special item-an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.","Arcane Focus",1.00,2),
@@ -327,8 +326,20 @@ VALUES
 ("Tinkers Tools",50.00,10,"Artisans Tools"),
 ("Weavers Tools",1.00,5,"Artisans Tools"),
 ("Woodcarvers Tools",1.00,5,"Artisans Tools"),
-("Gaming Set",null,Null,"Gaming Set"),
-("Musical Instrument",Null,null,"Musical Instrument"),
+("Dice Set",0.1,Null,"Gaming Set"),
+("Dragonchess Set",1.00,0.5,"Gaming Set"),
+("Playing card Set",0.50,Null,"Gaming Set"),
+("Three-Dragon Ante Set",1.00,Null,"Gaming Set"),
+("Bagpipes",30.00,6,"Musical Instrument"),
+("Drum",6.00,3,"Musical Instrument"),
+("Dulcimer",25.00,10,"Musical Instrument"),
+("Flute",2.00,1,"Musical Instrument"),
+("Lute",35.00,2,"Musical Instrument"),
+("Lyre",30.00,2,"Musical Instrument"),
+("Horn",3.00,2,"Musical Instrument"),
+("Pan flute",12.00,2,"Musical Instrument"),
+("Shawm",2.00,1,"Musical Instrument"),
+("Viol",30.00,1,"Musical Instrument"),
 ("Disguise Kit",25.00,3,"Miscellaneous"),
 ("Forgery Kit",15.00,5,"Miscellaneous"),
 ("Herbalism Kit",5.00,3,"Miscellaneous"),
@@ -985,8 +996,8 @@ WHERE races.race_name='Tiefling' and racial_traits.trait_name in ('Darkvision','
 truncate table race_grants_abilities;
 
 -- const bonus=2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Dwarf' and (abilities.ability_name='Constitution');
 
@@ -995,53 +1006,76 @@ WHERE races.race_name='Dwarf' and (abilities.ability_name='Constitution');
 -- where race_id=(select race_id from races where race_name='Dawrf') and ability_id=(select ability_id from abilities where ability_name='Constitution');
 
 -- dex bonus=2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Elf' and (abilities.ability_name='Dexterity');
 -- high elf: intel=1
 
 -- stren=2 char=1
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 1 as bonus_amount
 FROM races,abilities
-WHERE races.race_name='Dragonborn' and (abilities.ability_name='Strength'or abilities.ability_name='Charisma');
+WHERE races.race_name='Dragonborn' and (abilities.ability_name='Charisma');
+
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id,2 as bonus_amount
+FROM races,abilities
+WHERE races.race_name='Dragonborn' and (abilities.ability_name='Strength');
 
 -- intel=2 rock gnome="const" const=1
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id,2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Gnome' and (abilities.ability_name='Intelligence');
 
 -- two of choice char=2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Half-Elf' and (abilities.ability_name='Charisma');
 
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 1 as bonus_amount
+FROM races,abilities
+WHERE races.race_name='Half-Elf' and (abilities.ability_name='Constitution');
+
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 1 as bonus_amount
+FROM races,abilities
+WHERE races.race_name='Half-Elf' and (abilities.ability_name='Wisdom');
+
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Halfling' and (abilities.ability_name='Dexterity');
 
 -- stren=2 const=1
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id,2 as bonus_amount
 FROM races,abilities
-WHERE races.race_name='Half-Orc' and (abilities.ability_name='Constitution' or abilities.ability_name='Strength');
+WHERE races.race_name='Half-Orc' and (abilities.ability_name='Strength');
 
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id,1 as bonus_amount
+FROM races,abilities
+WHERE races.race_name='Half-Orc' and (abilities.ability_name='Constitution');
 -- 1 each
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id, 1 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Human' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma' or abilities.ability_name='Dexterity' or abilities.ability_name='Wisdom' or abilities.ability_name='Constitution' or abilities.ability_name='Strength');
 
 -- intell=1 charisma =2
-INSERT INTO race_grants_abilities(race_id, ability_id)
-SELECT races.race_id, abilities.ability_id
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id,1 as bonus_amount
 FROM races,abilities
-WHERE races.race_name='Tiefling' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma');
+WHERE races.race_name='Tiefling' and (abilities.ability_name='Charisma');
 
+INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
+SELECT races.race_id, abilities.ability_id,2 as bonus_amount
+FROM races,abilities
+WHERE races.race_name='Tiefling' and (abilities.ability_name='Intelligence');
 select * from race_grants_abilities;
 
 select r.race_id as race_id, r.race_name, rga.ability_id, a.ability_name
@@ -1079,3 +1113,559 @@ INSERT INTO racial_trait_grants_skills(racial_trait_id, skill_id)
 SELECT racial_traits.racial_trait_id, skills.skill_id
 FROM racial_traits,skills
 WHERE racial_traits.trait_name='Menacing' and (skills.skill_name='Intimidation');
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Barbarian' and (weapon_name="greataxe");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Barbarian' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 1 as option_number, 2 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Barbarian' and (weapon_name="handaxe");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Barbarian' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 4 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian' and (item_name="javelin");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="rapier");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="longsword");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="Diplomat’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="Entertainer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="lute");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="Leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="dagger");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 3 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Bard' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, t.tool_id as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, tools as t
+WHERE c.class_name='Bard' and (tool_name in(select tool_name from tools where tool_category= "Musical Instrument" ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="rapier");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="shortsword");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="shortbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="quiver");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="arrows");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="shortsword");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Burglar’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 3 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 2 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="dagger");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="thieves tool");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="shield");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Druid' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="scimitar");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Druid' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="Leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="druidic focus");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="chain mail");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="longbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="arrow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="shield");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="light crossbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name like ("%bolts"));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="handaxe,2");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="short sword");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Monk' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 10 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="darts");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="shield");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 5 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Javelin");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Priest’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Chain mail");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.gear_id as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, gear as w
+WHERE c.class_name='Paladin' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="scale mail");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 2 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="shortsword");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Ranger' and (weapon_name in(select weapon_name from weapons where weapon_category like('Simple Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Ranger' and (weapon_name in(select weapon_name from weapons where weapon_category like('Simple Melee%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="longbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="quiver");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="arrow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="light crossbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name like ("%bolts"));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Sorcerer' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="component pouch");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, gear as w
+WHERE c.class_name='Sorcerer' and (gear_name in(select gear_name from gear where gear_category like('%arcane focus%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 2 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="dagger");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="light crossbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name like ("%bolts"));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Warlock' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="component pouch");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, gear as w
+WHERE c.class_name='Warlock' and (gear_name in(select gear_name from gear where gear_category like('%arcane focus%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="Scholar’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Warlock' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 2 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="dagger");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="quarterstaff");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="dagger");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="component pouch");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, gear as w
+WHERE c.class_name='Wizard' and (gear_name in(select gear_name from gear where gear_category like('%arcane focus%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="light crossbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name like ("%bolts"));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Wizard' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="Scholar’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="spellbook");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="mace");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="warhammer");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="scale mail");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="leather");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 3 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="chain mail");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="light crossbow");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name like ("%bolts"));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.weapon_id as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, weapons as w
+WHERE c.class_name='Cleric' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="Priest’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 2 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, i.item_name as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="shield");
+
+INSERT INTO class_grants_items 
+SELECT c.class_id as class_id, w.gear_id as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, gear as w
+WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
