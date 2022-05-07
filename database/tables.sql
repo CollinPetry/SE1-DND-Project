@@ -3,7 +3,6 @@
 create table IF NOT EXISTS Classes(
 	class_id int(15) NOT NULL AUTO_INCREMENT,
     class_name varchar(50),
-    class_class_proficency_skills varchar(50) Not Null,
 	hit_die int(3),
     class_description text(50000),
     primary key (class_id)
@@ -170,8 +169,8 @@ create table IF NOT EXISTS Alignments(
 create table IF NOT EXISTS Languages(
 	language_id int(15) NOT NULL AUTO_INCREMENT,
     language_name varchar(50),
-    typical_speaker varchar(20),
-    script varchar(20),
+    typical_speaker varchar(50),
+    script varchar(50),
     primary key (language_id)
 );
 
@@ -257,8 +256,8 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 );
 -- 1 to 1
 CREATE TABLE IF NOT EXISTS Background_Features(
-	background_id INT(15) NOT NULL,
 	background_feat_id INT(14) NOT NULL AUTO_INCREMENT,
+    background_id INT(15),
     background_feat_name varchar(50),
     feat_description text(50000),  
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
@@ -276,18 +275,20 @@ create table IF NOT EXISTS Races(
 	age text(1000),
     primary key (race_id)
 );
-
 create table IF NOT EXISTS Subraces(
-	subrace_id int(15) NOT NULL AUTO_INCREMENT,
-    race_id int(15) Not Null,
-	subrace_name varchar(20) Not Null,
-	subrace_description text(50000),
-    primary key (subrace_id),
-    FOREIGN KEY (race_id) REFERENCES Races(race_id)
+	pk_subrace int(15) auto_increment,
+    subrace_id int(15),
+    subrace_name varchar(50),
+	subrace_description text(10000),
+    race_id int(15),
+    FOREIGN KEY (race_id) REFERENCES Races(race_id),
+    unique (subrace_id,race_id),
+    primary key (pk_subrace)
 );
+
 create table IF NOT EXISTS Racial_Traits(
 	racial_trait_id int(15) NOT NULL AUTO_INCREMENT,
-	trait_name varchar(20) Not Null,
+	trait_name varchar(50) Not Null,
     trait_description text(50000),
     primary key (racial_trait_id)
 );
@@ -302,6 +303,14 @@ CREATE TABLE IF NOT EXISTS Race_Grants_Abilities(
 	UNIQUE (race_id, ability_id)
 );
 
+CREATE TABLE IF NOT EXISTS subrace_Grants_Abilities(
+	pk_subrace INT(15) NOT NULL,
+	ability_id INT(15) NOT NULL,
+    bonus_amount int(5),
+	FOREIGN KEY (pk_subrace) REFERENCES subraces(pk_subrace),
+	FOREIGN KEY (ability_id) REFERENCES Abilities(ability_id),
+	UNIQUE (pk_subrace, ability_id)
+);
 CREATE TABLE IF NOT EXISTS Racial_Trait_Grants_Skills(
 	racial_trait_id INT(15) NOT NULL,
 	skill_id INT(15) NOT NULL,
@@ -332,6 +341,13 @@ CREATE TABLE IF NOT EXISTS Race_Grants_Traits(
 	FOREIGN KEY (race_id) REFERENCES Races(race_id),
 	FOREIGN KEY (racial_trait_id) REFERENCES racial_traits(racial_trait_id),
 	UNIQUE (race_id, racial_trait_id)
+);
+CREATE TABLE IF NOT EXISTS Subrace_Grants_Traits(
+	pk_subrace INT(15) NOT NULL,
+	racial_trait_id INT(15) NOT NULL,
+	FOREIGN KEY (pk_subrace) REFERENCES Subraces(pk_subrace),
+	FOREIGN KEY (racial_trait_id) REFERENCES racial_traits(racial_trait_id),
+	UNIQUE (pk_subrace, racial_trait_id)
 );
 CREATE TABLE IF NOT EXISTS Race_Tends_Alignment(
 	race_id INT(15) NOT NULL,
@@ -449,3 +465,4 @@ CREATE TABLE IF NOT EXISTS Class_grants_items(
 	quantity int(15),
 	FOREIGN KEY (class_id) REFERENCES Classes(class_id)
 );
+

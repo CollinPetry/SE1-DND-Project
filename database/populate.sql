@@ -132,19 +132,41 @@ VALUES
 ("Relentless Endurance","When you are reduced to 0  hit points but not killed outright, you can drop to 1  hit point instead. You can’t use this feature again  until you finish a long rest."),
 ("Hellish Resistance","You have resistance to fire  damage."),
 ("Infernal Legacy","You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the  hellish rebuke spell as a 2nd-level spell once with this  trait and regain the ability to do so when you finish a  long rest. When you reach 5th level, you can cast the  darkness spell once with this trait and regain the  ability to do so when you finish a long rest. Charisma  is your spellcasting ability for these spells."),
-("Darkvision","You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.");
+("Darkvision","You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray."),
+("Dwarven Armor Training","You have proficiency with light and medium armor."),
+("Extra Language","You can speak, read, and write one extra language of your choice."),
+("Fleet of Foot","Your base walking speed increases to 35 feet."),
+("Mask of the Wild","You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."),
+("Sunlight Sensitivity","You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."),
+("Drow Magic","You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can also cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."),
+("Drow Weapon Training","You have proficiency with rapiers, shortswords, and hand crossbows."),
+("Natural Illusionist","You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."),
+("Speak with Small Beasts","Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets."),
+("Stout Resilience","You have advantage on saving throws against poison, and you have resistance against poison damage.");
 
-INSERT INTO Races(race_name,age, alignment_tendency,size,base_speed)
+INSERT INTO Races(race_name,race_description,age, alignment_tendency,size,base_speed)
 VALUES
-("Dwarf","Dwarves mature at the same rate as humans, but they’re considered young until they reach the age of 50. On average, they live about 350 years.","Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.","Medium",25 ),
-("Elf","Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.","Elves love freedom, variety, and selfexpression, so they lean strongly toward the gentler aspects of chaos. They value and protect others’ freedom as well as their own, and they are more often good than not.","Medium",30),
-("Halfling","A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.", "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.","Small",25),
-("Human","Humans reach adulthood in their late teens and live less than a century.","Humans tend toward no particular alignment. The best and the worst are found among them.","Medium",30),
-("Dragonborn","Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.","Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil. Most dragonborn are good, but those who side with evil can be terrible villains.","Medium", 30),
-("Gnome","Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.","Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are good-hearted, and even the tricksters among them are more playful than vicious.","Small", 25),
-("Half-Elf","Half-elves mature at the same rate humans  do and reach adulthood around the age of 20. They  live much longer than humans, however, often  exceeding 180 years.","Half-elves share the chaotic bent of  their elven heritage. They value both personal  freedom and creative expression, demonstrating  neither love of leaders nor desire for followers. They  chafe at rules, resent others’ demands, and  sometimes prove unreliable, or at least unpredictable.","Medium", 30),
-("Half-Orc","Half-orcs mature a little faster than humans,  reaching adulthood around age 14. They age  noticeably faster and rarely live longer than 75 years.","Half-orcs inherit a tendency toward  chaos from their orc parents and are not strongly  inclined toward good. Half-orcs raised among orcs  and willing to live out their lives among them are  usually evil.","Medium", 30),
-("Tiefling","Tieflings mature at the same rate as humans  but live a few years longer.","Tieflings might not have an innate  tendency toward evil, but many of them end up  there. Evil or not, an independent nature inclines  many tieflings toward a chaotic alignment.","Medium", 30);
+("Dwarf","Stout, short and hardworking. Those might be the best words to describe a dwarf. Having their race forged by the god Moradin, they were taught of the benefits of hard labor, perfection in their works, and the importance of their clans. Dwarves live their long lives with a spirit of good and justice, that may only be corrupted by greed. Their sturdiness allows them to be more resistant than other classes in combat as well as resist poison. They tend to vary depending of the place they are from:","Dwarves mature at the same rate as humans, but they’re considered young until they reach the age of 50. On average, they live about 350 years.","Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.","Medium",25 ),
+("Elf","Elves are magical and gracious beings, as well as very close to being eternal. They develop many different attitudes during their life. When young (young being up to 100 years old) they have an adventurous and curious way of thought, making them go for adventures. By the time they reach adulthood their personalities change and become much more peaceful, but don’t discard the idea of going exploring until they become elders. They make for excellent artists and tend to be quite chaotic when it comes to laws. Last but not least, they don’t sleep but enter trances for 4 hours a day in which they remain semiconscious. If you are playing an elf, choose between the following subraces:","Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.","Elves love freedom, variety, and selfexpression, so they lean strongly toward the gentler aspects of chaos. They value and protect others’ freedom as well as their own, and they are more often good than not.","Medium",30),
+("Halfling","Halflings are isolated, cheerful people who love the commodity of their homes and communities. That’s the main reason most of them don’t abandon their birthplaces (shires). However, a strong sense of curiosity inhabits in most of them, leading these little folk to become adventurers or travel to other places. They are extremely agile, but as a result of their short legs, not as fast as the other races","A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.", "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.","Small",25),
+("Human","Well… I suppose you are a human, so you should know what we are good at. Absolutely nothing! Or more precisely, a bit in everything. Humans are quite more anxious and eager to adventure than the other races due to their short lives (in comparison with the others).","Humans reach adulthood in their late teens and live less than a century.","Humans tend toward no particular alignment. The best and the worst are found among them.","Medium",30),
+("Dragonborn","Descendants of dragons, these draconic humanoids live in clans who they value more than their life itself. Depending on their color, they get a breath attack of a specific type, as well as resistance to that same type of damage in combat. They tend to be as strong as they are charismatic, just like their fellow ancestors. Even though they are covered in scales, they lack the tail and wings that make dragons so characteristic.","Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.","Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil. Most dragonborn are good, but those who side with evil can be terrible villains.","Medium", 30),
+("Gnome","Gnomes are weird super positive beings. Their spirits shine even in the darkest nights. Great inventors, pranksters, and even better intellectuals. Living away from other communities they tend to live pretty normal lives in their about 500 years. However, just like halflings, curiosity is something that every one of them carries, as well as their impulsive behavior, creating excellent and many adventurers out of them.","Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.","Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are good-hearted, and even the tricksters among them are more playful than vicious.","Small", 25),
+("Half-Elf","These beings combine the best parts of elves and humans, or so they say. They don’t really belong in either of both worlds, having to decide the community they find themselves more identified with. That’s the reason why they work excellently as ambassadors or wander off feeling excluded from all places, sometimes in the search for weird adventurers with whom they can find a sense of belonging.","Half-elves mature at the same rate humans  do and reach adulthood around the age of 20. They  live much longer than humans, however, often  exceeding 180 years.","Half-elves share the chaotic bent of  their elven heritage. They value both personal  freedom and creative expression, demonstrating  neither love of leaders nor desire for followers. They  chafe at rules, resent others’ demands, and  sometimes prove unreliable, or at least unpredictable.","Medium", 30),
+("Half-Orc","Half orcs have orc blood running through their veins. This makes them much stronger than normal people, as well as hardy. However, that also can make them act impulsively and savagely. They often live, or at least used to in orc tribes and may or may not feel the rage of Gruumsh within them (Gruumsh being the orc god). While many of them triumph as leaders in their tribe due to their high IQ in comparison with the others, others are exiled and go in search of jobs in communities or go adventuring. Their high endurance makes them almost impossible to fall in combat.","Half-orcs mature a little faster than humans,  reaching adulthood around age 14. They age  noticeably faster and rarely live longer than 75 years.","Half-orcs inherit a tendency toward  chaos from their orc parents and are not strongly  inclined toward good. Half-orcs raised among orcs  and willing to live out their lives among them are  usually evil.","Medium", 30),
+("Tiefling","Tieflings take lots of forms and colors. They can have different kinds of horns and tails, as well as be from a great variety of colors. Nevertheless, they share some kind of curse. These are beings of infernal lineage due to a pact that someone in the long past made with Asmodeus (lord of Hell). They look mostly human, not taking into account the features described above. Even though they are mostly intellectual and highly charismatic beings, they tend to be received with mistrust by superstitious people.","Tieflings mature at the same rate as humans  but live a few years longer.","Tieflings might not have an innate  tendency toward evil, but many of them end up  there. Evil or not, an independent nature inclines  many tieflings toward a chaotic alignment.","Medium", 30);
+
+INSERT INTO Subraces(subrace_name,subrace_id,race_id,subrace_description)
+VALUES
+("Forest Gnome",1,6,"They stealthily move through the forest, creating illusions to trick whoever gets close. Their affinity with animals let them communicate simple ideas to these beasts."),
+("Rock Gnome",2,6,"Rock gnomes are known as the best tinkerers. These hardy beings can create little gadgets or things with a specific purpose, to be used for commodity or to maybe get them out of trouble."),
+("Lightfoot",1,3,"These halflings can easily hide behind anything that is higher than themselves and tend to be more charismatic than the rest from their race."),
+("Stout",2,3,"Stout halflings have are similar in a certain way to dwarves. They are stout as their name says and have a resistance to poison."),
+("Wood Elf",1,2,"Their intuition and keen senses are found to be the best among all elves, as well as their speed. Their training with weapons is similar to their high elves siblings, making them proficient in the use of longswords, shortswords, shortbows and longbows."),
+("Drow",2,2,"Drows were banished from the surface world for betraying Corellon, the elven god. That developed a hate from them towards the other elves. However, a very low number are indifferent about the quarrel and decide to go back to the surface in search for adventure. They are normally very charismatic and can master drow magic."),
+("High Elf",3,2,"High elves are more studious and value art in a greater way than the other subraces. In addition, they master both longswords and shortswords, as well as shortbows and longbows."),
+("Hill Dawrf",1,1,"Wiser than their mountain siblings, they also tend to be even more sturdy than them, meaning they are able to stand more hits before falling in combat."),
+("Mountain Dwarf",2,1,"The mountain and the labor in there has made them stronger. Their skin tends to be lighter toned as well as their stature a bit higher.");
 
 INSERT INTO Alignments(alignment_name,alignment_description)
 VALUES
@@ -276,7 +298,8 @@ VALUES
 ("Whetstone",Null,"Adventuring Gear",0.01,1),
 ("Arrow","Arrows are used with a bow to make a ranged attack.","Ammunition",0.05,0.05),
 ("Blowgun Needle (50)","Blowgun needles are used with a blowgun to make a ranged attack.","Ammunition",2,0.02),
-("Sling Bullet (5)","Sling bullets are used with a sling to make a ranged attack.","Ammunition",0.07),
+("Crossbow Bolt","Crossbow bolts are used with a crossbow to make a ranged attack.","Ammunition",0.05,0.05),
+("Sling Bullet (5)","Sling bullets are used with a sling to make a ranged attack.","Ammunition",0.07,0.05),
 ("Crystal","An arcane focus is a special itemNull an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.","Arcane Focus",10.00,1),
 ("Orb","An arcane focus is a special item-an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.","Arcane Focus",20.00,3),
 ("Rod","An arcane focus is a special item-an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.","Arcane Focus",1.00,2),
@@ -359,6 +382,8 @@ VALUES
 ("Priest’s Pack","Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin.",19,10),
 ("Scholar’s Pack","Includes a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of parchment, a little bag of sand, and a small knife.",40,10);
 
+-- drop database dungeons_and_dragons;
+-- create database dungeons_and_dragons;
 -- Cleric --
 INSERT INTO class_proficency_armor(class_id, armor_id)
 SELECT Classes.class_id, armor.armor_id
@@ -884,7 +909,6 @@ WHERE skill_name='Persuasion'or skill_name='Deception' or skill_name='Intimidati
 
 -- race populate
 -- after pop skills
-truncate table race_speaks_language;
 INSERT INTO race_speaks_language(race_id, language_id)
 SELECT races.race_id, languages.language_id
 FROM races,languages
@@ -955,6 +979,16 @@ or racial_traits.trait_name='Dwarven Resilience'
 or racial_traits.trait_name='Dwarven Combat Training'
 or racial_traits.trait_name='Tool Proficency');
 
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Hill Dwarf' and racial_traits.trait_name in( "Dwarven Toughness");
+
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Mountain Dwarf' and racial_traits.trait_name in("Dwarven Armor Training");
+
 INSERT INTO race_grants_traits(race_id, racial_trait_id)
 SELECT races.race_id, racial_traits.racial_trait_id
 FROM races,racial_traits
@@ -963,11 +997,36 @@ or racial_traits.trait_name='Keen Senses'
 or racial_traits.trait_name='Trance'
 or racial_traits.trait_name='Fey Ancestry');
 
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='High Elf' and racial_traits.trait_name in ("Extra Language","Elf Weapon Training","Cantrip");
+
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Wood Elf' and racial_traits.trait_name in( "Elf Weapon Training","Fleet of Foot","Mask of the Wild");
+
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Drow' and racial_traits.trait_name in ("Superior Darkvision","Sunlight Sensitivity","Drow Magic","Drow Weapon Training");
+
 INSERT INTO race_grants_traits(race_id, racial_trait_id)
 SELECT races.race_id, racial_traits.racial_trait_id
 FROM races,racial_traits
 WHERE races.race_name='Gnome' and (racial_traits.trait_name='Darkvision' 
 or racial_traits.trait_name='Gnome Cunning');
+
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Forest Gnome' and racial_traits.trait_name in("Natural Illusionist","Speak with Small Beasts");
+
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Rock Gnome' and racial_traits.trait_name in("Artificer’s Lore","Tinker");
 
 INSERT INTO race_grants_traits(race_id, racial_trait_id)
 SELECT races.race_id, racial_traits.racial_trait_id
@@ -982,6 +1041,16 @@ WHERE races.race_name='Halfling' and (racial_traits.trait_name='Lucky'
 or racial_traits.trait_name='Brave'
 or racial_traits.trait_name='Halfling Nimbleness');
 
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Lightfoot' and (racial_traits.trait_name= "Naturally Stealthy");
+
+INSERT INTO subrace_grants_traits(pk_subrace, racial_trait_id)
+SELECT subraces.pk_subrace, racial_traits.racial_trait_id
+FROM subraces,racial_traits
+WHERE subraces.subrace_name='Stout' and (racial_traits.trait_name= "Stout Resilience");
+
 INSERT INTO race_grants_traits(race_id, racial_trait_id)
 SELECT races.race_id, racial_traits.racial_trait_id
 FROM races,racial_traits
@@ -993,7 +1062,6 @@ FROM races,racial_traits
 WHERE races.race_name='Tiefling' and racial_traits.trait_name in ('Darkvision','Infernal Legacy','Hellish Resistance');
 
 -- race has abilities
-truncate table race_grants_abilities;
 
 -- const bonus=2
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
@@ -1001,9 +1069,15 @@ SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Dwarf' and (abilities.ability_name='Constitution');
 
--- need to update bonus amounts idk how
--- UPDATE race_grants_abilities SET bonus_amount=2
--- where race_id=(select race_id from races where race_name='Dawrf') and ability_id=(select ability_id from abilities where ability_name='Constitution');
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 2 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Hill Dawrf' and (abilities.ability_name='Wisdom');
+
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Mountain Dwarf' and (abilities.ability_name='Strength');
 
 -- dex bonus=2
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
@@ -1011,6 +1085,20 @@ SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Elf' and (abilities.ability_name='Dexterity');
 -- high elf: intel=1
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='High Elf' and (abilities.ability_name='Inteligence');
+
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Wood Elf' and (abilities.ability_name='Wisdom');
+
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Drow' and (abilities.ability_name='Charisma');
 
 -- stren=2 char=1
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
@@ -1028,6 +1116,16 @@ INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
 SELECT races.race_id, abilities.ability_id,2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Gnome' and (abilities.ability_name='Intelligence');
+
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Rock Gnome' and (abilities.ability_name='Constitution');
+
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Forest Gnome' and (abilities.ability_name='Dexterity');
 
 -- two of choice char=2
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
@@ -1050,6 +1148,16 @@ SELECT races.race_id, abilities.ability_id, 2 as bonus_amount
 FROM races,abilities
 WHERE races.race_name='Halfling' and (abilities.ability_name='Dexterity');
 
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Lightfoot' and (abilities.ability_name='Charisma');
+
+INSERT INTO subrace_grants_abilities(pk_subrace, ability_id,bonus_amount)
+SELECT subraces.pk_subrace, abilities.ability_id, 1 as bonus_amount
+FROM subraces,abilities
+WHERE subraces.subrace_name='Stout' and (abilities.ability_name='Constitution');
+
 -- stren=2 const=1
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
 SELECT races.race_id, abilities.ability_id,2 as bonus_amount
@@ -1064,7 +1172,7 @@ WHERE races.race_name='Half-Orc' and (abilities.ability_name='Constitution');
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
 SELECT races.race_id, abilities.ability_id, 1 as bonus_amount
 FROM races,abilities
-WHERE races.race_name='Human' and (abilities.ability_name='Intelligence' or abilities.ability_name='Charisma' or abilities.ability_name='Dexterity' or abilities.ability_name='Wisdom' or abilities.ability_name='Constitution' or abilities.ability_name='Strength');
+WHERE races.race_name='Human' and abilities.ability_name in ('Intelligence','Charisma','Dexterity','Wisdom','Constitution','Strength');
 
 -- intell=1 charisma =2
 INSERT INTO race_grants_abilities(race_id, ability_id,bonus_amount)
@@ -1085,9 +1193,6 @@ join abilities a on (rga.ability_id= a.ability_id);
 
 -- trait grants profs
 
-truncate table racial_trait_grants_weapons;
-truncate table racial_trait_grants_skills;
-
 INSERT INTO racial_trait_grants_weapons(racial_trait_id, weapon_id)
 SELECT racial_traits.racial_trait_id, weapons.weapon_id
 FROM racial_traits,weapons
@@ -1103,6 +1208,14 @@ WHERE racial_traits.trait_name='Elf Weapon Training' and (weapons.weapon_name='L
 or weapons.weapon_name='Shortbow' 
 or weapons.weapon_name='Shortsword'
 or weapons.weapon_name='Longsword');
+
+INSERT INTO racial_trait_grants_weapons(racial_trait_id, weapon_id)
+SELECT racial_traits.racial_trait_id, weapons.weapon_id
+FROM racial_traits,weapons
+WHERE racial_traits.trait_name='Drow Weapon Training' and (weapons.weapon_name='Longbow' 
+or weapons.weapon_name='Crossbow, hand' 
+or weapons.weapon_name='Shortsword'
+or weapons.weapon_name='Rapiers');
 
 INSERT INTO racial_trait_grants_skills(racial_trait_id, skill_id)
 SELECT racial_traits.racial_trait_id, skills.skill_id
@@ -1144,6 +1257,7 @@ INSERT INTO class_grants_items
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 4 as quantity_number
 FROM Classes as c, items as i
 WHERE c.class_name='Barbarian' and (item_name="javelin");
+
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
@@ -1189,7 +1303,7 @@ INSERT INTO class_grants_items
 SELECT c.class_id as class_id, t.tool_id as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, tools as t
 WHERE c.class_name='Bard' and (tool_name in(select tool_name from tools where tool_category= "Musical Instrument" ));
-
+	
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, items as i
@@ -1281,9 +1395,9 @@ FROM Classes as c, items as i
 WHERE c.class_name='Druid' and (item_name="Explorer’s Pack");
 
 INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Druid' and (item_name="druidic focus");
+SELECT c.class_id as class_id, w.gear_id as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
+FROM Classes as c, gear as w
+WHERE c.class_name='Druid' and (gear_name in(select gear_name from gear where gear_category like('%Druidic Focus%') ));
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
@@ -1328,7 +1442,7 @@ WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="light crossbow");
+WHERE c.class_name='Fighter' and (item_name="Crossbow,light");
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
@@ -1473,7 +1587,7 @@ WHERE c.class_name='Ranger' and (item_name="arrow");
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name="light crossbow");
+WHERE c.class_name='Sorcerer' and (item_name="Crossbow,light");
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 20 as quantity_number
@@ -1493,7 +1607,7 @@ WHERE c.class_name='Sorcerer' and (item_name="component pouch");
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
 FROM Classes as c, gear as w
-WHERE c.class_name='Sorcerer' and (gear_name in(select gear_name from gear where gear_category like('%arcane focus%') ));
+WHERE c.class_name='Sorcerer' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
@@ -1513,7 +1627,7 @@ WHERE c.class_name='Sorcerer' and (item_name="dagger");
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="light crossbow");
+WHERE c.class_name='Warlock' and (item_name="Crossbow,light");
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 20 as quantity_number
@@ -1533,7 +1647,7 @@ WHERE c.class_name='Warlock' and (item_name="component pouch");
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
 FROM Classes as c, gear as w
-WHERE c.class_name='Warlock' and (gear_name in(select gear_name from gear where gear_category like('%arcane focus%') ));
+WHERE c.class_name='Warlock' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
@@ -1578,12 +1692,12 @@ WHERE c.class_name='Wizard' and (item_name="component pouch");
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
 FROM Classes as c, gear as w
-WHERE c.class_name='Wizard' and (gear_name in(select gear_name from gear where gear_category like('%arcane focus%') ));
+WHERE c.class_name='Wizard' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="light crossbow");
+WHERE c.class_name='Wizard' and (item_name="Crossbow,light");
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
@@ -1638,7 +1752,7 @@ WHERE c.class_name='Cleric' and (item_name="chain mail");
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="light crossbow");
+WHERE c.class_name='Cleric' and (item_name="Crossbow,light");
 
 INSERT INTO class_grants_items 
 SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
@@ -1669,3 +1783,4 @@ INSERT INTO class_grants_items
 SELECT c.class_id as class_id, w.gear_id as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
 FROM Classes as c, gear as w
 WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
+
