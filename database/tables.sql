@@ -349,6 +349,16 @@ CREATE TABLE IF NOT EXISTS Subrace_Grants_Traits(
 	FOREIGN KEY (racial_trait_id) REFERENCES racial_traits(racial_trait_id),
 	UNIQUE (pk_subrace, racial_trait_id)
 );
+
+CREATE TABLE IF NOT EXISTS Path_Feats(
+	path_feat_id INT(15) NOT NULL auto_increment,
+    path_id INT(15) NOT NULL,
+	feat_name varchar(60),
+    feat_description text(50000),
+	FOREIGN KEY (path_id) REFERENCES Paths(path_id),
+	primary key (path_feat_id)
+);
+alter table path_feats add column lvl int(15);
 CREATE TABLE IF NOT EXISTS Race_Tends_Alignment(
 	race_id INT(15) NOT NULL,
 	alignment_id INT(15) NOT NULL,

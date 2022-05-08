@@ -381,6 +381,7 @@ VALUES
 ("Explorer’s Pack","Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it.",10,10),
 ("Priest’s Pack","Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin.",19,10),
 ("Scholar’s Pack","Includes a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of parchment, a little bag of sand, and a small knife.",40,10);
+SET SQL_SAFE_UPDATES = 0;
 
 -- drop database dungeons_and_dragons;
 -- create database dungeons_and_dragons;
@@ -889,7 +890,7 @@ WHERE skill_name='Athletics';
 UPDATE skills SET ability_id=( 
 SELECT ability_id FROM abilities
 WHERE  ability_name="Dexterity")
-WHERE skill_name='Athletics';
+WHERE skill_name in ('Acrobatics','Sleight of Hand','Stealth');
 
 UPDATE skills SET ability_id=( 
 SELECT ability_id FROM abilities
@@ -1784,3 +1785,198 @@ SELECT c.class_id as class_id, w.gear_id as item_id, 5 as group_number, 1 as opt
 FROM Classes as c, gear as w
 WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
 
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,"Path of the Berserker" as path_name,  "For some barbarians, rage is a means to an end—that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker’s rage, you thrill in the chaos of battle, heedless of your own health or well-being." as path_description
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,"Path of the Totem Warrior (Bear)" as path_name, "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration." as path_description
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,"Path of the Totem Warrior (Eagle)" as path_name,  "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration." as path_description
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,"Path of the Totem Warrior (Wolf)" as path_name,  "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration." as path_description
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "College of Lore" as path_name, "Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales." as path_description
+FROM Classes as c, items as i
+WHERE c.class_name='Bard';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "College of Valor" as path_name, "Bards of the College of Valor are daring skalds whose tales keep alive the memory of the great heroes of the past, and thereby inspire a new generation of heroes." as path_description
+FROM Classes as c, items as i
+WHERE c.class_name='Bard';    
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Life Domain" as path_name,"The Life domain focuses on the vibrant positive energy— one of the fundamental forces of the universe—that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil deity can claim influence over this domain, particularly agricultural deities (such as Chauntea, Arawai, and Demeter), sun gods (such as Lathander, Pelor, and Re-Horakhty), gods of healing or endurance (such as Ilmater, Mishakal, Apollo, and Diancecht), and gods of home and community (such as Hestia, Hathor, and Boldrei)." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Knowledge Domain" as path_name,"The gods of knowledge value learning and understanding above all." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';  
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Light Domain" as path_name,"Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Nature Domain" as path_name,"Gods of nature are as varied as the natural world itself, from inscrutable gods of the deep forests to friendly deities associated with particular springs and groves." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Tempest Domain" as path_name,"Gods whose portfolios include the Tempest domain govern storms, sea, and sky." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Trickery Domain" as path_name,"Gods of trickery are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "War Domain" as path_name,"War has many manifestations. It can make heroes of ordinary people. It can be desperate and horrific, with acts of cruelty and cowardice eclipsing instances of excellence and courage. In either case, the gods of war watch over warriors and reward them for their great deeds. The clerics of such gods excel in battle, inspiring others to fight the good fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry (such as Torm, Heironeous, and Kiri- Jolith) as well as gods of destruction and pillage (such as Erythnul, the Fury, Gruumsh, and Ares) and gods of conquest and domination (such as Bane, Hextor, and Maglubiyet). Other war gods (such as Tempus, Nike, and Nuada) take a more neutral stance, promoting war in all its manifestations and supporting warriors in any circumstance." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Circle of the Land" as path_name,"The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle’s wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle’s mysterious rites." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Druid';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Circle of the Moon" as path_name,"Druids of the Circle of the Moon are fierce guardians of the wilds." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Druid';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Champion" as path_name,"The archetypal Champion focuses on the development of raw physical power honed to deadly perfection." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Battle Master" as path_name,"Those who emulate the archetypal Battle Master employ martial techniques passed down through generations." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Eldritch Knight" as path_name,"The archetypal Eldritch Knight combines the martial mastery common to all fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards. They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter’s reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Way of the Open Hand" as path_name, "The ultimate masters of martial arts combat, whether armed or unarmed." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Monk';
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id, "Way of Shadow" as path_name, "Monks of the Way of Shadow follow a tradition that values stealth and subterfuge." as path_description	
+FROM Classes as c, items as i
+WHERE c.class_name='Monk';
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Frenzy" as feat_name, "For the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Berserker";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Mindless Rage" as feat_name, "You can’t be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Berserker";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Intimidating Presence" as feat_name, "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you. If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Berserker";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Retaliation" as feat_name, "When you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Berserker";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Totem Spirit (Bear)" as feat_name, "While raging, you have resistance to all damage except psychic damage. The spirit of the bear makes you tough enough to stand up to any punishment." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Bear)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Aspect of the Beast (Bear)" as feat_name, "You gain the might of a bear. Your carrying capacity (including maximum load and maximum lift) is doubled, and you have advantage on Strength checks made to push, pull, lift, or break objects." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Bear)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Totemic Attunement (Bear)" as feat_name, "While you’re raging, any creature within 5 feet of you that’s hostile to you has disadvantage on attack rolls against targets other than you or another character with this feature. An enemy is immune to this effect if it can’t see or hear you or if it can’t be frightened." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Bear)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Totem Spirit (Eagle)" as feat_name, "While you're raging and aren't wearing any armor, other creatures have disadvantage on opportunity attack rolls against you, and you can use the Dash Action as a bonus action on your turn. The spirit of the eagle makes you into a predator who can weave through the fray with ease." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Eagle)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Aspect of the Beast (Eagle)" as feat_name, "You gain the eyesight of an eagle. You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you. Additionally, dim light doesn't impose disadvantage on your Wisdom (Perception) checks." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Eagle)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Totemic Attunement (Eagle)" as feat_name, "While raging, you have a flying speed equal to your current walking speed. This benefit works only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Eagle)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Totem Spirit (Wolf)" as feat_name, "While you're raging, your friends have advantage on melee attack rolls against any creature within 5 feet of you that is hostile to you. The spirit of the wold makes you a leader of hunters." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Wolf)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Aspect of the Beast (Wolf)" as feat_name, "You gain the hunting sensibilities of a wolf. You can track other creatures while traveling at a fast pace, and you can move stealthily while traveling at a normal pace (see chapter 8 for rules on travel pace)." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Wolf)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Totemic Attunement (Wolf)" as feat_name, "While you’re raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Wolf)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Spirit Seeker" as feat_name, "Yours is a path that seeks attunement with the natural world, giving you a kinship with beasts. At 3rd level when you adopt this path, you gain the ability to cast the beast sense and speak with animals spells, but only as rituals."	 as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Wolf)";    
+
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Spirit Walker" as feat_name, "At 10th level, you can cast the commune with nature spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek." as feat_description
+FROM Paths as p
+WHERE p.path_name="Path of the Totem Warrior (Wolf)";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Bonus Proficiencies" as feat_name, "When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice." as feat_description
+FROM Paths as p
+WHERE p.path_name="College of Lore";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Cutting Words" as feat_name, "When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed." as feat_description
+FROM Paths as p
+WHERE p.path_name="College of Lore";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Additional Magical Secrets" as feat_name, "At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don’t count against the number of bard spells you know." as feat_description
+FROM Paths as p
+WHERE p.path_name="College of Lore";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Peerless Skill" as feat_name, "When you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail." as feat_description
+FROM Paths as p
+WHERE p.path_name="College of Lore";
