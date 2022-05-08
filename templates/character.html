@@ -13,8 +13,8 @@
       </div>
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-        <div class = "container" style = "background-color: rgb(255 255 255 0.5);">
-            <div class="row">
+        <div class = "container" style = "background-color: #ffffff80;">
+            <div class="row" >
           <div class="col">
               <p>Name: Baloo</p>
               <p>Race: Khenra</p>
@@ -42,7 +42,7 @@
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
 
-<div class="container">
+<div class="container" style = "background-color: #ffffff80;">
     <div class="row">
         <div class="col">
             <strong>HP:</strong> 45/60
@@ -136,7 +136,7 @@
       </div>
       <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
         <div class="card-body">
-          <div class="container">
+          <div class="container" style = "background-color: #ffffff80;">
 
             <div class="row">
                 <div class="col">
@@ -519,7 +519,7 @@
     </div>
     <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
       <div class="card-body">
-        <div class="container">
+        <div class="container" style = "background-color: #ffffff80;">
             <div class="row">
                 <div class="col-sm-2">
                     <strong>Name</strong>
@@ -556,7 +556,7 @@
     </div>
     <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
       <div class="card-body">
-        <div class="container">
+        <div class="container" style = "background-color: #ffffff80;">
             <div class="row">
                 <div class="col-sm-2">
                     <strong>Name</strong>
@@ -595,23 +595,28 @@
     </div>
     <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
       <div class="card-body">
-        <div class="input-group">
+          <div class = "container">
+              <div class = "row">
+                  <div class = "col">
+                      <div class="input-group">
             <span class="input-group-text">Inventory</span>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
+            <textarea class="form-control" aria-label="With textarea" style = "height: 300px;"></textarea>
+          </div>
+                  </div>
+                  <div class = "col">
+                      <div class="input-group">
+            <span class="input-group-text">Notes</span>
+            <textarea class="form-control" aria-label="With textarea" style = "height: 300px;"></textarea>
+          </div>
+                  </div>
+              </div>
           </div>
 
-          <div class="input-group">
-            <span class="input-group-text">Notes</span>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-          </div>
+
+
       </div>
     </div>
 
 </div>
-
-
-
-    <script src="bootstrap.min.js"></script>
-
 
 {% endblock %}

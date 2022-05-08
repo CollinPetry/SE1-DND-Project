@@ -39,14 +39,24 @@ substituted for. It's very possible we can also have multiple layout files that 
       }
     </style>
   </head>
-<body>
-<div class = "bg-image" style="
+<body style="
     background-image: url('../static/background3.jpg');
-    height: 100vh;">
+    height: 100vh;
+       background-attachment: fixed;">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='diceroller.js') }}"></script>
-    <script src="../static/bootstrap.min.js"></script>
+    <script type = "text/javascript" src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <script>
+      const button = document.querySelector('#button');
+      const tooltip = document.querySelector('#tooltip');
+
+      const popperInstance = Popper.createPopper(button, tooltip);
+    </script>
+
+    <script type = "text/javascript" src="../static/bootstrap.min.js"></script>
 
     <!-- This is the navbar for the webpage so it doesn't need to be copied, needs css obviously -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
@@ -105,6 +115,7 @@ substituted for. It's very possible we can also have multiple layout files that 
     <!-- This is differing page content is added on individual pages -->
     {% block content %}{% endblock %}
     </div>
+
 
     <!-- A Footer or something can go here as well -->
     <footer>
