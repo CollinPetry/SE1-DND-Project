@@ -1980,3 +1980,405 @@ INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_nu
 SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 5 as group_number, 1 as option_number, 1 as quantity,"Gear" as category
 FROM Classes as c, gear as w
 WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
+
+	
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Bonus Proficiency" as feat_name, "When you choose this domain at 1st level, you gain proficiency with heavy armor." as feat_description
+FROM Paths as p
+WHERE p.path_name="Life Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Disciple of Life" as feat_name, "Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell’s level." as feat_description
+FROM Paths as p
+WHERE p.path_name="Life Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Channel Divinity: Preserve Life" as feat_name, "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured." as feat_description
+FROM Paths as p
+WHERE p.path_name="Life Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Blessed Healer" as feat_name, "Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell’s level." as feat_description
+FROM Paths as p
+WHERE p.path_name="Life Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8 as lvl, "Divine Strike" as feat_name, "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8." as feat_description
+FROM Paths as p
+WHERE p.path_name="Life Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Supreme Healing" as feat_name, "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12." as feat_description
+FROM Paths as p
+WHERE p.path_name="Life Domain";    
+
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1  as lvl, "Blessings of Knowledge" as feat_name, "At 1st level, you learn two languages of your choice. You also become proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion. Your proficiency bonus is doubled for any ability check you make that uses either of those skills." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1  as lvl, "Blessings of Knowledge (Arcana)" as feat_name, "You become proficient in Arcana. Your proficiency bonus is doubled for any ability check you make that uses Arcana." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1  as lvl, "Blessings of Knowledge (History)" as feat_name, "You become proficient in History. Your proficiency bonus is doubled for any ability check you make that uses History." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1  as lvl, "Blessings of Knowledge (Nature)" as feat_name, "You become proficient in Nature. Your proficiency bonus is doubled for any ability check you make that uses Nature." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1  as lvl, "Blessings of Knowledge (Religion)" as feat_name, "You become proficient in Religion. Your proficiency bonus is doubled for any ability check you make that uses Religion." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2  as lvl, "Channel Divinity: Knowledge of the Ages" as feat_name, "Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6  as lvl, "Read Thoughts" as feat_name, "At 6th level, you can use your Channel Divinity to read a creature’s thoughts. You can then use your access to the creature’s mind to command it." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8  as lvl, "Potent Spellcasting" as feat_name, "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Visions of the Past" as feat_name, "Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell. Once you use this feature, you can’t use it again until you finish a short or long rest." as feat_description
+FROM Paths as p
+WHERE p.path_name="Knowledge Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Bonus Cantrip" as feat_name, "When you choose this domain at 1st level, you gain the light cantrip if you don’t already know it."	 as feat_description
+FROM Paths as p
+WHERE p.path_name="Light Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Warding Flare" as feat_name, "Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can’t be blinded is immune to this feature." as feat_description
+FROM Paths as p
+WHERE p.path_name="Light Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Channel Divinity: Radiance of the Dawn" as feat_name, "Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes." as feat_description
+FROM Paths as p
+WHERE p.path_name="Light Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Improved Flare" as feat_name, "Starting at 6th level, you can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you." as feat_description
+FROM Paths as p
+WHERE p.path_name="Light Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8 as lvl, "Potent Spellcasting" as feat_name, "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip." as feat_description
+FROM Paths as p
+WHERE p.path_name="Light Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Corona of Light" as feat_name, "Starting at 17th level, you can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage." as feat_description
+FROM Paths as p
+WHERE p.path_name="Light Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Acolyte of Nature" as feat_name, "At 1st level, you learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Bonus Proficiency" as feat_name, "Also at 1st level, you gain proficiency with heavy armor." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Channel Divinity: Charm Animals and Plants" as feat_name, "As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Dampen Elements" as feat_name, "Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage."	 as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8 as lvl, "Divine Strike" as feat_name, "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Master of Nature" as feat_name, "At 17th level, you gain the ability to command animals and plant creatures. While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Bonus Proficiencies" as feat_name, "At 1st level, you gain proficiency with martial weapons and heavy armor." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Wrath of the Storm" as feat_name, "Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Channel Divinity: Destructive Wrath" as feat_name, "Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Thunderbolt Strike" as feat_name, "At 6th level, when you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8 as lvl, "Divine Strike" as feat_name, "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Stormborn" as feat_name, "At 17th level, you have a flying speed equal to your current walking speed whenever you are not underground or indoors." as feat_description
+FROM Paths as p
+WHERE p.path_name="Nature Domain";    
+
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Blessing of the Trickster" as feat_name, "Starting when you choose this domain at 1st level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again." as feat_description
+FROM Paths as p
+WHERE p.path_name="Trickery Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Channel Divinity: Invoke Duplicity" as feat_name, "Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself. As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell)." as feat_description
+FROM Paths as p
+WHERE p.path_name="Trickery Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Channel Divinity: Cloak of Shadows" as feat_name, "invisibility" as feat_description
+FROM Paths as p
+WHERE p.path_name="Trickery Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8 as lvl, "Divine Strike" as feat_name, "At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8." as feat_description
+FROM Paths as p
+WHERE p.path_name="Trickery Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Improved Duplicity" as feat_name, "At 17th level, you can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet." as feat_description
+FROM Paths as p
+WHERE p.path_name="Trickery Domain";    
+
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "Bonus Proficiencies" as feat_name, "At 1st level, you gain proficiency with martial weapons and heavy armor." as feat_description
+FROM Paths as p
+WHERE p.path_name="War Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 1 as lvl, "War Priest" as feat_name, "From 1st level, your god delivers bolts of inspiration to you while you are engaged in battle. When you use the Attack action, you can make one weapon attack as a bonus action." as feat_description
+FROM Paths as p
+WHERE p.path_name="War Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Channel Divinity: Guided Strike" as feat_name, "Starting at 2nd level, you can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses." as feat_description
+FROM Paths as p
+WHERE p.path_name="War Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Channel Divinity: War God’s Blessing" as feat_name, "At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses." as feat_description
+FROM Paths as p
+WHERE p.path_name="War Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 8 as lvl, "Divine Strike" as feat_name, "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8." as feat_description
+FROM Paths as p
+WHERE p.path_name="War Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Avatar of Battle" as feat_name, "At 17th level, you gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons." as feat_description
+FROM Paths as p
+WHERE p.path_name="War Domain";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Bonus Cantrip" as feat_name, "When you choose this circle at 2nd level, you learn one additional druid cantrip of your choice." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Land";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Natural Recovery" as feat_name, "Starting at 2nd level, you can regain some of your magical energy by sitting in meditation and communing with nature. During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your druid level (rounded up), and none of the slots can be 6th level or higher. You can’t use this feature again until you finish a long rest." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Land";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Circle Spells" as feat_name, "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid. Choose that land—arctic, coast, desert, forest, grassland, mountain, swamp, or Underdark—and consult the associated list of spells." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Land";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Land’s Stride" as feat_name, "Starting at 6th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Land";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Nature’s Ward" as feat_name, "When you reach 10th level, you can’t be charmed or frightened by elementals or fey, and you are immune to poison and disease." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Land";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Nature’s Sanctuary" as feat_name, "When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Land";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Combat Wild Shape" as feat_name, "When you choose this circle at 2nd level, you gain the ability to use Wild Shape on your turn as a bonus action, rather than as an actionAdditionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d8 hit points per level of the spell slot expended." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Moon";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 2 as lvl, "Circle Forms" as feat_name, "The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, you can use your Wild Shape to transform into a beast with a challenge rating as high as 1 (you ignore the Max. CR column of the Beast Shapes table, but must abide by the other limitations there)" as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Moon";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Primal Strike" as feat_name, "Starting at 6th level, your attacks in beast form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Moon";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Elemental Wild Shape" as feat_name, "At 10th level, you can expend two uses of Wild Shape at the same time to transform into an air elemental, an earth elemental, a fire elemental, or a water elemental." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Moon";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 14 as lvl, "Thousand Forms" as feat_name, "By 14th level, you have learned to use magic to alter your physical form in more subtle ways. You can cast the alter self spell at will." as feat_description
+FROM Paths as p
+WHERE p.path_name="Circle of the Moon";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Improved Critical" as feat_name, "Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20." as feat_description
+FROM Paths as p
+WHERE p.path_name="Champion";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 7 as lvl, "Remarkable Athlete" as feat_name, "Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn’t already use your proficiency bonus." as feat_description
+FROM Paths as p
+WHERE p.path_name="Champion";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Additional Fighting Style" as feat_name, "At 10th level, you can choose a second option from the Fighting Style class feature." as feat_description
+FROM Paths as p
+WHERE p.path_name="Champion";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 15 as lvl, "Superior Critical" as feat_name, "Starting at 15th level, your weapon attacks score a critical hit on a roll of 18–20." as feat_description
+FROM Paths as p
+WHERE p.path_name="Champion";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 18 as lvl, "Survivor" as feat_name, "At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don’t gain this benefit if you have 0 hit points." as feat_description
+FROM Paths as p
+WHERE p.path_name="Champion";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Combat Superiority" as feat_name, "When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice." as feat_description
+FROM Paths as p
+WHERE p.path_name="Battle Master";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Student of War" as feat_name, "At 3rd level, you gain proficiency with one type of artisan’s tools of your choice." as feat_description
+FROM Paths as p
+WHERE p.path_name="Battle Master";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 7 as lvl, "Know Your Enemy" as feat_name, "Starting at 7th level, if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:" as feat_description
+FROM Paths as p
+WHERE p.path_name="Battle Master";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Improved Combat Superiority" as feat_name, "At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s." as feat_description
+FROM Paths as p
+WHERE p.path_name="Battle Master";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 15 as lvl, "Relentless" as feat_name, "Starting at 15th level, when you roll initiative and have no superiority dice remaining, you regain 1 superiority die." as feat_description
+FROM Paths as p
+WHERE p.path_name="Battle Master";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Spellcasting" as feat_name, "When you reach 3rd level, you augment your martial prowess with the ability to cast spells. See chapter 10 for the general rules of spellcasting and chapter 11 for the wizard spell l" as feat_description
+FROM Paths as p
+WHERE p.path_name="Eldritch Knight";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Weapon Bond" as feat_name, "At 3rd level, you learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond." as feat_description
+FROM Paths as p
+WHERE p.path_name="Eldritch Knight";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 7 as lvl, "War Magic" as feat_name, "Beginning at 7th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action." as feat_description
+FROM Paths as p
+WHERE p.path_name="Eldritch Knight";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 10 as lvl, "Eldritch Strike" as feat_name, "At 10th level, you learn how to make your weapon strikes undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn." as feat_description
+FROM Paths as p
+WHERE p.path_name="Eldritch Knight";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 15 as lvl, "Arcane Charge" as feat_name, "At 15th level, you gain the ability to teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action." as feat_description
+FROM Paths as p
+WHERE p.path_name="Eldritch Knight";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 18 as lvl, "Improved War Magic" as feat_name, "Starting at 18th level, when you use your action to cast a spell, you can make one weapon attack as a bonus action." as feat_description
+FROM Paths as p
+WHERE p.path_name="Eldritch Knight";    
+
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Open Hand Technique" as feat_name, "Starting when you choose this tradition at 3rd level, you can manipulate your enemy’s ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:" as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of the Open Hand";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Wholeness of Body" as feat_name, "At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of the Open Hand";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 11 as lvl, "Tranquility" as feat_name, "Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of the Open Hand";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Quivering Palm" as feat_name, "At 17th level, you gain the ability to set up lethal vibrations in someone’s body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of the Open Hand";    
+
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 3 as lvl, "Shadow Arts" as feat_name, "Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of Shadow";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 6 as lvl, "Shadow Step" as feat_name, "At 6th level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of Shadow";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 11 as lvl, "Cloak of Shadows" as feat_name, "By 11th level, you have learned to become one with the shadows. When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of Shadow";    
+
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, 17 as lvl, "Opportunist" as feat_name, "At 17th level, you can exploit a creature’s momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature." as feat_description
+FROM Paths as p
+WHERE p.path_name="Way of Shadow";    
