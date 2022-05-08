@@ -464,6 +464,9 @@ CREATE TABLE IF NOT EXISTS char_languages(
 CREATE TABLE IF NOT EXISTS char_inventory(
 char_id INT(15) NOT NULL,
 item_id INT(15) NOT NULL,
+quantity float,
+category varchar(50),
+weight float,
 FOREIGN KEY (char_id) REFERENCES Characters(char_id),
 UNIQUE (char_id, item_id)
 );
@@ -506,8 +509,8 @@ CREATE TABLE IF NOT EXISTS char_proficency_saving_throws(
 
 CREATE TABLE IF NOT EXISTS Class_grants_items(
 	class_id INT(15) NOT NULL,
-	item_id INT(15) NOT NULL,
-    item_name int(15),
+	item_id INT(100) NOT NULL,
+    item_name varchar(50),
     category varchar(50),
     group_number int(15),
     option_number int(15),
