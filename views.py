@@ -13,6 +13,9 @@ from user import get_user
 def home_page():
     return render_template("home.html")
 
+def character_builder():
+        return render_template("characterbuilder.html")
+
 
 def view_characters():
     return render_template("view_characters.html")
