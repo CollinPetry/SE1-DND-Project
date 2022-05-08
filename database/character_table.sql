@@ -107,7 +107,6 @@ CREATE TABLE IF NOT EXISTS char_languages(
 CREATE TABLE IF NOT EXISTS char_inventory(
 char_id INT(15) NOT NULL,
 item_id INT(15) NOT NULL,
-FOREIGN KEY (char_id) REFERENCES user_character(char_id),
-FOREIGN KEY (item_id) REFERENCES items(item_id),
+FOREIGN KEY (char_id) REFERENCES Characters(char_id),
 UNIQUE (char_id, item_id)
 );

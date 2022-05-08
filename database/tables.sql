@@ -401,7 +401,9 @@ CREATE TABLE IF NOT EXISTS Characters(
     speed int(15),
     size varchar(50),
     char_lvl int(15),
+    pk_subrace int(15),
 	FOREIGN KEY (char_background_id) REFERENCES Backgrounds(background_id),
+    FOREIGN KEY (pk_subrace) REFERENCES Subraces(pk_subrace),
 	FOREIGN KEY (char_class_id) REFERENCES classes(class_id),
     FOREIGN KEY (char_race_id) REFERENCES races(race_id),
     primary key(char_id)
@@ -462,14 +464,51 @@ CREATE TABLE IF NOT EXISTS char_languages(
 CREATE TABLE IF NOT EXISTS char_inventory(
 char_id INT(15) NOT NULL,
 item_id INT(15) NOT NULL,
-FOREIGN KEY (char_id) REFERENCES characters(char_id),
-FOREIGN KEY (item_id) REFERENCES items(item_id),
+FOREIGN KEY (char_id) REFERENCES Characters(char_id),
 UNIQUE (char_id, item_id)
+);
+
+CREATE TABLE IF NOT EXISTS char_proficency_skills(
+	char_id INT(15) NOT NULL,
+	skill_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (skill_id) REFERENCES skills(skill_id),
+	UNIQUE (char_id, skill_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_tools(
+	char_id INT(15) NOT NULL,
+	tool_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (tool_id) REFERENCES tools(tool_id),
+	UNIQUE (char_id, tool_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_weapons(
+	char_id INT(15) NOT NULL,
+	weapon_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+	FOREIGN KEY (weapon_id) REFERENCES weapons(weapon_id),
+    UNIQUE (char_id, weapon_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_armor(
+	char_id INT(15) NOT NULL,
+	armor_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (armor_id) REFERENCES armor(armor_id),
+	UNIQUE (char_id, armor_id)
+);
+CREATE TABLE IF NOT EXISTS char_proficency_saving_throws(
+	char_id INT(15) NOT NULL,
+	ability_id INT(15) NOT NULL,
+	FOREIGN KEY (char_id) REFERENCES characters(char_id),
+    FOREIGN KEY (ability_id) REFERENCES abilities(ability_id),
+	UNIQUE (char_id, ability_id)
 );
 
 CREATE TABLE IF NOT EXISTS Class_grants_items(
 	class_id INT(15) NOT NULL,
 	item_id INT(15) NOT NULL,
+    item_name int(15),
+    category varchar(50),
     group_number int(15),
     option_number int(15),
 	quantity int(15),

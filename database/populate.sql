@@ -1228,661 +1228,105 @@ SELECT racial_traits.racial_trait_id, skills.skill_id
 FROM racial_traits,skills
 WHERE racial_traits.trait_name='Menacing' and (skills.skill_name='Intimidation');
 
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Barbarian' and (weapon_name="greataxe");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Barbarian' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 1 as option_number, 2 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Barbarian' and (weapon_name="handaxe");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Barbarian' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Barbarian' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 4 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Barbarian' and (item_name="javelin");
-
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="rapier");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="longsword");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="Diplomat’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="Entertainer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="lute");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="Leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Bard' and (item_name="dagger");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 3 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Bard' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, t.tool_id as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, tools as t
-WHERE c.class_name='Bard' and (tool_name in(select tool_name from tools where tool_category= "Musical Instrument" ));
-	
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="rapier");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="shortsword");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="shortbow");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="quiver");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="arrows");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="shortsword");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="Burglar’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="Dungeoneer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 3 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="Leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 2 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="dagger");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Rogue' and (item_name="thieves tool");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Druid' and (item_name="shield");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Druid' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Druid' and (item_name="scimitar");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Druid' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Druid' and (item_name="Leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Druid' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.gear_id as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, gear as w
-WHERE c.class_name='Druid' and (gear_name in(select gear_name from gear where gear_category like('%Druidic Focus%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="chain mail");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="longbow");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="arrow");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="shield");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="Crossbow,light");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name like ("%bolts"));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="handaxe,2");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Fighter' and (item_name="Dungeoneer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Monk' and (item_name="short sword");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Monk' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Monk' and (item_name="Dungeoneer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Monk' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 10 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Monk' and (item_name="darts");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Paladin' and (item_name="shield");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 5 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Paladin' and (item_name="Javelin");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Paladin' and (item_name="Priest’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Paladin' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Paladin' and (item_name="Chain mail");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.gear_id as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, gear as w
-WHERE c.class_name='Paladin' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="scale mail");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 2 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="shortsword");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Ranger' and (weapon_name in(select weapon_name from weapons where weapon_category like('Simple Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Ranger' and (weapon_name in(select weapon_name from weapons where weapon_category like('Simple Melee%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="Dungeoneer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="longbow");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="quiver");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Ranger' and (item_name="arrow");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name="Crossbow,light");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name like ("%bolts"));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Sorcerer' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name="component pouch");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, gear as w
-WHERE c.class_name='Sorcerer' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name="Dungeoneer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 2 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Sorcerer' and (item_name="dagger");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="Crossbow,light");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name like ("%bolts"));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Warlock' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="component pouch");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, gear as w
-WHERE c.class_name='Warlock' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="Scholar’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="Dungeoneer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Warlock' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 2 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Warlock' and (item_name="dagger");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="quarterstaff");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="dagger");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="component pouch");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.gear_id as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, gear as w
-WHERE c.class_name='Wizard' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="Crossbow,light");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name like ("%bolts"));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Wizard' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="Scholar’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Wizard' and (item_name="spellbook");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="mace");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 1 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="warhammer");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="scale mail");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="leather");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 2 as group_number, 3 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="chain mail");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="Crossbow,light");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 3 as group_number, 1 as option_number, 20 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name like ("%bolts"));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.weapon_id as item_id, 3 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, weapons as w
-WHERE c.class_name='Cleric' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="Priest’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 4 as group_number, 2 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="Explorer’s Pack");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, i.item_name as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, items as i
-WHERE c.class_name='Cleric' and (item_name="shield");
-
-INSERT INTO class_grants_items 
-SELECT c.class_id as class_id, w.gear_id as item_id, 5 as group_number, 1 as option_number, 1 as quantity_number
-FROM Classes as c, gear as w
-WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id,"Path of the Berserker" as path_name,  "For some barbarians, rage is a means to an end—that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker’s rage, you thrill in the chaos of battle, heedless of your own health or well-being." as path_description
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Barbarian';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id,"Path of the Totem Warrior (Bear)" as path_name, "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration." as path_description
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Barbarian';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id,"Path of the Totem Warrior (Eagle)" as path_name,  "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration." as path_description
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Barbarian';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id,"Path of the Totem Warrior (Wolf)" as path_name,  "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration." as path_description
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Barbarian';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "College of Lore" as path_name, "Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales." as path_description
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Bard';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "College of Valor" as path_name, "Bards of the College of Valor are daring skalds whose tales keep alive the memory of the great heroes of the past, and thereby inspire a new generation of heroes." as path_description
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Bard';    
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Life Domain" as path_name,"The Life domain focuses on the vibrant positive energy— one of the fundamental forces of the universe—that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil deity can claim influence over this domain, particularly agricultural deities (such as Chauntea, Arawai, and Demeter), sun gods (such as Lathander, Pelor, and Re-Horakhty), gods of healing or endurance (such as Ilmater, Mishakal, Apollo, and Diancecht), and gods of home and community (such as Hestia, Hathor, and Boldrei)." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Knowledge Domain" as path_name,"The gods of knowledge value learning and understanding above all." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';  
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Light Domain" as path_name,"Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Nature Domain" as path_name,"Gods of nature are as varied as the natural world itself, from inscrutable gods of the deep forests to friendly deities associated with particular springs and groves." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Tempest Domain" as path_name,"Gods whose portfolios include the Tempest domain govern storms, sea, and sky." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Trickery Domain" as path_name,"Gods of trickery are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "War Domain" as path_name,"War has many manifestations. It can make heroes of ordinary people. It can be desperate and horrific, with acts of cruelty and cowardice eclipsing instances of excellence and courage. In either case, the gods of war watch over warriors and reward them for their great deeds. The clerics of such gods excel in battle, inspiring others to fight the good fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry (such as Torm, Heironeous, and Kiri- Jolith) as well as gods of destruction and pillage (such as Erythnul, the Fury, Gruumsh, and Ares) and gods of conquest and domination (such as Bane, Hextor, and Maglubiyet). Other war gods (such as Tempus, Nike, and Nuada) take a more neutral stance, promoting war in all its manifestations and supporting warriors in any circumstance." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Cleric';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Circle of the Land" as path_name,"The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle’s wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle’s mysterious rites." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Druid';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Circle of the Moon" as path_name,"Druids of the Circle of the Moon are fierce guardians of the wilds." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Druid';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Champion" as path_name,"The archetypal Champion focuses on the development of raw physical power honed to deadly perfection." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Fighter';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Battle Master" as path_name,"Those who emulate the archetypal Battle Master employ martial techniques passed down through generations." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Fighter';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Eldritch Knight" as path_name,"The archetypal Eldritch Knight combines the martial mastery common to all fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards. They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter’s reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Fighter';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Way of the Open Hand" as path_name, "The ultimate masters of martial arts combat, whether armed or unarmed." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Monk';
 
 INSERT INTO paths (class_id,path_name,path_description)
 SELECT c.class_id as class_id, "Way of Shadow" as path_name, "Monks of the Way of Shadow follow a tradition that values stealth and subterfuge." as path_description	
-FROM Classes as c, items as i
+FROM Classes as c
 WHERE c.class_name='Monk';
 
 INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
@@ -1980,3 +1424,559 @@ INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
 SELECT p.path_id as path_id, 14 as lvl, "Peerless Skill" as feat_name, "When you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail." as feat_description
 FROM Paths as p
 WHERE p.path_name="College of Lore";
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian' and (item_name="greataxe");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Barbarian' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 2 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian' and (item_name="handaxe");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Barbarian' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 4 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Barbarian' and (item_name="javelin");
+
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="rapier");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="longsword");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="Diplomat’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="Entertainer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="lute");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="Leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Bard' and (item_name="dagger");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 3 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Bard' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, t.tool_id as item_id,t.tool_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity,"tool" as category
+FROM Classes as c, tools as t
+WHERE c.class_name='Bard' and (tool_name in(select tool_name from tools where tool_category= "Musical Instrument" ));
+	
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="rapier");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="shortsword");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="shortbow");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="quiver");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="arrow");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="shortsword");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Burglar’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 3 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 2 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="dagger");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Rogue' and (item_name="Thieves Tools");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="shield");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Druid' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="scimitar");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Druid' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="Leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Druid' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity,"Gear" as category
+FROM Classes as c, gear as w
+WHERE c.class_name='Druid' and (gear_name in(select gear_name from gear where gear_category like('%Druidic Focus%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="chain mail");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="longbow");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="arrow");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="shield");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Fighter' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="Crossbow,light");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name like ("%bolt"));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="handaxe");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Fighter' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="shortsword");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Monk' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 10 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Monk' and (item_name="darts");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="shield");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('Martial Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 5 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Javelin");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Paladin' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Priest’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Paladin' and (item_name="Chain mail");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity,"Gear" as category
+FROM Classes as c, gear as w
+WHERE c.class_name='Paladin' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="scale mail");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 2 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="shortsword");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Ranger' and (weapon_name in(select weapon_name from weapons where weapon_category like('Simple Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Ranger' and (weapon_name in(select weapon_name from weapons where weapon_category like('Simple Melee%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="longbow");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="quiver");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Ranger' and (item_name="arrow");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="Crossbow,light");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name like ("%bolt"));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Sorcerer' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="component pouch");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity,"Gear" as category
+FROM Classes as c, gear as w
+WHERE c.class_name='Sorcerer' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 2 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Sorcerer' and (item_name="dagger");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="Crossbow,light");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name like ("%bolt"));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Warlock' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="component pouch");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity,"Gear" as category
+FROM Classes as c, gear as w
+WHERE c.class_name='Warlock' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="Scholar’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="Dungeoneer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Warlock' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 2 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Warlock' and (item_name="dagger");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="quarterstaff");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="dagger");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="component pouch");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity,"Gear" as category
+FROM Classes as c, gear as w
+WHERE c.class_name='Wizard' and (gear_name in(select gear_name from gear where gear_category like('%Arcane Focus%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="Crossbow,light");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name like ("%bolt"));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Wizard' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="Scholar’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 5 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Wizard' and (item_name="spellbook");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="mace");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 1 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="warhammer");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="scale mail");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="leather");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 2 as group_number, 3 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="chain mail");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="Crossbow,light");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 3 as group_number, 1 as option_number, 20 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name like ("%bolt"));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.weapon_id as item_id,w.weapon_name as item_name, 3 as group_number, 2 as option_number, 1 as quantity, "weapon" as category
+FROM Classes as c, weapons as w
+WHERE c.class_name='Cleric' and (weapon_name in(select weapon_name from weapons where weapon_category like('%Simple%') ));
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="Priest’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 4 as group_number, 2 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="Explorer’s Pack");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, i.item_id as item_id,i.item_name as item_name, 5 as group_number, 1 as option_number, 1 as quantity, i.category as category
+FROM Classes as c, items as i
+WHERE c.class_name='Cleric' and (item_name="shield");
+
+INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_number,quantity,category) 
+SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 5 as group_number, 1 as option_number, 1 as quantity,"Gear" as category
+FROM Classes as c, gear as w
+WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
