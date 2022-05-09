@@ -2,6 +2,8 @@
 <!-- Title on the next line -->
 {% block content %}
 <!-- Side navigation -->
+{% if character %}
+  {% for char_id, character in character %}
   <div id="accordion">
       <!--Character info-->
     <div class="accordion-item">
@@ -16,7 +18,7 @@
         <div class = "container" style = "background-color: #ffffff80;">
             <div class="row" >
           <div class="col">
-              <p>Name: Baloo</p>
+              <p>Name: {{ character.name }}</p>
               <p>Race: Khenra</p>
             </div><div class="col">
               <p>Class: Monk</p>
@@ -617,6 +619,7 @@
       </div>
     </div>
 
-</div>
-
+  </div>
+{% endfor %}
+{% endif %}
 {% endblock %}

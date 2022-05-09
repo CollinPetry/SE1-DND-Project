@@ -1,5 +1,5 @@
 class Character:
-    def __init__(self, name, exp, race, race_desc, subrace, subrace_desc, char_class, class_desc, class_path, path_desc, path_feats, background, background_desc, alignment, speed, size, strength, dexterity, constitution, wisdom, intelligence, charisma, inventory_id):
+    def __init__(self, name, exp, race, race_desc, subrace, subrace_desc, char_class, class_desc, class_path, path_desc, background, background_desc, alignment, speed, size, strength, dexterity, constitution, wisdom, intelligence, charisma):
         self.name = name
         self.exp = exp
         self.race = race
@@ -21,4 +21,3 @@ class Character:
         self.wisdom = wisdom
         self.intelligence = intelligence
         self.charisma = charisma
-        self.inventory_id = inventory_id

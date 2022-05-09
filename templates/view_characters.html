@@ -8,7 +8,7 @@
             {% for char_id, user_char in characters %}
             <div class="grid-item" id="Content">
                 <div class="characterbox" style ="background-color = rgba(255,255,255,.5);">
-                    "{{user_char.char_name}}"<br>
+                    <a href="{{url_for('characterpage', char_name = 'Testy')}}">{{user_char.char_name}}</a><br>
                     <p>Race: "{{user_char.subrace_name}}"<br>Class: "{{user_char.class_name}}"<br>Level: "{{user_char.char_lvl}}"<br></p>
                 </div>
             </div>

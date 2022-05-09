@@ -54,7 +54,7 @@ def create_app():
     )
 
     app.add_url_rule(
-        '/character', view_func=views.characterpage, methods=["GET", "POST"]
+        '/character/<char_name>', view_func=views.characterpage, methods=["GET", "POST"]
     )
 
     app.add_url_rule(
