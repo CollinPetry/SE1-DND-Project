@@ -34,8 +34,11 @@ SET
     char_lvl = 10
 WHERE char_id=(select char_id from user_chars where user_name="kaia");
 
--- post races: descriipt still required
-select race_name, race_description from Races;
+-- post races
+select rgt.race_id, r.race_name, rgt.racial_trait_id,rt.trait_name, rt.trait_description
+from race_grants_traits as rgt
+join races as r on (r.race_id=rgt.race_id)
+join racial_traits as rt on (rt.racial_trait_id=rgt.racial_trait_id);
 
 -- replace ="race" with race_name=$input
 UPDATE characters
@@ -162,6 +165,21 @@ select pf.path_feat_id as power_id, c.char_id as char_id, "path feature"
 from path_feats pf, characters as c
 where pf.path_id= c.path_id and c.char_id=(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
 
+-- get backgrounds
+select bg.background_id, bg.background_name, bg.starting_gold,bf.background_feat_id, bf.background_feat_name, bf.feat_description
+from backgrounds as bg,background_features as bf 
+where (bg.background_id=bf.background_id);
+
+alter table characters add column gold float(8);
+UPDATE backgrounds
+SET
+	background_id= (select background_id from backgrounds where background_name="Guild Artisan")
+WHERE char_id =(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
+
+insert into char_powers (power_id, char_id, category)
+select bf.path_feat_id as power_id, c.char_id as char_id, "background feature"
+from path_feats pf, characters as c
+where pf.path_id= c.path_id and c.char_id=(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
 
 
 
