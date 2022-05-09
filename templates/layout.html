@@ -72,14 +72,11 @@ substituted for. It's very possible we can also have multiple layout files that 
 
                     {% if current_user.is_authenticated %}
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ url_for('view_characters') }}">Characters</a>
+                        <a class="nav-link" href="{{ url_for('view_characters', username = current_user.username) }}">Characters</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ url_for('view_campaigns') }}">Campaigns</a>
+                        <a class="nav-link" href="{{ url_for('view_campaigns', username = current_user.username) }}">Campaigns</a>
                     </li>
-                    <!--<li class="nav-item px-3">-->
-                    <!--    <a class="nav-link" href="{{ url_for('test_page') }}">Test Page</a>-->
-                    <!--</li>-->
                     {% endif %}
 
                     <li class="nav-item px-3">
