@@ -1,0 +1,745 @@
+{% extends "layout.html" %}
+<!-- Title on the next line -->
+{% block content %}
+<!-- Side navigation -->
+<div id="accordion">
+    <!--Character info-->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button"
+                    data-bs-target="#collapseOne"
+                    data-bs-toggle="collapse" type="button">
+                Character Info
+            </button>
+        </h2>
+    </div>
+    <div aria-labelledby="headingOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"
+         id="collapseOne">
+        <div class="accordion-body">
+            <div class="container" style="background-color: #ffffff80; padding: 10px;">
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <input placeholder="Character Name">
+                    </div>
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop1" onclick="myFunction(this)">Select Race</button>
+                            <div class="dropdown-content" id="drop1">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop2" onclick="myFunction(this)">Select Subrace</button>
+                            <div class="dropdown-content" id="drop2">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop3" onclick="myFunction(this)">Select Class</button>
+                            <div class="dropdown-content" id="drop3">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop4" onclick="myFunction(this)">Select Subclass</button>
+                            <div class="dropdown-content" id="drop4">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop5" onclick="myFunction(this)">Select Background</button>
+                            <div class="dropdown-content" id="drop5">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop6" onclick="myFunction(this)">Select Alignment</button>
+                            <div class="dropdown-content" id="drop6">
+                                <button class="innerbtn">Lawful Good</button>
+                                <button class="innerbtn">Neutral Good</button>
+                                <button class="innerbtn">Chaotic Good</button>
+                                <button class="innerbtn">Lawful Neutral</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <input placeholder="Starting Level (default 1)">
+                    </div>
+                    <div class="col">
+                        <input placeholder="Starting XP (default 0)">
+                    </div>
+                </div>
+            </div> <!--close container-->
+        </div>
+    </div>
+
+    <!--Combat-->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button aria-controls="collapseTwo" aria-expanded="true" class="accordion-button"
+                    data-bs-target="#collapseTwo"
+                    data-bs-toggle="collapse" type="button">
+                Combat Stats
+            </button>
+        </h2>
+    </div>
+    <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordion" id="collapseTwo">
+        <div class="card-body">
+
+            <div class="container" style="background-color: #ffffff80;">
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <strong> Max HP:</strong> 20
+                    </div>
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop11" onclick="myFunction(this)">Select Armor</button>
+                            <div class="dropdown-content" id="drop11">
+                                <button class="innerbtn">none</button>
+                                <button class="innerbtn">Hide</button>
+                                <button class="innerbtn">Chain Mail</button>
+                                <button class="innerbtn">Plate Armor</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <strong>AC:</strong> 18
+                    </div>
+                    <div class="col">
+                        <strong>Speed:</strong> 50
+                    </div>
+                    <div class="col">
+                        <strong> Hit Dice:</strong> d6
+                    </div>
+                    <div class="col">
+                        <strong>Proficiency:</strong> +4
+                    </div>
+                </div>
+
+                <div class="row" style="background-color: white;padding:5px;">
+                    <div class="col"></div>
+                    <div class="col">
+                        <strong>Attacks</strong>
+                        <div class="col"></div>
+                    </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <strong>Name:</strong>
+                    </div>
+                    <div class="col-4">
+                        <strong>Description:</strong>
+                    </div>
+                    <div class="col">
+                        <strong>Bonus:</strong>
+                    </div>
+                    <div class="col">
+                        <strong>Damage/Type:</strong>
+                    </div>
+                </div>
+                <!--this is the row that repeats for each weapon/attack-->
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop12" onclick="myFunction(this)">Select Attack</button>
+                            <div class="dropdown-content" id="drop12">
+                                <button class="innerbtn">punch</button>
+                                <button class="innerbtn">kick</button>
+                                <button class="innerbtn">sword</button>
+                                <button class="innerbtn">-remove-</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <p style="background-color: white;">description</p>
+                    </div>
+                    <div class="col">
+                        +3
+                    </div>
+                    <div class="col">
+                        1d6 Piercing
+                    </div>
+                </div>
+                <!--end repeat section :)-->
+                <div class="row" STYLE="padding:5px;">
+                    <div class="col">
+                        <button class="button btn-secondary">Add Attack</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--stats-->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading3">
+            <button aria-controls="collapse3" aria-expanded="true" class="accordion-button" data-bs-target="#collapse3"
+                    data-bs-toggle="collapse" type="button">
+                Stats and Skills
+            </button>
+        </h2>
+    </div>
+    <div aria-labelledby="heading3" class="collapse" data-parent="#accordion" id="collapse3">
+        <div class="card-body">
+            <div class="container" style="background-color: #ffffff80;">
+
+                <div class="row">
+                    <div class="col">
+                        <strong>STR:</strong> 14
+                    </div>
+                    <div class="col">
+                        <strong>DEX:</strong> 17
+                    </div>
+                    <div class="col">
+                        <strong>CON:</strong> 12
+                    </div>
+                    <div class="col">
+                        <strong>INT:</strong> 10
+                    </div>
+                    <div class="col">
+                        <strong>WIS:</strong> 14
+                    </div>
+                    <div class="col">
+                        <strong>CHA:</strong> 13
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        +2
+                    </div>
+                    <div class="col">
+                        +3
+                    </div>
+                    <div class="col">
+                        +1
+                    </div>
+                    <div class="col">
+                        +0
+                    </div>
+                    <div class="col">
+                        +2
+                    </div>
+                    <div class="col">
+                        +2
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        Acrobatics
+                    </div>
+                    <div class="col">
+                        Animal Handling
+                    </div>
+                    <div class="col">
+                        Arcana
+                    </div>
+                    <div class="col">
+                        Athletics
+                    </div>
+                    <div class="col">
+                        Deception
+                    </div>
+                    <div class="col">
+                        History
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        Insight
+                    </div>
+                    <div class="col">
+                        Intimidation
+                    </div>
+                    <div class="col">
+                        Investigation
+                    </div>
+                    <div class="col">
+                        Medicine
+                    </div>
+                    <div class="col">
+                        Nature
+                    </div>
+                    <div class="col">
+                        Perception
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        Performance
+                    </div>
+                    <div class="col">
+                        Persuasion
+                    </div>
+                    <div class="col">
+                        Religion
+                    </div>
+                    <div class="col">
+                        Sleight of Hand
+                    </div>
+                    <div class="col">
+                        Stealth
+                    </div>
+                    <div class="col">
+                        Survival
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 form-check">
+                                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="col">
+                                +1
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--feats-->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading4">
+            <button aria-controls="collapse4" aria-expanded="true" class="accordion-button" data-bs-target="#collapse4"
+                    data-bs-toggle="collapse" type="button">
+                Feats and Traits
+            </button>
+        </h2>
+    </div>
+    <div aria-labelledby="heading4" class="collapse" data-parent="#accordion" id="collapse4">
+        <div class="card-body">
+            <div class="container" style="background-color: #ffffff80;">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <strong>Name</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>Class/Race</strong>
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Description</strong>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            Dark Vision
+                        </div>
+                        <div class="col-sm-2">
+                            Khenra
+                        </div>
+                        <div class="col-md-4">
+                            You can see +30ft in the dark.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--spells-->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading5">
+            <button aria-controls="collapse5" aria-expanded="true" class="accordion-button" data-bs-target="#collapse5"
+                    data-bs-toggle="collapse" type="button">
+                Spells
+            </button>
+        </h2>
+    </div>
+    <div aria-labelledby="heading5" class="collapse" data-parent="#accordion" id="collapse5">
+        <div class="card-body">
+            <div class="container" style="background-color: #ffffff80;">
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <strong>Name:</strong>
+                    </div>
+                    <div class="col-4">
+                        <strong>Description:</strong>
+                    </div>
+                    <div class="col">
+                        <strong>Bonus:</strong>
+                    </div>
+                    <div class="col">
+                        <strong>Damage/Type:</strong>
+                    </div>
+                </div>
+                <!--this is the row that repeats for each weapon/attack-->
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop21" onclick="myFunction(this)">Select Spell</button>
+                            <div class="dropdown-content" id="drop21">
+                                <button class="innerbtn">fireball</button>
+                                <button class="innerbtn">heal</button>
+                                <button class="innerbtn">magic punch</button>
+                                <button class="innerbtn">-remove-</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <p style="background-color: white;">description</p>
+                    </div>
+                    <div class="col">
+                        +3
+                    </div>
+                    <div class="col">
+                        1d6 Piercing
+                    </div>
+                </div>
+                <!--end repeat section :)-->
+            </div>
+        </div>
+    </div>
+
+
+    <!--inventory-->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading6">
+            <button aria-controls="collapse6" aria-expanded="true" class="accordion-button" data-bs-target="#collapse6"
+                    data-bs-toggle="collapse" type="button">
+                Inventory/Notes
+            </button>
+        </h2>
+    </div>
+    <div aria-labelledby="heading6" class="collapse" data-parent="#accordion" id="collapse6">
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">Inventory</span>
+                            <textarea aria-label="With textarea" class="form-control" style="height: 300px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">Notes</span>
+                            <textarea aria-label="With textarea" class="form-control" style="height: 300px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

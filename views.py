@@ -13,6 +13,9 @@ from server import mysql
 def home_page():
     return render_template("home.html")
 
+def character_builder():
+        return render_template("characterbuilder.html")
+
 
 def view_characters(username):
     db = current_app.config["db"]
