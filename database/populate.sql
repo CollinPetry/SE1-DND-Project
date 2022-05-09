@@ -739,11 +739,10 @@ FROM backgrounds,skills
 WHERE backgrounds.background_name='Acolyte' and (skills.skill_name='Insight' or skills.skill_name='Religion');
 
 -- two of choice
--- INSERT INTO background_proficency_languages(background_id, language_id)
--- SELECT backgrounds.background_id, languages.language_id
--- FROM backgrounds,languages
--- WHERE backgrounds.background_name='Acolyte' and (languages.language_name=null or languages.language_name=null);
-
+INSERT INTO background_proficency_languages(background_id, language_id,select_num)
+SELECT backgrounds.background_id, languages.language_id, 2 as select_num
+FROM backgrounds,languages
+WHERE backgrounds.background_name='Acolyte' and (languages.language_name in  (select language_name from languages));
 
 -- charlatan
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -800,16 +799,16 @@ FROM backgrounds,skills
 WHERE backgrounds.background_name='Guild Artisan' and (skills.skill_name='Insight' or skills.skill_name='Persuasion');
 
 -- any artisian
--- INSERT INTO background_proficency_tools(background_id, tool_id)
--- SELECT backgrounds.background_id, tools.tool_id
--- FROM backgrounds,tools
--- WHERE backgrounds.background_name='Guild Artisan' and (tools.tool_name='Artisians Tools');
+INSERT INTO background_proficency_tools(background_id, tool_id, select_num)
+SELECT backgrounds.background_id, tools.tool_id, 1 as select_num
+FROM backgrounds,tools
+WHERE backgrounds.background_name='Guild Artisan' and (tools.tool_name='Artisians Tools');
 
 -- one of choice
--- INSERT INTO background_proficency_languages(background_id, language_id)
--- SELECT backgrounds.background_id, languages.language_id
--- FROM backgrounds,languages
--- WHERE backgrounds.background_name='Guild Artisan' and (languages.language_name=null);
+INSERT INTO background_proficency_languages(background_id, language_id,select_num)
+SELECT backgrounds.background_id, languages.language_id, 1 as select_num
+FROM backgrounds,languages
+WHERE backgrounds.background_name='Guild Artisan' and (languages.language_name=null);
 
 
 -- Hermit
@@ -824,10 +823,10 @@ FROM backgrounds,tools
 WHERE backgrounds.background_name='Hermit' and (tools.tool_name='Herbalism Kit');
 
 -- one of choice
--- INSERT INTO background_proficency_languages(background_id, language_id)
--- SELECT backgrounds.background_id, languages.language_id
--- FROM backgrounds,languages
--- WHERE backgrounds.background_name='Hermit' and (languages.language_name=null);
+INSERT INTO background_proficency_languages(background_id, language_id, select_num)
+SELECT backgrounds.background_id, languages.language_id, 1 as select_num
+FROM backgrounds,languages
+WHERE backgrounds.background_name='Hermit' and (languages.language_name=null);
 
 
 -- Noble
@@ -842,10 +841,10 @@ FROM backgrounds,tools
 WHERE backgrounds.background_name='Noble' and tools.tool_name in (select tool_name from tools where tool_category ='Gaming Set');
 
 -- one of choice
--- INSERT INTO background_proficency_languages(background_id, language_id)
--- SELECT backgrounds.background_id, languages.language_id
--- FROM backgrounds,languages
--- WHERE backgrounds.background_name='Noble' and (languages.language_name=null);
+INSERT INTO background_proficency_languages(background_id, language_id,select_num)
+SELECT backgrounds.background_id, languages.language_id, 1 as select_num
+FROM backgrounds,languages
+WHERE backgrounds.background_name='Noble' and (languages.language_name in  (select language_name from languages));
 
 
 -- Outlander
@@ -854,16 +853,16 @@ SELECT backgrounds.background_id, skills.skill_id
 FROM backgrounds,skills
 WHERE backgrounds.background_name='Outlander' and (skills.skill_name='Athletics' or skills.skill_name='Survival');
 
-INSERT INTO background_proficency_tools(background_id, tool_id)
-SELECT backgrounds.background_id, tools.tool_id
+INSERT INTO background_proficency_tools(background_id, tool_id, select_num)
+SELECT backgrounds.background_id, tools.tool_id, 1 as select_num
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Outlander' and tool_name in (select tool_name from tools where tool_category like ('Musical%'));
 
 -- one of choice
--- INSERT INTO background_proficency_languages(background_id, language_id)
--- SELECT backgrounds.background_id, languages.language_id
--- FROM backgrounds,languages
--- WHERE backgrounds.background_name='Outlander' and (languages.language_name=null);
+INSERT INTO background_proficency_languages(background_id, language_id, select_num)
+SELECT backgrounds.background_id, languages.language_id, 1 as select_num
+FROM backgrounds,languages
+WHERE backgrounds.background_name='Outlander' and (languages.language_name in  (select language_name from languages));
 
 
 -- Sage
@@ -873,11 +872,10 @@ FROM backgrounds,skills
 WHERE backgrounds.background_name='Sage' and (skills.skill_name='Arcana' or skills.skill_name='History');
 
 -- two of choice
--- INSERT INTO background_proficency_languages(background_id, language_id)
--- SELECT backgrounds.background_id, languages.language_id
--- FROM backgrounds,languages
--- WHERE backgrounds.background_name='Sage' and (languages.language_name=null);
-select * from background_features;
+INSERT INTO background_proficency_languages(background_id, language_id,select_num)
+SELECT backgrounds.background_id, languages.language_id,2 as select_num
+FROM backgrounds,languages
+WHERE backgrounds.background_name='Sage' and (languages.language_name in  (select language_name from languages));
 
 -- Sailor
 INSERT INTO background_proficency_skills(background_id, skill_id)

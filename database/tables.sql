@@ -234,6 +234,7 @@ create table IF NOT EXISTS Suggested_Specialty_Traits(
 CREATE TABLE IF NOT EXISTS Background_Proficency_Tools(
 	background_id int(100) NOT NULL,
 	tool_id INT(14) NOT NULL,
+    select_num int(100) default null,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (tool_id) REFERENCES Tools(tool_id),
 	UNIQUE (background_id, tool_id)
@@ -242,6 +243,7 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Tools(
 CREATE TABLE IF NOT EXISTS Background_Proficency_Languages(
 	background_id int(100) NOT NULL,
 	language_id INT(14) NOT NULL,
+    select_num int(100) default null,
 	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (language_id) REFERENCES Languages(language_id),
 	UNIQUE (background_id, language_id)
@@ -250,7 +252,8 @@ CREATE TABLE IF NOT EXISTS Background_Proficency_Languages(
 CREATE TABLE IF NOT EXISTS Background_Proficency_Skills(
 	background_id int(100) NOT NULL,
 	skill_id INT(14) NOT NULL,
-	FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
+	select_num int(100) default null,
+    FOREIGN KEY (background_id) REFERENCES Backgrounds(background_id),
 	FOREIGN KEY (skill_id) REFERENCES Skills(skill_id),
 	UNIQUE (background_id, skill_id)
 );
