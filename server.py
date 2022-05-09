@@ -54,7 +54,7 @@ def create_app():
     )
 
     app.add_url_rule(
-        '/character', view_func=views.characterpage, methods=["GET", "POST"]
+        '/character/<char_name>', view_func=views.characterpage, methods=["GET", "POST"]
     )
 
     app.add_url_rule(
@@ -91,7 +91,7 @@ def create_app():
 
     # Creating database connection
     home_dir = os.path.expanduser("~")
-    db = Database(os.path.join(home_dir, "dndb.db"))
+    db = Database(os.path.join(home_dir, "dnddb.db"))
     app.config["db"] = db
 
     #  This makes it run. NO TOUCHY

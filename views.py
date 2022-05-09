@@ -20,9 +20,6 @@ def character_builder():
 def view_characters(username):
     db = current_app.config["db"]
     characters = db.get_user_characters(username)
-    print()
-    print("TESTING 1 2 3 . . . ")
-    print(characters)
     return render_template("view_characters.html", characters=characters)
     #return render_template("view_characters.html")
 
@@ -30,6 +27,10 @@ def view_characters(username):
 def view_campaigns(username):
     return render_template("view_campaigns.html")
 
+def characterpage(char_name):
+    db = current_app.config["db"]
+    character = db.get_character(char_name)
+    return render_template("character.html", character=character)
 
 def diceroller():
     roll = 0
@@ -78,10 +79,6 @@ def diceroller():
 
 def test_page():
     return render_template("test.html")
-
-
-def characterpage():
-    return render_template("character.html")
 
 
 def login_page():
