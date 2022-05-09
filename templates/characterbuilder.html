@@ -184,7 +184,7 @@
                     <div class="col">
                         <strong>Name:</strong>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4">
                         <strong>Description:</strong>
                     </div>
                     <div class="col">
@@ -195,20 +195,21 @@
                     </div>
                 </div>
                 <!--this is the row that repeats for each weapon/attack-->
-                <div class="row">
+                <div class="row" style="padding:5px;">
                     <div class="col">
-                        <div class="btn-group">
-                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
-                                    data-toggle="dropdown" type="button">
-                                Select Weapon:
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop12" onclick="myFunction(this)">Select Attack</button>
+                            <div class="dropdown-content" id="drop12">
+                                <button class="innerbtn">punch</button>
+                                <button class="innerbtn">kick</button>
+                                <button class="innerbtn">sword</button>
+                                <button class="innerbtn">-remove-</button>
                             </div>
                         </div>
 
+                    </div>
+                    <div class="col-4">
+                        <p style="background-color: white;">description</p>
                     </div>
                     <div class="col">
                         +3
@@ -217,7 +218,8 @@
                         1d6 Piercing
                     </div>
                 </div>
-                <div class="row">
+                <!--end repeat section :)-->
+                <div class="row" STYLE="padding:5px;">
                     <div class="col">
                         <button class="button btn-secondary">Add Attack</button>
                     </div>
@@ -662,28 +664,45 @@
     <div aria-labelledby="heading5" class="collapse" data-parent="#accordion" id="collapse5">
         <div class="card-body">
             <div class="container" style="background-color: #ffffff80;">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <strong>Name</strong>
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <strong>Name:</strong>
                     </div>
-                    <div class="col-sm-2">
-                        <strong>Modifier</strong>
+                    <div class="col-4">
+                        <strong>Description:</strong>
                     </div>
-                    <div class="col-md-4">
-                        <strong>Description</strong>
+                    <div class="col">
+                        <strong>Bonus:</strong>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-2">
-                            Fireball
-                        </div>
-                        <div class="col-sm-2">
-                            3
-                        </div>
-                        <div class="col-md-4">
-                            You throw a ball of fire.
-                        </div>
+                    <div class="col">
+                        <strong>Damage/Type:</strong>
                     </div>
                 </div>
+                <!--this is the row that repeats for each weapon/attack-->
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop21" onclick="myFunction(this)">Select Spell</button>
+                            <div class="dropdown-content" id="drop21">
+                                <button class="innerbtn">fireball</button>
+                                <button class="innerbtn">heal</button>
+                                <button class="innerbtn">magic punch</button>
+                                <button class="innerbtn">-remove-</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <p style="background-color: white;">description</p>
+                    </div>
+                    <div class="col">
+                        +3
+                    </div>
+                    <div class="col">
+                        1d6 Piercing
+                    </div>
+                </div>
+                <!--end repeat section :)-->
             </div>
         </div>
     </div>
