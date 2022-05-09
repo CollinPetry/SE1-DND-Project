@@ -82,11 +82,11 @@ CREATE TABLE IF NOT EXISTS char_proficency_weapons(
     UNIQUE (char_id, weapon_id)
 );
 CREATE TABLE IF NOT EXISTS char_proficency_armor(
+	UNIQUE (char_id, armor_id),
 	char_id INT(15) NOT NULL,
 	armor_id INT(15) NOT NULL,
 	FOREIGN KEY (char_id) REFERENCES characters(char_id),
-    FOREIGN KEY (armor_id) REFERENCES armor(armor_id),
-	UNIQUE (char_id, armor_id)
+    FOREIGN KEY (armor_id) REFERENCES armor(armor_id)
 );
 CREATE TABLE IF NOT EXISTS char_proficency_saving_throws(
 	char_id INT(15) NOT NULL,
@@ -105,8 +105,8 @@ CREATE TABLE IF NOT EXISTS char_languages(
 );
 
 CREATE TABLE IF NOT EXISTS char_inventory(
+UNIQUE (char_id, item_id),
 char_id INT(15) NOT NULL,
 item_id INT(15) NOT NULL,
-FOREIGN KEY (char_id) REFERENCES Characters(char_id),
-UNIQUE (char_id, item_id)
+FOREIGN KEY (char_id) REFERENCES Characters(char_id)
 );

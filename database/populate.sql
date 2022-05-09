@@ -2955,3 +2955,95 @@ INSERT INTO suggested_traits (background_id,trait_description,trait_roll)
 SELECT b.background_id as background_id, "I bluntly say what other people are hinting at or hiding." as trait_description, 8 as trait_roll
 FROM backgrounds as b
 WHERE b.background_name="Urchin";
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,	"Thief" as path_name, "You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn’t employ." as path_description
+FROM Classes as c
+WHERE c.class_name="Rogue";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Fast Hands"  as feat_name,3 as lvl,"Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves’ tools to disarm a trap or open a lock, or take the Use an Object action." as feat_description
+FROM Paths as p
+WHERE p.path_name="Thief";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Second-Story Work"  as feat_name,3 as lvl,"When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier." as feat_description
+FROM Paths as p
+WHERE p.path_name="Thief";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Supreme Sneak"  as feat_name,9 as lvl,"Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn." as feat_description
+FROM Paths as p
+WHERE p.path_name="Thief";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Use Magic Device"  as feat_name,13 as lvl,"By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items." as feat_description
+FROM Paths as p
+WHERE p.path_name="Thief";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Thief’s Reflexes"  as feat_name,17 as lvl,"When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can’t use this feature when you are surprised." as feat_description
+FROM Paths as p
+WHERE p.path_name="Thief";
+		
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,	"Assassin" as path_name, "You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency." as path_description
+FROM Classes as c
+WHERE c.class_name="Rogue";
+	
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Bonus Proficiencies"  as feat_name,3 as lvl,"When you choose this archetype at 3rd level, you gain proficiency with the disguise kit and the poisoner’s kit." as feat_description
+FROM Paths as p
+WHERE p.path_name="Assassin";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id AS path_id,'Assassinate' AS feat_name,3 AS lvl,'Starting at 3rd level, you are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.' AS feat_description
+FROM Paths as p
+WHERE p.path_name="Assassin";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Infiltration Expertise"  as feat_name,9 as lvl,"Starting at 9th level, you can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to someone else. For example, you might acquire appropriate clothing, letters of introduction, and officiallooking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to." as feat_description
+FROM Paths as p
+WHERE p.path_name="Assassin";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Imposter"  as feat_name,13 as lvl,"At 13th level, you gain the ability to unerringly mimic another person’s speech, writing, and behavior. You must spend at least three hours studying these three components of the person’s behavior, listening to speech, examining handwriting, and observing mannerisms." as feat_description
+FROM Paths as p
+WHERE p.path_name="Assassin";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Death Strike"  as feat_name,17 as lvl,"Starting at 17th level, you become a master of instant death. When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature." as feat_description
+FROM Paths as p
+WHERE p.path_name="Assassin";
+
+INSERT INTO paths (class_id,path_name,path_description)
+SELECT c.class_id as class_id,	"Arcane Trickster" as path_name, "Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischief-makers, and a significant number of adventurers." as path_description
+FROM Classes as c
+WHERE c.class_name="Rogue";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Spellcasting" as feat_name,3 as lvl,"When you reach 3rd level, you gain the ability to cast spells. See chapter 10 for the general rules of spellcasting and chapter 11 for the wizard spell list." as feat_description
+FROM Paths as p
+WHERE p.path_name="Arcane Trickster";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Mage Hand Legerdemain" as feat_name,3 as lvl,"Starting at 3rd level, when you cast mage hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it:<ul><li>You can stow one object the hand is holding in a container worn or carried by another creature.</li><li>You can retrieve an object in a container worn or carried by another creature.</li><li>You can use thieves’ tools to pick locks and disarm traps at range.</li></ul>" as feat_description
+FROM Paths as p
+WHERE p.path_name="Arcane Trickster";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Magical Ambush" as feat_name,9 as lvl,"Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn." as feat_description
+FROM Paths as p
+WHERE p.path_name="Arcane Trickster";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Versatile Trickster" as feat_name,13 as lvl,"At 13th level, you gain the ability to distract targets with your mage hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn." as feat_description
+FROM Paths as p
+WHERE p.path_name="Arcane Trickster";
+	
+INSERT INTO path_feats (path_id,lvl, feat_name,feat_description)
+SELECT p.path_id as path_id, "Spell Thief" as feat_name,17 as lvl,"At 17th level, you gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster." as feat_description
+FROM Paths as p
+WHERE p.path_name="Arcane Trickster";
+
