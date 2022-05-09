@@ -4,6 +4,7 @@ from flask_login import login_required, current_user, login_user, logout_user
 from werkzeug.utils import redirect
 from passlib.hash import pbkdf2_sha256 as hasher
 from forms import LoginForm
+from skill_prof import Skill_Prof
 from user import get_user
 from server import mysql
 
@@ -30,7 +31,9 @@ def view_campaigns(username):
 def characterpage(char_name):
     db = current_app.config["db"]
     character = db.get_character(char_name)
-    return render_template("character.html", character=character)
+    skills = db.get_stats(char_name)
+    traits = db.get_traits(char_name)
+    return render_template("character.html", character=character, skills=skills, traits=traits)
 
 def diceroller():
     roll = 0

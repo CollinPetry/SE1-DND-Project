@@ -1,7 +1,11 @@
 class Character:
-    def __init__(self, name, exp, race, race_desc, subrace, subrace_desc, char_class, class_desc, class_path, path_desc, background, background_desc, alignment, speed, size, strength, dexterity, constitution, wisdom, intelligence, charisma):
+    def __init__(self, char_id, name, exp, level, race, race_desc, subrace, subrace_desc, char_class, class_desc, class_path,
+                 path_desc, background, background_desc, alignment, speed, size, strength, dexterity, constitution,
+                 wisdom, intelligence, charisma, current_hp, total_hp):
+        self.char_id = char_id
         self.name = name
         self.exp = exp
+        self.level = level
         self.race = race
         self.race_desc = race_desc
         self.subrace = subrace
@@ -21,3 +25,5 @@ class Character:
         self.wisdom = wisdom
         self.intelligence = intelligence
         self.charisma = charisma
+        self.current_hp = current_hp
+        self.total_hp = total_hp

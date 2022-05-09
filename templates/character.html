@@ -2,12 +2,14 @@
 <!-- Title on the next line -->
 {% block content %}
 <!-- Side navigation -->
+{% if character %}
+  {% for char_id, character in character %}
   <div id="accordion">
       <!--Character info-->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Baloo's Info
+            {{character.name}}'s Info
           </button>
       </h2>
       </div>
@@ -16,17 +18,17 @@
         <div class = "container" style = "background-color: #ffffff80; padding: 10px;">
             <div class="row" style="margin: 5px;">
           <div class="col">
-                Race: Khenra
+                Race: {{character.race}}
             </div><div class="col">
-              Class: Monk
+              Class: {{ character.char_class }}
               </div><div class="col">
-                    Alignment: Lawful Good
+                    Alignment: {{character.alignment}}
                 </div><div class="col">
-                 Background: Hermit
+                 Background: {{character.background}}
             </div><div class="col">
-              Level: 7
+              Level: {{character.level}}
           </div><div class="col">
-                XP = 100
+                XP = {{character.exp}}
             </div>
         </div>
         </div>
@@ -48,13 +50,13 @@
 <div class="container" style = "background-color: #ffffff80;">
     <div class="row">
         <div class="col">
-            <strong>HP:</strong> 45/60
+            <strong>HP:</strong> {{ character.current_hp }}/{{ character.total_hp }}
         </div>
         <div class="col">
             <strong>AC:</strong> 18
         </div>
         <div class="col">
-            <strong>Speed:</strong> 50
+            <strong>Speed:</strong> {{ character.speed }}
         </div>
     </div>
     <div class="row">
@@ -99,7 +101,7 @@
             <strong>Attacks</strong>
         </div>
         <div class="col">
-            <strong>Proficiency:</strong> +4
+            <strong>Proficiency:</strong> +2
         </div>
     </div>
     <div class="row">
@@ -141,369 +143,206 @@
         <div class="card-body">
           <div class="container" style = "background-color: #ffffff80;">
 
+            {% if skills %}
+            {% for char_id, skill_prof in skills %}
             <div class="row">
                 <div class="col">
-                    <strong>STR:</strong> 14
+                    <strong>STR:</strong> {{ character.strength }}
+                    <ul>
+                        <li>{{ skill_prof.strength }}</li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <strong>DEX:</strong> 17
+                    <strong>DEX:</strong> {{ character.dexterity }}
+                    <ul>
+                        <li>{{ skill_prof.dexterity }}</li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <strong>CON:</strong> 12
+                    <strong>CON:</strong> {{ character.constitution }}
+                    <ul>
+                        <li>{{ skill_prof.constitution }}</li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <strong>INT:</strong> 10
+                    <strong>INT:</strong> {{ character.intelligence }}
+                    <ul>
+                        <li>{{ skill_prof.intelligence }}</li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <strong>WIS:</strong> 14
+                    <strong>WIS:</strong> {{ character.wisdom }}
+                    <ul>
+                        <li>{{ skill_prof.wisdom }}</li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <strong>CHA:</strong> 13
+                    <strong>CHA:</strong> {{ character.charisma }}
+                    <ul>
+                        <li>{{ skill_prof.charisma }}</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    +2
-                </div>
-                <div class="col">
-                    +3
-                </div>
-                <div class="col">
-                    +1
-                </div>
-                <div class="col">
-                    +0
-                </div>
-                <div class="col">
-                    +2
-                </div>
-                <div class="col">
-                    +2
-                </div>
-            </div>
-
+                <div class="row">
+                    <div class="col">
+                            Strength Saving Throw
+                            <ul>
+                                <li>{{ skill_prof.strength_saving_throw }}</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            Dexterity Saving Throw
+                            <ul>
+                                <li>{{ skill_prof.dexterity_saving_throw }}</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            Constitution Saving Throw
+                            <ul>
+                                <li>{{ skill_prof.constitution_saving_throw }}</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            Intelligence Saving Throw
+                            <ul>
+                                <li>{{ skill_prof.intelligence_saving_throw }}</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            Wisdom Saving Throw
+                            <ul>
+                                <li>{{ skill_prof.wisdom_saving_throw }}</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            Charisma Saving Throw
+                            <ul>
+                                <li>{{ skill_prof.charisma_saving_throw }}</li>
+                            </ul>
+                        </div>
+                    </div>
+               </div>
             <div class="row">
                 <div class="col">
                     Acrobatics
+                    <ul>
+                        <li>{{ skill_prof.acrobatics }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Animal Handling
+                    <ul>
+                        <li>{{ skill_prof.animal_handling }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Arcana
+                    <ul>
+                        <li>{{ skill_prof.arcana }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Athletics
+                    <ul>
+                        <li>{{ skill_prof.athletics }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Deception
+                    <ul>
+                        <li>{{ skill_prof.deception }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     History
+                    <ul>
+                        <li>{{ skill_prof.history }}</li>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
 
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
 
             <div class="row">
                 <div class="col">
                     Insight
+                    <ul>
+                        <li>{{ skill_prof.insight }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Intimidation
+                    <ul>
+                        <li>{{ skill_prof.intimidation }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Investigation
+                    <ul>
+                        <li>{{ skill_prof.investigation }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Medicine
+                    <ul>
+                        <li>{{ skill_prof.medicine }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Nature
+                    <ul>
+                        <li>{{ skill_prof.nature }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Perception
+                    <ul>
+                        <li>{{ skill_prof.perception }}</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
 
             <div class="row">
                 <div class="col">
                     Performance
+                    <ul>
+                        <li>{{ skill_prof.performance }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Persuasion
+                    <ul>
+                        <li>{{ skill_prof.persuasion }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Religion
+                    <ul>
+                        <li>{{ skill_prof.religion }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Sleight of Hand
+                    <ul>
+                        <li>{{ skill_prof.sleight_of_hand }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Stealth
+                    <ul>
+                        <li>{{ skill_prof.stealth }}</li>
+                    </ul>
                 </div>
                 <div class="col">
                     Survival
+                    <ul>
+                        <li>{{ skill_prof.survival }}</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
 
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              </div>
-                        </div>
-                        <div class="col">
-                            +1
-                        </div>
-                    </div>
-
-                </div>
-
+            {% endfor %}
+            {% endif %}
             </div>
 
           </div>
@@ -533,17 +372,23 @@
                 <div class="col-md-4">
                     <strong>Description</strong>
                 </div>
+                {% if traits %}
+                {% for id, trait in traits %}
+
                 <div class="row">
                     <div class="col-sm-2">
-                        Dark Vision
+                        {{ trait.name }}
                     </div>
                     <div class="col-sm-2">
-                        Khenra
+                        {{ trait.origin }}
                     </div>
                     <div class="col-md-4">
-                        You can see +30ft in the dark.
+                        {{ trait.description }}<br>
                     </div>
             </div>
+                <br>
+                {% endfor %}
+                {% endif %}
         </div>
       </div>
     </div>
@@ -621,5 +466,6 @@
     </div>
 
 </div>
-
+{% endfor %}
+{% endif %}
 {% endblock %}
