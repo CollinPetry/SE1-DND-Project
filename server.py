@@ -87,7 +87,7 @@ def create_app():
 
     # Creating database connection
     home_dir = os.path.expanduser("~")
-    db = Database(os.path.join(home_dir, "dndb.db"))
+    db = Database(os.path.join(home_dir, "dnddb.db"))
     app.config["db"] = db
 
     #  This makes it run. NO TOUCHY

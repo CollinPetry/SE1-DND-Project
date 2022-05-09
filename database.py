@@ -15,7 +15,7 @@ class Database:
         user_chars = []
         #  Establishing link to the database
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        db_path = os.path.join(BASE_DIR, "dndb.db")
+        db_path = os.path.join(BASE_DIR, "dnddb.db")
         #  SQL commands to execute
         with sqlite3.connect(db_path) as connection:
             print("CONNECTION SUCCESS")
