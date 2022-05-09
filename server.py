@@ -7,6 +7,7 @@ import os
 
 # from database import Database
 # from user import get_user
+from database import Database
 from user import get_user
 
 lm = LoginManager()
@@ -42,29 +43,9 @@ def create_app():
         "/login", view_func=views.login_page, methods=["GET", "POST"]
     )
 
-    # background process happening without any refreshing
+
     app.add_url_rule(
         '/diceroller', view_func=views.diceroller, methods=["GET", "POST"]
-    )
-
-    app.add_url_rule(
-        '/character', view_func=views.characterpage, methods=["GET", "POST"]
-    )
-
-    app.add_url_rule(
-        "/view_char", view_func=views.view_characters, methods=["GET", "POST"]
-    )
-
-    app.add_url_rule(
-        "/view_campaigns", view_func=views.view_campaigns, methods=["GET", "POST"]
-    )
-
-    app.add_url_rule("/logout", view_func=views.logout_page)
-
-    #  TEST URLS
-
-    app.add_url_rule(
-        "/test", view_func=views.test_page, methods=["GET", "POST"]
     )
 
     # background process happening without any refreshing
@@ -73,21 +54,41 @@ def create_app():
     )
 
     app.add_url_rule(
-        '/form', view_func=views.form, methods=["GET", "POST"]
+        '/character', view_func=views.characterpage, methods=["GET", "POST"]
     )
 
     app.add_url_rule(
-        '/logintest', view_func=views.logintest, methods=['POST', 'GET']
+        "/view_char/<username>", view_func=views.view_characters, methods=["GET", "POST"]
     )
 
-    #  no clue what exactly this is doing, but it's doing something, so no touchy
+    app.add_url_rule(
+        "/view_campaigns/<username>", view_func=views.view_campaigns, methods=["GET", "POST"]
+    )
+
+    app.add_url_rule("/logout", view_func=views.logout_page)
+
+    #  TEST URLS
+
+    #app.add_url_rule(
+    #    "/test", view_func=views.test_page, methods=["GET", "POST"]
+    #)
+
+    #app.add_url_rule(
+    #    '/form', view_func=views.form, methods=["GET", "POST"]
+    #)
+
+    #app.add_url_rule(
+    #    '/logintest', view_func=views.logintest, methods=['POST', 'GET']
+    #)
+
+    #  no clue what exactly this is doing, but it's doing something for the login function, so no touchy
     lm.init_app(app)
     lm.login_view = "login_page"
 
-    global mysql
-    mysql = MySQL()
-    app.config.from_object('config.DNDConfig')
-    mysql.init_app(app)
+    # Creating database connection
+    home_dir = os.path.expanduser("~")
+    db = Database(os.path.join(home_dir, "dndb.db"))
+    app.config["db"] = db
 
     #  This makes it run. NO TOUCHY
     return app
