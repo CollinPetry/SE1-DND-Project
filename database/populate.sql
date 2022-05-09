@@ -18,6 +18,108 @@ VALUES
 ("Sylvan", "Fey Creatures", "Elvish"),
 ("Undercommon", "Underdark Traders", "Elvish");
 
+
+INSERT INTO Backgrounds(background_name,starting_gold, background_description)
+VALUES
+("Acolyte",15.0,"You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power. Choose a god, a pantheon of gods, or some other quasi-divine being, and work with your DM to detail the nature of your religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that served a fiendish master that you now deny."),
+("Charlatan",15.0,"You have always had a way with people. You know what makes them tick, you can tease out their hearts’ desires after a few minutes of conversation, and with a few leading questions you can read them like they were children’s books. It’s a useful talent, and one that you’re perfectly willing to use for your advantage. You know what people want and you deliver, or rather, you promise to deliver. Common sense should steer people away from things that sound too good to be true, but common sense seems to be in short supply when you’re around. The bottle of pink-colored liquid will surely cure that unseemly rash, this ointment—nothing more than a bit of fat with a sprinkle of silver dust—can restore youth and vigor, and there’s a bridge in the city that just happens to be for sale. These marvels sound implausible, but you make them sound like the real deal."),
+("Criminal",15.0,"You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society."),
+("Folk Hero",10.0,"You come from a humble social rank, but you are destined for so much more. Already the people of your home village regard you as their champion, and your destiny calls you to stand against the tyrants and monsters that threaten the common folk everywhere."),
+("Guild Artisan",15.0,"You are a member of an artisan’s guild, skilled in a particular field and closely associated with other artisans. You are a well-established part of the mercantile world, freed by talent and wealth from the constraints of a feudal social order. You learned your skills as an apprentice to a master artisan, under the sponsorship of your guild, until you became a master in your own right."),
+("Hermit",5.0,"You lived in seclusion—either in a sheltered community such as a monastery, or entirely a lone—for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for."),
+("Noble",25.0,"You understand wealth, power, and privilege. You carry a noble title, and your family owns land, collects taxes, and wields significant political influence. You might be a pampered aristocrat unfamiliar with work or discomfort, a former merchant just elevated to the nobility, or a disinherited scoundrel with a disproportionate sense of entitlement. Or you could be an honest, hard-working landowner who cares deeply about the people who live and work on your land, keenly aware of your responsibility to them. Work with your DM to come up with an appropriate title and determine how much authority that title carries. A noble title doesn’t stand on its own—it’s connected to an entire family, and whatever title you hold, you will pass it down to your own children. Not only do you need to determine your noble title, but you should also work with the DM to describe your family and their influence on you."),
+("Outlander",10.0,"You grew up in the wilds, far from civilization and the comforts of town and technology. You’ve witnessed the migration of herds larger than forests, survived weather more extreme than any city-dweller could comprehend, and enjoyed the solitude of being the only thinking creature for miles in any direction. The wilds are in your blood, whether you were a nomad, an explorer, a recluse, a hunter-gatherer, or even a marauder. Even in places where you don’t know the specific features of the terrain, you know the ways of the wild."),
+("Sage",10.0,"You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study."),
+("Sailor",10.0,"You sailed on a seagoing vessel for years. In that time, you faced down mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths. Your first love is the distant line of the horizon, but the time has come to try your hand at something new.Discuss the nature of the ship you previously sailed with your Dungeon Master. Was it a merchant ship, a naval vessel, a ship of discovery, or a pirate ship? How famous (or infamous) is it? Is it widely traveled? Is it still sailing, or is it missing and presumed lost with all hands?What were your duties on board—boatswain, captain, navigator, cook, or some other position? Who were the captain and first mate? Did you leave your ship on good terms with your fellows, or on the run?"),
+("Soldier",10.0,"War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield. You might have been part of a standing national army or a mercenary company, or perhaps a member of a local militia who rose to prominence during a recent war. When you choose this background, work with your DM to determine which military organization you were a part of, how far through its ranks you progressed, and what kind of experiences you had during your military career. Was it a standing army, a town guard, or a village militia? Or it might have been a noble’s or merchant’s private army, or a mercenary company."),
+("Urchin",10.0,"You grew up on the streets alone, orphaned, and poor. You had no one to watch over you or to provide for you, so you learned to provide for yourself. You fought fiercely over food and kept a constant watch out for other desperate souls who might steal from you. You slept on rooftops and in alleyways, exposed to the elements, and endured sickness without the advantage of medicine or a place to recuperate. You’ve survived despite all odds, and did so through cunning, strength, speed, or some combination of each. You begin your adventuring career with enough money to live modestly but securely for at least ten days. How did you come by that money? What allowed you to break free of your desperate circumstances and embark on a better life?"),
+("Entertainer",15.0,"You thrive in front of an audience. You know how to entrance them, entertain them, and even inspire them. Your poetics can stir the hearts of those who hear you, awakening grief or joy, laughter or anger. Your music raises their spirits or captures their sorrow. Your dance steps captivate, your humor cuts to the quick. Whatever techniques you use, your art is your life.");
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"City Secrets" as background_feat_name, "You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow." as background_feat_description 
+from backgrounds
+where background_name="Urchin";
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Shelter of the Faithful" as background_feat_name, "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple." as background_feat_description 
+from backgrounds
+where background_name="Acolyte" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"False Identity" as background_feat_name, "You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy." as background_feat_description 
+from backgrounds
+where background_name= "Charlatan";
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Criminal Contact" as background_feat_name, "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you." as background_feat_description 
+from backgrounds
+where background_name="Criminal" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Rustic Hospitality" as background_feat_name, "Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you." as background_feat_description 
+from backgrounds
+where background_name="Folk Hero" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Guild Membership" as background_feat_name, "As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings. Guilds often wield tremendous political power. If you are accused of a crime, your guild will support you if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild’s coffers. You must pay dues of 5 gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild’s good graces." as background_feat_description 
+from backgrounds
+where background_name="Guild Artisan" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Discovery" as background_feat_name, "The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces of nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the people who or consigned you to exile, and hence the reason for your return to society." as background_feat_description 
+from backgrounds
+where background_name="Hermit" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Position of Privilege" as background_feat_name, "Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to." as background_feat_description 
+from backgrounds
+where background_name="Noble" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Wanderer" as background_feat_name, "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth." as background_feat_description 
+from backgrounds
+where background_name="Outlander" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Researcher" as background_feat_name, "When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign" as background_feat_description 
+from backgrounds
+where background_name="Sage" ;
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Ship’s Passage" as background_feat_name, "When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. You might sail on the ship you served on, or another ship you have good relations with (perhaps one captained by a former crewmate). Because you’re calling in a favor, you can’t be certain of a schedule or route that will meet your every need. Your Dungeon Master will determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected to assist the crew during the voyage." as background_feat_description 
+from backgrounds
+where background_name= "Sailor";
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"Military Rank" as background_feat_name, "You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized." as background_feat_description 
+from backgrounds
+where background_name= "Sailor";
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"City Secrets" as background_feat_name, "You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow." as background_feat_description 
+from backgrounds
+where background_name= "Urchin";
+
+
+INSERT INTO background_features(background_id,background_feat_name,feat_description)
+select background_id,"By Popular Demand" as background_feat_name, "You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a noble’s court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. When strangers recognize you in a town where you have performed, they typically take a liking to you.<" as background_feat_description 
+from backgrounds
+where background_name=Entertainer ;
+
+
+
 INSERT INTO abilities(ability_name,ability_description)
 VALUES
 ("Strength", "measuring physical power"),
@@ -313,24 +415,6 @@ VALUES
 ("Amulet","A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield.","Holy Symbol",5.00,1),
 ("Emblem","A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield.","Holy Symbol",5.00,Null),
 ("Reliquary","A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield.","Holy Symbol",5.00,2);
-
-INSERT INTO background_features(background_feat_name,feat_description)
-VALUES
-("City Secrets","You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow."),
-("Shelter of the Faithful","As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."),
-("False Identity","You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy."),
-("Criminal Contact","You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you."),
-("Rustic Hospitality","Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you."),
-("Guild Membership","As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings. Guilds often wield tremendous political power. If you are accused of a crime, your guild will support you if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild’s coffers. You must pay dues of 5 gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild’s good graces."),
-("Discovery","The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces of nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the people who or consigned you to exile, and hence the reason for your return to society."),
-("Position of Privilege","Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to."),
-("Retainers","If your character has a noble background, you may select this background feature instead of Position of Privilege. You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused."),
-("Wanderer","You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."),
-("Researcher","When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign"),
-("Ship’s Passage","When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. You might sail on the ship you served on, or another ship you have good relations with (perhaps one captained by a former crewmate). Because you’re calling in a favor, you can’t be certain of a schedule or route that will meet your every need. Your Dungeon Master will determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected to assist the crew during the voyage."),
-("Military Rank","You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized."),
-("City Secrets","You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow."),
-("By Popular Demand","You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a noble’s court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. When strangers recognize you in a town where you have performed, they typically take a liking to you.<");
 
 INSERT INTO tools(tool_name, cost,weight,tool_category)
 VALUES
@@ -660,10 +744,6 @@ WHERE backgrounds.background_name='Acolyte' and (skills.skill_name='Insight' or 
 -- FROM backgrounds,languages
 -- WHERE backgrounds.background_name='Acolyte' and (languages.language_name=null or languages.language_name=null);
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Acolyte")
-WHERE background_feat_name='Shelter of The Faithful';
 
 -- charlatan
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -676,10 +756,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Charlatan' and (tools.tool_name='Disguise Kit' or tools.tool_name='Forgery Kit');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Charlatan")
-WHERE background_feat_name='False Identity';
 
 -- criminal
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -692,10 +768,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Criminal' and (tools.tool_name='Gaming Set' or tools.tool_name='Thieves Tools');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Criminal")
-WHERE background_feat_name='Criminal Contact';
 
 -- Entertainer
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -708,10 +780,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Entertainer' and (tools.tool_name='Disguise Kit' or tools.tool_name='Musical Instrument');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Entertainer")
-WHERE background_feat_name='By Popular Demand';
 
 -- Folk Hero
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -724,10 +792,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Folk Hero' and (tools.tool_name='Artisians Tools' or tools.tool_name='Vehicles (Land)');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Folk Hero")
-WHERE background_feat_name='Rustic Hospitality';
 
 -- Guild Artisan
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -747,10 +811,6 @@ WHERE backgrounds.background_name='Guild Artisan' and (skills.skill_name='Insigh
 -- FROM backgrounds,languages
 -- WHERE backgrounds.background_name='Guild Artisan' and (languages.language_name=null);
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Guild Artisan")
-WHERE background_feat_name='Guild Membership';
 
 -- Hermit
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -769,10 +829,6 @@ WHERE backgrounds.background_name='Hermit' and (tools.tool_name='Herbalism Kit')
 -- FROM backgrounds,languages
 -- WHERE backgrounds.background_name='Hermit' and (languages.language_name=null);
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Hermit")
-WHERE background_feat_name='Discovery';
 
 -- Noble
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -791,10 +847,6 @@ WHERE backgrounds.background_name='Noble' and tools.tool_name in (select tool_na
 -- FROM backgrounds,languages
 -- WHERE backgrounds.background_name='Noble' and (languages.language_name=null);
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Noble")
-WHERE background_feat_name='Position Of Privilege';
 
 -- Outlander
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -813,10 +865,6 @@ WHERE backgrounds.background_name='Outlander' and tool_name in (select tool_name
 -- FROM backgrounds,languages
 -- WHERE backgrounds.background_name='Outlander' and (languages.language_name=null);
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Outlander")
-WHERE background_feat_name='Wanderer';
 
 -- Sage
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -829,11 +877,7 @@ WHERE backgrounds.background_name='Sage' and (skills.skill_name='Arcana' or skil
 -- SELECT backgrounds.background_id, languages.language_id
 -- FROM backgrounds,languages
 -- WHERE backgrounds.background_name='Sage' and (languages.language_name=null);
-
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Sage")
-WHERE background_feat_name='Researcher';
+select * from background_features;
 
 -- Sailor
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -846,10 +890,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Sailor' and (tools.tool_name='Navigators Tools' or tools.tool_name='Vehicles (Water)');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Sailor")
-WHERE background_feat_name="Ship’s Passage";
 
 -- Soldier
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -862,10 +902,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Soldier' and (tools.tool_name='Gaming Set' or tools.tool_name='Vehicles (Land)');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Soldier")
-WHERE background_feat_name='Military Rank';
 
 -- Urchin
 INSERT INTO background_proficency_skills(background_id, skill_id)
@@ -878,10 +914,6 @@ SELECT backgrounds.background_id, tools.tool_id
 FROM backgrounds,tools
 WHERE backgrounds.background_name='Urchin' and (tools.tool_name='Disguise Kit' or tools.tool_name='Thieves Tools');
 
-UPDATE background_features SET background_id=( 
-SELECT background_id FROM backgrounds
-WHERE  background_name="Urchin")
-WHERE background_feat_name='City Secrets';
 
 -- populate skills
 SET SQL_SAFE_UPDATES = 0;
@@ -2544,3 +2576,5 @@ INSERT INTO class_grants_items(class_id,item_id,item_name,group_number,option_nu
 SELECT c.class_id as class_id, w.gear_id as item_id,w.gear_name as item_name, 5 as group_number, 1 as option_number, 1 as quantity,"Gear" as category, 2 as select_num
 FROM Classes as c, gear as w
 WHERE c.class_name='Cleric' and (gear_name in(select gear_name from gear where gear_category like('%holy symbol%') ));
+
+ 
