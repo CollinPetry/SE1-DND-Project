@@ -155,7 +155,7 @@ create table IF NOT EXISTS Backgrounds(
 	background_id int(100) NOT NULL AUTO_INCREMENT,
     background_name varchar(20) Not Null,
 	background_description text(50000),
-    starting_gold int(100),
+    starting_gold float(8),
     primary key (background_id)
 );
 
@@ -402,10 +402,12 @@ CREATE TABLE IF NOT EXISTS Characters(
     size varchar(50),
     char_lvl int(100),
     pk_subrace int(100),
+    path_id int(100),
 	FOREIGN KEY (char_background_id) REFERENCES Backgrounds(background_id),
     FOREIGN KEY (pk_subrace) REFERENCES Subraces(pk_subrace),
 	FOREIGN KEY (char_class_id) REFERENCES classes(class_id),
     FOREIGN KEY (char_race_id) REFERENCES races(race_id),
+    FOREIGN KEY (path_id) REFERENCES Paths(path_id),
     primary key(char_id)
 );
 
@@ -461,15 +463,15 @@ CREATE TABLE IF NOT EXISTS char_languages(
 	UNIQUE (char_id, language_id)
 );
 
-CREATE TABLE IF NOT EXISTS char_inventory(
-char_id int(100) NOT NULL,
-item_id int(100) NOT NULL,
-quantity float,
-category varchar(50),
-weight float,
-FOREIGN KEY (char_id) REFERENCES Characters(char_id),
-UNIQUE (char_id, item_id)
-);
+-- CREATE TABLE IF NOT EXISTS char_inventory(
+-- char_id int(100) NOT NULL,
+-- item_id int(100) NOT NULL,
+-- quantity float,
+-- category varchar(50),
+-- weight float,
+-- FOREIGN KEY (char_id) REFERENCES Characters(char_id),
+-- UNIQUE (char_id, category, item_id)
+-- );
 
 CREATE TABLE IF NOT EXISTS char_proficency_skills(
 	char_id int(100) NOT NULL,
@@ -508,6 +510,7 @@ CREATE TABLE IF NOT EXISTS char_proficency_saving_throws(
 );
 
 CREATE TABLE IF NOT EXISTS Class_grants_items(
+	cgi_id int(100) Not Null auto_increment,
 	class_id int(100) NOT NULL,
 	item_id INT(100) NOT NULL,
     item_name varchar(50),
@@ -516,6 +519,19 @@ CREATE TABLE IF NOT EXISTS Class_grants_items(
     option_number int(100),
 	quantity int(100),
     select_num int(100),
-	FOREIGN KEY (class_id) REFERENCES Classes(class_id)
+	FOREIGN KEY (class_id) REFERENCES Classes(class_id),
+    primary Key(cgi_id)
 );
+CREATE TABLE IF NOT EXISTS char_inventory(
+item_name varchar(100),
+char_id int(100) NOT NULL,
+item_id int(100) NOT NULL,
+quantity float,
+category varchar(50),
+weight float,
+FOREIGN KEY (char_id) REFERENCES Characters(char_id),
+primary key (item_name)
+);
+
+
 
