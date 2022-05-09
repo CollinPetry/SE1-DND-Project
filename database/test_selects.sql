@@ -130,11 +130,38 @@ select chf.feat_id, c.char_id as char_id, "class feature"
 from class_has_feats chf, characters as c
 where chf.class_id = c.char_class_id and c.char_id=(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
 
-select c.class_name,i.item_name, i.category, group_number,option_number, quantity
+-- if item quantity> count(group,option) then the user needs to select quanity amount 
+select c.class_name,i.item_name, i.category, group_number,option_number, quantity, select_num, cgts.cgi_id
 from class_grants_items as cgts
 join items as i on (cgts.item_name=i.item_name)
 join classes as c on (cgts.class_id=c.class_id)
-where cgts.class_id= (select class_id from Classes where class_name="Ranger")
-order by cgts.class_id, cgts.group_number,cgts.option_number;
+where cgts.class_id= (select c.char_class_id from Characters as c  where c.user_id=1 and c.char_name="aahil")
+order by cgts.class_id, cgts.group_number,cgts.group_number, cgts.option_number;
+
+-- need to get user input back as item name, group number, and option number or just item name and quanity
+insert into char_inventory(char_id,item_name,quantity,category,weight,item_id)
+select c.char_id,i.item_name, quantity,i.category,i.weight, i.item_id
+from Characters as c, class_grants_items as cgi, items as i
+where cgi_id in (380,401,401,413,415,416,417) and i.item_name=cgi.item_name and c.char_id=(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil")
+ON DUPLICATE KEY UPDATE quantity = char_inventory.quantity+ cgi.quantity;
+
+select * from char_inventory where char_id=(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
+
+-- get subraces
+select path_name,path_description, class_id
+from paths
+where class_id=(select char_class_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
+
+UPDATE characters
+SET
+	path_id= (select path_id from paths  where path_name="Beast Master")
+WHERE char_id =(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
+
+insert into char_powers (power_id, char_id, category)
+select pf.path_feat_id as power_id, c.char_id as char_id, "path feature"
+from path_feats pf, characters as c
+where pf.path_id= c.path_id and c.char_id=(select char_id from Characters as c  where c.user_id=1 and c.char_name="aahil");
+
+
 
 
