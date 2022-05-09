@@ -7,7 +7,7 @@
         {% if characters %}
             {% for char_id, user_char in characters %}
             <div class="grid-item" id="Content">
-                <div class="characterbox">
+                <div class="characterbox" style ="background-color = rgba(255,255,255,.5);">
                     "{{user_char.char_name}}"<br>
                     <p>Race: "{{user_char.subrace_name}}"<br>Class: "{{user_char.class_name}}"<br>Level: "{{user_char.char_lvl}}"<br></p>
                 </div>

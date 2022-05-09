@@ -6,7 +6,8 @@
     <!--Character info-->
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
-            <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button" data-bs-target="#collapseOne"
+            <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button"
+                    data-bs-target="#collapseOne"
                     data-bs-toggle="collapse" type="button">
                 Character Info
             </button>
@@ -15,77 +16,125 @@
     <div aria-labelledby="headingOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"
          id="collapseOne">
         <div class="accordion-body">
-            <div class="container" style="background-color: #ffffff80; padding: 10px">
-                <div class="row">
+            <div class="container" style="background-color: #ffffff80; padding: 10px;">
+                <div class="row" style="padding: 5px;">
                     <div class="col">
                         <input placeholder="Character Name">
-                        <p></p>
-                        <div class="btn-group">
-                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
-                                    data-toggle="dropdown" type="button">
-                                Select Race:
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
-                            </div>
-                        </div>
-
                     </div>
                     <div class="col">
-                        <div class="btn-group">
-                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
-                                    data-toggle="dropdown" type="button">
-                                Select Class:
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop1" onclick="myFunction(this)">Select Race</button>
+                            <div class="dropdown-content" id="drop1">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
                             </div>
                         </div>
-                        <p></p>
-
-                        <div class="btn-group">
-                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
-                                    data-toggle="dropdown" type="button">
-                                Select Background:
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="col">
-                        <div class="btn-group">
-                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
-                                    data-toggle="dropdown" type="button">
-                                Select Level:
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
-                            </div>
-                        </div>
-                        <p></p>
-
-                        <input placeholder="Starting XP">
+                    <div class="col-7">
+                        <p style="background-color:white;">description</p>
                     </div>
                 </div>
-            </div>
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop2" onclick="myFunction(this)">Select Subrace</button>
+                            <div class="dropdown-content" id="drop2">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop3" onclick="myFunction(this)">Select Class</button>
+                            <div class="dropdown-content" id="drop3">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop4" onclick="myFunction(this)">Select Subclass</button>
+                            <div class="dropdown-content" id="drop4">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop5" onclick="myFunction(this)">Select Background</button>
+                            <div class="dropdown-content" id="drop5">
+                                <button class="innerbtn">Human</button>
+                                <button class="innerbtn">Elf</button>
+                                <button class="innerbtn">Dwarf</button>
+                                <button class="innerbtn">Halfling</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop6" onclick="myFunction(this)">Select Alignment</button>
+                            <div class="dropdown-content" id="drop6">
+                                <button class="innerbtn">Lawful Good</button>
+                                <button class="innerbtn">Neutral Good</button>
+                                <button class="innerbtn">Chaotic Good</button>
+                                <button class="innerbtn">Lawful Neutral</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p style="background-color:white;">description</p>
+                    </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                    <div class="col">
+                        <input placeholder="Starting Level (default 1)">
+                    </div>
+                    <div class="col">
+                        <input placeholder="Starting XP (default 0)">
+                    </div>
+                </div>
+            </div> <!--close container-->
         </div>
     </div>
-
 
     <!--Combat-->
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
-            <button aria-controls="collapseTwo" aria-expanded="true" class="accordion-button" data-bs-target="#collapseTwo"
+            <button aria-controls="collapseTwo" aria-expanded="true" class="accordion-button"
+                    data-bs-target="#collapseTwo"
                     data-bs-toggle="collapse" type="button">
                 Combat Stats
             </button>
@@ -95,9 +144,20 @@
         <div class="card-body">
 
             <div class="container" style="background-color: #ffffff80;">
-                <div class="row">
+                <div class="row" style="padding:5px;">
                     <div class="col">
                         <strong> Max HP:</strong> 20
+                    </div>
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="drop11" onclick="myFunction(this)">Select Armor</button>
+                            <div class="dropdown-content" id="drop11">
+                                <button class="innerbtn">none</button>
+                                <button class="innerbtn">Hide</button>
+                                <button class="innerbtn">Chain Mail</button>
+                                <button class="innerbtn">Plate Armor</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
                         <strong>AC:</strong> 18
@@ -105,26 +165,27 @@
                     <div class="col">
                         <strong>Speed:</strong> 50
                     </div>
-                </div>
-                <div class="row">
                     <div class="col">
                         <strong> Hit Dice:</strong> d6
                     </div>
                     <div class="col">
                         <strong>Proficiency:</strong> +4
                     </div>
-                    <div class="col"></div>
                 </div>
-                <div class="row" style="background-color: white;">
+
+                <div class="row" style="background-color: white;padding:5px;">
                     <div class="col"></div>
                     <div class="col">
                         <strong>Attacks</strong>
                         <div class="col"></div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="padding:5px;">
                     <div class="col">
                         <strong>Name:</strong>
+                    </div>
+                    <div class="col-2">
+                        <strong>Description:</strong>
                     </div>
                     <div class="col">
                         <strong>Bonus:</strong>
@@ -133,9 +194,9 @@
                         <strong>Damage/Type:</strong>
                     </div>
                 </div>
+                <!--this is the row that repeats for each weapon/attack-->
                 <div class="row">
                     <div class="col">
-
                         <div class="btn-group">
                             <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
                                     data-toggle="dropdown" type="button">
