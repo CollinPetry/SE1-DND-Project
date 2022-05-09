@@ -1,3 +1,5 @@
 Figure out armor and natural AC
 Proficiency in Combat stats needs to take from DB, currently hard coded
-LINE 154 has level hardcoded
+LINE 154 has level hardcoded - ?
+CHARACTER BUILDER stats need input boxes
+Need a place to list non-skill proficiencies
