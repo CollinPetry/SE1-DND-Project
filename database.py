@@ -4,6 +4,7 @@ import os.path
 #custom class imports
 from character import Character
 from skill_prof import Skill_Prof
+from subrace import Subrace
 from traits import Trait
 from user_char import User_char
 
@@ -161,3 +162,18 @@ class Database:
 
             cursor.close()
         return traits
+
+    def get_subraces(self, race_id):
+        subraces = []
+        #  Establishing link to the database
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, "dnddb.db")
+        #  SQL commands to execute
+        with sqlite3.connect(db_path) as connection:
+            cursor = connection.cursor()
+            cursor.execute("SELECT pk_subrace, subrace_name FROM SUBRACES WHERE race_id = ?", (race_id, ))
+            for pk_subrace, subrace_name in cursor:
+                subraces.append(Subrace(pk_subrace,subrace_name))
+            cursor.close()
+
+        return subraces

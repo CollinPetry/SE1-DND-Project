@@ -69,6 +69,10 @@ def create_app():
         "/character_builder", view_func=views.character_builder, methods=["GET", "POST"]
     )
 
+    app.add_url_rule(
+        "/character_builder/subrace/<race_id>", view_func=views.subrace, methods=["GET", "POST"]
+    )
+
     app.add_url_rule("/logout", view_func=views.logout_page)
 
     #  TEST URLS

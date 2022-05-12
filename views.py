@@ -8,15 +8,12 @@ from skill_prof import Skill_Prof
 from user import get_user
 from server import mysql
 
+import form as f
 
 #  For pages that need to be logged in to view, the line above the method def statement should read: @login_required
 
 def home_page():
     return render_template("home.html")
-
-def character_builder():
-        return render_template("characterbuilder.html")
-
 
 def view_characters(username):
     db = current_app.config["db"]
@@ -106,33 +103,32 @@ def logout_page():
     return redirect(url_for("home_page"))
 
 
-# Test Method
-# def form():
-#    return render_template('form.html')
-
-
 def process():
     user_question = request.form['question']
     print(user_question)
     return jsonify({'response': user_question})
 
-# Test Method
-# def logintest():
-#    print("In the method")
-#    if request.method == 'GET':
-#        return "Login via the login Form"
 
-#    if request.method == 'POST':
-#        name = request.form['name']
-#        age = request.form['age']
-#        print("Here")
-#        conn = mysql.connect()
-#        cursor = conn.cursor()
-#        cursor.execute(''' INSERT INTO info_table VALUES(%s,%s)''', (name, age))
-#        cursor.execute("SELECT * from info_table")
-#        data = cursor.fetchone()
-#        print(data)
-#        conn.commit()
-#        cursor.close()
+def character_builder():
+    db = current_app.config["db"]
+    raceForm = f.RaceForm()
+    raceForm.subrace.choices =[(subrace.pk_subrace, subrace.subrace_name) for subrace in db.get_subraces(1)]
 
-#        return f"Done!!"
+    if request.method == "POST":
+        request.form
+
+    return render_template("characterbuilder.html", raceForm=raceForm)
+
+def subrace(race_id):
+    db = current_app.config["db"]
+    subraces = db.get_subraces(race_id)
+
+    subraceArray = []
+
+    for subrace in subraces:
+        subraceObj = {}
+        subraceObj['pk_subrace'] = subrace.pk_subrace
+        subraceObj['subrace_name'] = subrace.subrace_name
+        subraceArray.append(subraceObj)
+
+    return jsonify({'subraces': subraceArray})
