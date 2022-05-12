@@ -113,6 +113,8 @@ def character_builder():
     db = current_app.config["db"]
     raceForm = f.RaceForm()
     raceForm.subrace.choices =[(subrace.pk_subrace, subrace.subrace_name) for subrace in db.get_subraces(1)]
+    raceForm.subrace_desc = [(subrace.subrace_description) for subrace in db.get_subraces(1)]
+
 
     if request.method == "POST":
         request.form
@@ -129,6 +131,26 @@ def subrace(race_id):
         subraceObj = {}
         subraceObj['pk_subrace'] = subrace.pk_subrace
         subraceObj['subrace_name'] = subrace.subrace_name
+        subraceObj['subrace_description'] = subrace.subrace_description
         subraceArray.append(subraceObj)
 
+    race_desc = db.get_race_desc(race_id)
+    race_descOBJ = {}
+    race_descOBJ['race_desc'] = race_desc
+
     return jsonify({'subraces': subraceArray})
+
+def paths(class_id):
+    db = current_app.config["db"]
+    paths = db.get_path(class_id)
+
+    pathArray = []
+
+    for path in paths:
+        pathObj = {}
+        pathObj['path_id'] = path.path_id
+        pathObj['path_name'] = path.path_name
+        pathArray.append(pathObj)
+
+
+    return jsonify({'paths': pathArray})

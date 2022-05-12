@@ -4,6 +4,7 @@ import os.path
 #custom class imports
 from character import Character
 from skill_prof import Skill_Prof
+from subclass import Subclass
 from subrace import Subrace
 from traits import Trait
 from user_char import User_char
@@ -171,9 +172,41 @@ class Database:
         #  SQL commands to execute
         with sqlite3.connect(db_path) as connection:
             cursor = connection.cursor()
-            cursor.execute("SELECT pk_subrace, subrace_name FROM SUBRACES WHERE race_id = ?", (race_id, ))
-            for pk_subrace, subrace_name in cursor:
-                subraces.append(Subrace(pk_subrace,subrace_name))
+            cursor.execute("SELECT s.pk_subrace, s.subrace_name, s.subrace_description, r.race_description FROM SUBRACES s JOIN RACES r ON "
+                           "r.race_id = s.race_id WHERE s.race_id = ?", (race_id, ))
+            for pk_subrace, subrace_name, subrace_description, race_description in cursor:
+                #print(str(pk_subrace)+ ",    " + subrace_name+ ",    " + race_description)
+                subraces.append(Subrace(pk_subrace, subrace_name, subrace_description, race_description))
             cursor.close()
 
         return subraces
+
+    def get_path(self, class_id):
+        paths = []
+        #  Establishing link to the database
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, "dnddb.db")
+        #  SQL commands to execute
+        with sqlite3.connect(db_path) as connection:
+            cursor = connection.cursor()
+            cursor.execute(
+                "SELECT path_id, path_name FROM PATHS WHERE class_id = ?", (class_id,))
+            for path_id, path_name  in cursor:
+                paths.append(Subclass(path_id, path_name ))
+            cursor.close()
+
+        return paths
+
+    def get_race_desc(self, race_id):
+        race_desc = ""
+        #  Establishing link to the database
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, "dnddb.db")
+        #  SQL commands to execute
+        with sqlite3.connect(db_path) as connection:
+            cursor = connection.cursor()
+            cursor.execute("SELECT race_description FROM RACES WHERE race_id = ?", (race_id, ))
+            for race_description in cursor:
+                race_desc = race_description
+            cursor.close()
+        return race_desc
