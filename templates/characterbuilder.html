@@ -738,9 +738,15 @@
         race_select.onchange = function() {
             race_id = race_select.value;
 
-            fetch('/characterbuilder/subrace/' + race_id).then(function(response) {
-               response.json().then(function() {
-                    console.table(data);
+            fetch('/character_builder/subrace/' + race_id).then(function(response) {
+               response.json().then(function(data) {
+                    let optionHTML = '';
+                    for (let subrace of data.subraces){
+                        optionHTML += '<option value="' + subrace.pk_subrace + '">' + subrace.subrace_name + '</option>'
+                    }
+
+                    subrace_select.innerHTML = optionHTML;
+
                });
             });
         }
