@@ -115,6 +115,10 @@ def character_builder():
     raceForm.subrace.choices =[(subrace.pk_subrace, subrace.subrace_name) for subrace in db.get_subraces(1)]
     raceForm.subrace_desc = [(subrace.subrace_description) for subrace in db.get_subraces(1)]
 
+    #classForm = f.ClassForm()
+   # classForm.path.choices = [(path.path_id, path.subrace_name) for path in db.get_path(1)]
+   # classForm.path_desc = [(path.path_description) for path in db.get_path(1)]
+
 
     if request.method == "POST":
         request.form
