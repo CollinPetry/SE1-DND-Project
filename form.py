@@ -12,9 +12,23 @@ class RaceForm(FlaskForm):
 
     subrace_desc = ""
 
-class ClassForm(FlaskForm):
-    classes = SelectField('class', choices=[(1, 'Barbarian'), (2, 'Bard'), (3, 'Cleric'), (4, 'Druid'), (5, 'Fighter'),
+    classes = SelectField('classes', choices=[(1, 'Barbarian'), (2, 'Bard'), (3, 'Cleric'), (4, 'Druid'), (5, 'Fighter'),
                                             (6, 'Monk'), (7, 'Paladin'), (8, 'Ranger'), (9, 'Rogue'), (10, 'Sorcerer'),
                                             (11, 'Warlock'), (12, 'Wizard')])
 
-    subclass = SelectField('subclass', choices=[])
+    background = SelectField('background', choices=[(1, 'Acolyte'), (2, 'Charlatan'), (3, 'Criminal'), (4, 'Folk Hero'),
+                                                    (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'),
+                                                    (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Urchin'), (13, 'Entertainer')])
+
+
+    alignment = SelectField('alignment', choices = [(1, 'Lawful Good'), (2, 'Neutral Good'), (3, 'Chaotic Good'),
+                            (4, 'Lawful Neutral'), (5, 'Neutral'), (6, 'Chaotic Neutral'),
+                            (7, 'Lawful Evil'), (8, 'Neutral Evil'), (9, 'Chaotic Evil')])
+
+    equipment1 = SelectField('equipment1', choices=[])
+
+    equipment2 = SelectField('equipment2', choices=[])
+
+    equipment3 = SelectField('equipment3', choices=[])
+
+    equipment4 = SelectField('equipment4', choices=[])

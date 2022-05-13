@@ -1,3 +1,10 @@
+class Item:
+    def __init__(self, cgi_id, item_id, class_id, item_name):
+        self.cgi_id = cgi_id
+        self.item_id = item_id
+        self.class_id = class_id
+        self.item_name = item_name
+
 class Gear:
     def __init__(self, name, desc, category, weight, cost):
         self.name = name

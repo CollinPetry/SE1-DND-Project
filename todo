@@ -1,8 +1,11 @@
 Figure out armor and natural AC
-Proficiency in Combat stats needs to take from DB, currently hard coded
+Proficiency in Combat stats needs to take from DB + " " + currently hard coded
 LINE 154 has level hardcoded - ?
 CHARACTER BUILDER stats need input boxes
 Need a place to list non-skill proficiencies
 
 ABILITY SCORES- logic and how they go in (point buy)
-PHYSICAL TRAITS- textbox (eyes, hair, skin color, age, height, wieght
+PHYSICAL TRAITS- textbox (eyes hair skin color age height wieght
+
+
+character.user_id + " " + character.name + " " + character.exp + " " + character.race + " " + character.char_class + " " + character.background + " " + character.alignment + " " + character.speed + " " + character.size + " " + character.level + " " + character.subrace + " " + character.strength + " " + character.dexterity + " " + character.constitution + " " + character.intelligence + " " + character.wisdom + " " + character.charisma + " " + character.total_hp

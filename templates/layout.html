@@ -59,7 +59,7 @@ substituted for. It's very possible we can also have multiple layout files that 
                         <a class="nav-link" href="{{ url_for('view_campaigns', username = current_user.username) }}">Campaigns</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ url_for('character_builder')}}">Character Builder</a>
+                        <a class="nav-link" href="{{ url_for('character_builder', username = current_user.username)}}">Character Builder</a>
                     </li>
                     {% endif %}
 

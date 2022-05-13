@@ -66,7 +66,7 @@ def create_app():
     )
 
     app.add_url_rule(
-        "/character_builder", view_func=views.character_builder, methods=["GET", "POST"]
+        "/character_builder/<username>", view_func=views.character_builder, methods=["GET", "POST"]
     )
 
     app.add_url_rule(

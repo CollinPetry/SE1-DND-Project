@@ -3,6 +3,8 @@ from flask import abort, current_app, render_template, url_for, request, flash, 
 from flask_login import login_required, current_user, login_user, logout_user
 from werkzeug.utils import redirect
 from passlib.hash import pbkdf2_sha256 as hasher
+
+from character import Character
 from forms import LoginForm
 from skill_prof import Skill_Prof
 from user import get_user
@@ -27,7 +29,9 @@ def view_campaigns(username):
 
 def characterpage(char_name):
     db = current_app.config["db"]
+    print(char_name)
     character = db.get_character(char_name)
+    print(character)
     skills = db.get_stats(char_name)
     traits = db.get_traits(char_name)
     return render_template("character.html", character=character, skills=skills, traits=traits)
@@ -109,19 +113,41 @@ def process():
     return jsonify({'response': user_question})
 
 
-def character_builder():
+def character_builder(username):
     db = current_app.config["db"]
     raceForm = f.RaceForm()
     raceForm.subrace.choices =[(subrace.pk_subrace, subrace.subrace_name) for subrace in db.get_subraces(1)]
-    raceForm.subrace_desc = [(subrace.subrace_description) for subrace in db.get_subraces(1)]
-
+    # four equipment choices for almost all classes
+    # raceForm.equipment1.choices = [(item.item_id, item.item_name) for item in db.get_equipment1_choices()]
     #classForm = f.ClassForm()
    # classForm.path.choices = [(path.path_id, path.subrace_name) for path in db.get_path(1)]
    # classForm.path_desc = [(path.path_description) for path in db.get_path(1)]
 
 
     if request.method == "POST":
-        request.form
+        name = request.form['name']
+        level = 1
+        XP = 0
+        race_id = request.form['race']
+        pk_subrace = request.form['subrace']
+        class_id = request.form['classes']
+        background_id = request.form['background']
+        alignment_id = request.form['alignment']
+
+        str = request.form['str']
+        dex = request.form['dex']
+        con = request.form['con']
+        int = request.form['int']
+        wis = request.form['wis']
+        cha = request.form['cha']
+
+        character = Character(0, name, XP, level, race_id, 0, pk_subrace, 0, class_id, 0, 0, 0, background_id, 0, alignment_id, 0, 0, str, dex, con, wis, int, cha, 0, 0)
+        db.new_character(character, username)
+        #tie armor and weapons into dynamic dropdowns?
+
+        characters = db.get_user_characters(username)
+        return render_template("view_characters.html", characters=characters)
+
 
     return render_template("characterbuilder.html", raceForm=raceForm)
 
